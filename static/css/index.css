@@ -1,0 +1,371 @@
+body{
+    background:url("../img/index_bg.jpg") no-repeat fixed ;
+    background-size:100% 100%;
+}
+header{
+    background-color: #EFEEEF;
+    width:100%;
+    text-align: center;
+    position: relative;
+    display: flex;
+}
+header ul{
+    margin-left: 32%;
+    margin-bottom: 0;
+}
+header ul li{
+    float: left;
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+}
+.my_img{
+    height:23px;
+}
+section>div:first-child{
+    width:960px;
+    height:723px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px 10px 0 0;
+}
+.my_header{
+    width:100%;
+    height: 30px;
+    border-radius: 10px 10px 0 0;
+    background-image: repeating-linear-gradient(90deg,#DCEAF5,#F6FAFD);
+}
+.my_header span:first-child{
+    font-family: my_font;
+    font-size: 1.8rem;
+    margin-top: -0.4rem;
+}
+.my_header span:nth-child(2) a{
+    vertical-align: -1px;
+    margin-left: 10rem;
+}
+.my_header ul li{
+    float: left;
+    margin-right: 0.3rem;
+}
+.my_header ul li a{
+    font-size: 0.8rem;
+}
+.my_header_1{
+    width:940px;
+    height: 590px;
+    margin: 0.4rem auto 0;
+    background-color: #1b1e21;
+    display: flex;
+    position: relative;
+}
+.my_left{
+    /*border: 1px solid red;*/
+    height:100%;
+    width: 44rem;
+    position: relative;
+}
+.my_right{
+    position: relative;
+    border: 1px solid red;
+    width: 15rem;
+}
+.my_right ul{
+    position: absolute;
+    z-index: 10;
+    color:white;
+    font-weight: bold;
+    margin-top: 1rem;
+    /*font-size: 1.8rem;*/
+    top:1rem;
+    left:1rem;
+}
+.my_right ul li:first-child{
+    font-family: my_font;
+}
+.my_right ul li{
+    margin-top: 1.5rem;
+    color:white;
+    text-align: center;
+    padding-bottom: 0.2rem;
+}
+.my_right ul li:not(:nth-child(1)){
+    border-bottom: 1px solid white;
+    font-size: 1.2rem;
+}
+.my_right ul li a{
+    color: white;
+    font-family: "my_font_1";
+}
+.my_right ul li a:hover{
+    text-decoration: none;
+    color: olivedrab;
+}
+/*为左边的面板添加样式*/
+.my_left div{
+    position:absolute;
+    z-index: 10;
+    width:702px;
+    height: 590px;
+    background-color: orange;
+    top:0;
+    left:0;
+}
+.my_left div.panel_1{
+    z-index: 11;
+    background: #23272b url("../img/game_bg.png") no-repeat 50% 50%;
+    background-size:contain;
+}
+.my_left div.panel_1 p{
+    position: absolute;
+    z-index: 10;
+    top:96.5%;
+    color: white;
+    left:3%;
+    font-size: 0.4rem;
+}
+.my_left div.panel_2{
+    background-color: orange;
+}
+.my_left div.panel_3{
+    background-color: yellow;
+}
+.my_left div.panel_4{
+    background-color: green;
+}
+.my_left div.panel_5{
+    background-color: blue;
+}
+.my_left div.panel_6{
+     background-color: darkblue;
+}
+.my_left div.panel_7{
+    background-color: purple;
+}
+.my_left div.panel_8{
+    background-color: pink;
+}
+.my_footer{
+    width:100%;
+    height:85px;
+    background-color: #9fcdff;
+    margin-top: 0.8rem;
+    border-radius: 0 0 8px 8px;
+}
+#myModal{
+    top:130px;
+    left:-233px;
+}
+.modal-dialog{
+    max-width:538px;
+}
+#myModal .modal-content{
+    background-color: rgba(55,56,60,0.8);
+    color: white;
+}
+#myModal .modal-header{
+    padding: 0.2rem 0.5rem;
+}
+#myModal .modal-header span{
+    margin: 0.35rem auto 0;
+}
+.my_checkbox{
+    vertical-align: -2px;
+}
+.my_border{
+    border:1px solid black;
+    height: 2px;
+    width: 204px;
+    background-color: white;
+    margin-top: 9px;
+}
+.my_footer div h5{
+    font-family: "my_font";
+}
+.my_footer div p{
+    text-indent: 2rem;
+    margin-left: 2rem;
+    font-family: "my_font_1";
+}
+@font-face {
+    font-family: "my_font";
+    src:url("../font/font.ttf");
+}
+@font-face {
+    font-family: "my_font_1";
+    src:url("../font/font_1.ttf");
+}
+a:hover{
+    color:orange;
+}
+.my_showDiv{
+    position:absolute;
+    width:702px;
+    height:590px;
+    top:0;
+    left:0;
+    display: none;
+    background: black url("../img/yangyang.png") no-repeat top left ;
+    background-size: 100% 100%;
+}
+.my_showProgress{
+    position:absolute;
+    width:940px;
+    height:590px;
+    top:0;
+    left:0;
+    display: none;
+    background: #DEE1E2 url("../img/download.gif") no-repeat center center;
+    background-size: contain;
+}
+.my_img1{
+    width:15px;
+    height:15px;
+    position: absolute;
+    top:12px;
+    left:95%;
+    cursor: pointer;
+}
+.my_showDiv div.alert{
+    font-family: my_font_1;
+    font-size: 1.5rem;
+    color:white;
+    background-color: rgba(128,128,128,0.5);
+    border-radius: 0 0 8px 8px;
+    display: none;
+}
+.my_btn{
+    position: absolute;
+    top:85%;
+    left: 76%;
+    z-index: auto;
+    border-radius: 20px;
+}
+.my_btn button{
+    font-size: 1.8rem;
+    color:orange;
+    font-family: my_font;
+    border-radius: 20px;
+    padding-left: 1.4rem;
+    padding-right: 1.4rem;
+}
+.my_handle{
+    width:100%;
+    height:100%;
+    position:absolute;
+    z-index: 100;
+    /*background-color: #9fcdff;*/
+    background-image: repeating-linear-gradient(90deg,#243B9C,#2D67AC,#228DBE);
+    display: none;
+}
+.my_handle ul{
+    background-color: rgba(255,215,210,0.2);
+    width:75%;
+    margin: 1.6rem auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 10px;
+    border:2px solid white;
+}
+.my_handle ul li {
+    float:left;
+    margin:1.2rem auto;
+}
+.my_handle ul:nth-child(3) li{
+    margin-left: 1.1rem;
+}
+.my_handle ul li img{
+    width:100px;
+    height:72px;
+    border:2px solid white;
+    border-radius: 3px;
+}
+.my_handle h3{
+    font-family: my_font;
+    color:orange;
+}
+.my_handle ul li img:hover{
+    transform: scale(1.05);
+}
+.my_handle div{
+    position: absolute;
+    width: 80px;
+    height:39px;
+    left: 20%;
+    top:20%;
+    color:orange;
+    font-size: 1.8rem;
+    font-family: my_font_1;
+    background-color: rgba(255,215,210,0.2);
+    border-radius: 50px;
+    text-align: center;
+    border:2px solid white;
+}
+.my_handle div.my_easy{
+    top:10%;
+    left:15%;
+}
+.my_handle div.my_diffiult{
+    top:34%;
+    left:15%;
+}.my_handle div.my_trouble{
+     top:76.5%;
+     left:15%;
+ }
+.my_showMaze{
+    width:100%;
+    height:100%;
+    position:absolute;
+    z-index: 100;
+    background: rgb(129,118,82) ;
+    display: none;
+}
+.my_showMaze .my_map{
+    width:70%;
+    height: 65%;
+    margin:4rem auto 1rem;
+    /*background:url('../img/my_maze.png') no-repeat center center ;*/
+    background-size:100% 100%;
+    /* border:2px dotted  palevioletred; */
+    overflow: hidden;
+}
+.my_showMaze .my_map:focus{
+    border:none;
+}
+.my_showMaze div:nth-child(1) span{
+    margin-top: 1rem;
+    color: white;
+    font-size: 1.2rem;
+    font-family: my_font_1;
+}
+.my_exit_btn{
+    font-family: my_font;
+    margin-top: 2rem;
+    color: black;
+    background: white;
+}
+.my_hidden_div {
+    position:absolute;/*设置position:absolute脱离文档流*/
+    top:-64px;
+    left:44%;
+    display: none;
+    font-family: my_font_1;
+}
+.my_hover{
+    width:11.8rem;
+    position:absolute;
+    left:80%;
+}
+.my_hover:hover .my_hidden_div{
+   display: block;
+}
+.my_showMaze div:nth-child(1) span b{
+    font-family: my_font;
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+/*为canvas添加样式*/
+.my_time{
+    font-family: my_font;
+}
