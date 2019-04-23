@@ -1,0 +1,18 @@
+﻿/*定义公用私有变量*/
+/*公用变量*/
+public static final String url="jdbc:mysql://127.0.0.1/mogu_database";//主机名+数据库名
+public static final String name="com.mysql.jdbc.Driver";//加载驱动
+public static final String user="root";
+public static final String password="123456";
+public  Connection conn=null;
+/*私有变量*/
+private PreparedStatement pst=null;
+private ResultSet rs;
+/*
+	public  代表公用
+	private 代表私有
+	static  代表静态
+	final   代表无法修改
+	String  代表变量类型
+*/
+/*通过构造函数*/

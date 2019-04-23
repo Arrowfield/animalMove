@@ -1,0 +1,618 @@
+.IndexPage.my-container {
+}
+
+.IndexPage .header {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 80px;
+}
+
+.IndexPage .my-href {
+    display: block;
+    font-size:0;
+}
+
+
+.IndexPage .top-img {
+  width:100%;
+  height:80px;
+}
+
+.IndexPage .my-nav {
+    background-color: black;
+}
+
+.IndexPage .my-header {
+    width: 1090px;
+    margin: 0 auto;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.IndexPage .my-header .my-left {
+    color: gray;
+}
+
+.IndexPage ul{list-style:none;}
+
+.IndexPage .my-right{margin:0;}
+
+.IndexPage .my-right li {
+	float:left;
+    color: gray;
+    margin-left: 20px;
+    white-space: nowrap;
+    word-break: keep-all;
+    cursor: pointer;
+}
+
+.IndexPage .my-right li:hover {
+    color: white;
+}
+
+.IndexPage .header-href {
+    color: gray;
+    text-decoration: none;
+    padding: 0 10px;
+    position: relative;
+}
+
+.IndexPage .header-href:hover {
+    color: white;
+}
+
+.IndexPage .my-input {
+    width: 1090px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.IndexPage .input-container {
+    border: 2px solid red;
+    border-radius: 40px;
+    height: 40px;
+    width: 50%;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    overflow:hidden;
+}
+
+.IndexPage .rel-input {
+    border: 0;
+    width: 80%;
+    margin: 5px;
+}
+
+.IndexPage .rel-input:focus {
+    outline: none;
+}
+
+.IndexPage .search {
+    text-align: center;
+    width: 13%;
+   
+    background-color: red;
+    color: white;
+    height: 100%;
+    line-height: 36px;
+}
+
+.IndexPage .search:hover {
+    opacity: 0.8;
+}
+
+.IndexPage .search i {
+    font-size: 30px;
+}
+
+.IndexPage .my-cart {
+    border: 2px solid red;
+    border-radius: 42px;
+    height: 40px;
+    width: 10%;
+    line-height: 36px;
+    text-align: center;
+}
+
+.IndexPage .my-cart:hover {
+    color: red;
+    background-color: lightgray;
+}
+
+.IndexPage .my-cart i {
+    font-size: 25px;
+    color: red;
+}
+
+.IndexPage .cart {
+    vertical-align: top;
+}
+
+.IndexPage .my-navbar {
+    width: 1090px;
+    margin: 20px auto;
+}
+
+
+.IndexPage .left-nav {
+    padding: 0 10px;
+    color: white;
+    background-color: red;
+    position: relative;
+    width:200px;
+    height:50px;
+    cursor:pointer;
+}
+
+.IndexPage .left-nav span{padding-left:10px;}
+
+.IndexPage .hover-show {
+    display: none;
+    position: absolute;
+    width: 100%;
+    top:50px;
+    left:0;
+    z-index: 100;
+    background-color: red;
+    margin:0;
+    padding:0 0 10px;
+}
+
+.IndexPage .hover-show li {
+	display:flex;
+	align-items:center;
+	height:50px;
+    border-top: 1px solid white;
+    padding: 0 10px;
+}
+
+.IndexPage .hover-show li:hover {
+    background-color: white;
+    color: red;
+}
+
+.IndexPage .left-nav:hover .hover-show {
+    display: block;
+}
+
+.IndexPage .left-nav i {
+    font-size: 25px;
+}
+
+
+
+.IndexPage .right-nav {
+    padding-left:20px;
+    margin:0;
+}
+
+.IndexPage .right-nav li {
+    float: left;
+    margin: 0 15px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.IndexPage .right-nav li:hover {
+    color: red;
+}
+
+.IndexPage .right-nav li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.IndexPage .right-nav li a:hover {
+    color: red;
+}
+
+.IndexPage .carousel {
+    width: 100%;
+    height: 505px;
+    position: relative;
+}
+
+.IndexPage .carousel ul {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.IndexPage .carousel ul li {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 10;
+    width: 1920px;
+    overflow: hidden;
+    margin-left: -960px;
+    text-align: center;
+}
+
+.IndexPage .carousel img {
+    height: 100%;
+    width: auto;
+}
+
+.IndexPage .my-img {
+    float: left;
+}
+
+/*隐藏首页的退出按钮*/
+.IndexPage .my-hide-img {
+    position: absolute;
+    top: 5px;
+    left: 98%;
+    border: 1px solid black;
+    border-radius: 50%;
+    font-size: 12px;
+    width: 15px;
+    text-align: center;
+    color: black;
+    line-height: 13px;
+    height: 15px;
+}
+
+.IndexPage .icon-sanjiao {
+    font-size: 13px;
+}
+
+.IndexPage .my-list {
+    width: 1090px;
+    height: 331px;
+    margin: 0 auto;
+    background: url("../img/index/01.webp") no-repeat;
+    background-position: center center;
+    background-clip: content-box;
+    padding: 10px 0;/*background-size:100%;*/
+}
+
+.IndexPage .my-list-href {
+    display: inline-block;
+    width: 24.1%;
+    height: 100%;
+}
+
+.IndexPage .my-section-p {
+    position: relative;
+    overflow: hidden;
+}
+
+.IndexPage .my-section {
+    list-style: none;
+    width: 1090px;
+    margin: 0 auto;
+    display:flex;
+    padding:0;
+    flex-wrap:wrap;
+    padding:10px 0;
+}
+
+.IndexPage .my-section li {
+    width: 20%;
+    padding: 5px;
+    margin-bottom:10px;
+    transition: all 0.2s linear;
+    cursor:pointer;
+    border: 1px solid transparent;
+}
+
+.IndexPage .my-section li:hover{
+    border: 1px solid red;
+}
+
+.IndexPage .my-section li:hover .title {
+    /*text-overflow: clip;
+    white-space: normal;*/
+}
+
+.IndexPage .my-section li span {
+    display: block;
+    padding: 3px 4px;
+}
+
+.IndexPage .my-section li img {
+    width: 100%;
+}
+
+.IndexPage .my-intro {
+    width: 1090px;
+    margin: 10px auto;
+    line-height: 60px;
+    background-color: red;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    height: 60px;
+}
+
+.IndexPage .title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.IndexPage .sub-title {
+    color: gray;
+}
+
+
+.IndexPage .price {
+    overflow: hidden;
+}
+
+.IndexPage .price em {
+    color: red;
+    font-size: 20px;
+    float: left;
+}
+
+.IndexPage .price em .new-price {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.IndexPage .price em .old {
+    font-size: 12px;
+    color: gray;
+    text-decoration: line-through;
+}
+
+.IndexPage .my-buy {
+    float: right;
+    text-align: center;
+    padding: 2px 3px;
+    background: red;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.IndexPage .change-color {
+    background: white;
+}
+
+.IndexPage .footer-img {
+    width: 1000px;
+    height: 400px;
+    background: url("./static/img/index/06.jpg") no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin: 5px auto;
+}
+
+.IndexPage .footer01 {
+    width: 100%;
+    height: 500px;
+    background-color: white;
+    margin-top: 100px;
+}
+
+.IndexPage .my-rel-table {
+    border: 1px solid gray;
+    width: 50%;
+    margin: 0 auto;
+}
+
+/*底部*/
+.FooterPage{padding-top:50px;}
+
+.FooterPage #parent h6{
+    text-align: center;
+    font-size:0.9rem;
+    font-weight: bold;
+    color: gray;
+}
+.FooterPage #parent p{
+    margin-bottom: 0;
+}
+.FooterPage #parent p span{
+    font-size:0.7rem;
+    color:gray;
+}
+.FooterPage #footer ul li{
+    float:left;
+    font-size:0.7rem;
+    margin-left: 1rem;
+}
+.FooterPage #footer ul li a{
+    color: black;
+}
+.FooterPage .my_border{
+    margin:0 auto;
+    width:1090px;
+}
+.FooterPage #footer span{
+    vertical-align: 1rem;
+}
+.FooterPage .my_small{
+    font-size:0.4rem;
+}
+.FooterPage .text-muted>span>a{
+    color:gray;
+}
+/*登录页*/
+
+
+
+.LoginPage .header-color {
+	background: white;
+}
+
+.LoginPage .login-header {
+	width: 1090px;
+	margin: 0px auto;
+	padding: 20px 0;
+}
+
+.LoginPage .center {
+	width: 100%;
+	height: 500px;
+	position: relative;
+	background: url(../img/login/01.jpg) no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+.LoginPage .like-table {
+	background-color: white;
+	position: absolute;
+	top: 10%;
+	left: 60%;
+}
+/*消除为子元素设置外边距却作用于父元素的 问题*/
+.LoginPage .like-table::before {
+	display: table;
+	content: "";
+}
+
+.LoginPage .phone-email {
+	padding: 13px 0;
+	background: #f2f2f2;
+}
+
+.LoginPage .phone-email em {
+	padding: 0 50px;
+	font-weight: blod;
+}
+
+.LoginPage .phone-email em:nth-child(1) {
+	border-right: 1px solid gray;
+	color: red
+}
+
+.LoginPage .table-center {
+	padding: 10px 30px;
+}
+
+.LoginPage .vail {
+	padding: 6px 0;
+	font-size: 12px;
+	color: gray;
+	float: right;
+}
+
+.LoginPage .vail i {
+	padding-right: 2px;
+}
+
+.LoginPage .my-input {
+	border: 1px solid #ddd;
+	padding:8px 0 8px 8px;
+	border-radius: 2px;
+}
+
+.LoginPage .my-input input {
+	border: none;
+	/*width: 80%;*/
+}
+
+.LoginPage .my-input input:focus .my-input {
+	border: 1px solid blue !important;
+}
+
+.LoginPage .huakuai {
+	padding: 2px 8px;
+	margin: 20px 0;
+	border-radius: 10px;
+	border: 1px solid #ddd;
+	background-color: #EEEEEE;
+}
+
+.LoginPage .huakuai em {
+	-moz-user-select: none;
+	margin-left: 20px;
+	color: gray;
+}
+
+.LoginPage .huakuai i {
+	cursor: pointer;
+}
+
+.LoginPage .get-code {
+	border: 1px solid #ddd;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	padding:0 0 0 8px;
+}
+
+.LoginPage .get-code button {
+	padding:8px;
+	border: none;
+	align-self:flex-end;
+}
+
+.LoginPage .get-code input {
+	border: none;
+	/*width: 60%;*/
+}
+
+.LoginPage .btn-login {
+	width: 100%;
+	background: red;
+	text-align: center;
+	color: white;
+	padding: 8px 0;
+	border: 0;
+	margin-top: 10px;
+	opacity: 0.7;
+	cursor:pointer;
+}
+
+.LoginPage .icons {
+	padding-left: 30px;
+}
+
+.LoginPage .icons i {
+	margin-right: 5px;
+	font-size: 20px;
+}
+
+.LoginPage div.my-input:focus {
+	outline: 1px solid blue !important;
+}
+
+.LoginPage .show-msg {
+	margin-top: 10px;
+	height: 16px;
+	font-size: 12px;
+}
+
+.LoginPage .code {
+	cursor: pointer;
+}
+
+.LoginPage .code:hover {
+	color: red;
+}
+
+.LoginPage.code:focus {
+	outline: none;
+}
+/*注册*/
+
+.IndexPageBg{
+	background-color:#C6D5E9 !important;
+}
+
+
