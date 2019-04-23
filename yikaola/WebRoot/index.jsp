@@ -24,7 +24,7 @@
 	}
 
 	LinkedList<Goods> myGoods = new LinkedList<Goods>();
-	Goods good1 = new Goods(1,"商品1",100.00,"storage/img/photo01.png","新品上线");
+	//Goods good1 = new Goods(1,"商品1",100.00,"storage/img/photo01.png","新品上线");
 	//List<String> list = new ArrayList<String>();
 	//list.add('1');
 %>
