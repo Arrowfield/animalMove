@@ -237,6 +237,7 @@
 					</span>
 				</div></li>
 		</ul>
+		<div class="toast"></div>
 		<%@ include file='../common/footer.jsp'%>
 	</div>
 	<script src="./static/javascript/index.js"></script>

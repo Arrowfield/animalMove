@@ -168,6 +168,18 @@
         });
       }
     }
+    
+    function getToast(data){
+    	var dom = document.createElement('div');
+        dom.classList.add('toast');
+        //消息
+        dom.innerHTML = "您的验证码是" + data;
+        document.body.appendChild(dom);
+        dom.style.display = 'block';
+        setTimeout(() => {
+      	  dom.style.display = 'none';
+        },3000)
+    }
     //执行接口调用
     function getCodeALi() {
       $.ajax({
@@ -176,9 +188,7 @@
         success: function (data) {
           //存储到cookie中，5分钟有效
           setCookie("code", data, 0);
-          layer.msg("您的验证码是" + data, {
-            time: 30000
-          });
+          getToast(data);
         },
         error: function (err) {
           console.log(err);
