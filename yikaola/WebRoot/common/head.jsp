@@ -19,5 +19,5 @@
     <script src="./static/javascript/jquery-3.2.1.js"></script>
     <script src="./static/javascript/popper.js"></script>
     <script src="./static/javascript/bootstrap.js"></script>
-    <script src="static/javascript/layer.js"></script>
+    <!--script src="static/javascript/layer.js"></script-->
 </head>
