@@ -7,26 +7,9 @@
 	<jsp:param value="衣佳首页" name="title" /></jsp:include>
 <!-- 定义变量构造数据 -->
 <%
-	class Goods{
-		int id;
-		String goodName;
-		float price;
-		String imgUrl;
-		String desc;
-		
-		Goods(int id,String goodName,float price,String imgUrl,String desc){
-			this.id = id;
-			this.goodName = goodName;
-			this.price = price;
-			this.imgUrl = imgUrl;
-			this.desc = desc;
-		}
-	}
+	
 
-	LinkedList<Goods> myGoods = new LinkedList<Goods>();
-	//Goods good1 = new Goods(1,"商品1",100.00,"storage/img/photo01.png","新品上线");
-	//List<String> list = new ArrayList<String>();
-	//list.add('1');
+	
 %>
 <body>
 	<div class="my-container Page IndexPage">
@@ -257,8 +240,5 @@
 		<%@ include file='../common/footer.jsp'%>
 	</div>
 	<script src="./static/javascript/index.js"></script>
-	<script>
-		
-	</script>
 </body>
 </html>

@@ -23,6 +23,8 @@ public class IsLogin extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 		String tel = (String) session.getAttribute("tel");
+		
+		
 		JSONObject json = new JSONObject();
 		if (tel != null) {
 			Login login = new Login(tel);

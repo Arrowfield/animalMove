@@ -48,6 +48,8 @@ public class LoginServlet extends HttpServlet {
 		response.setCharacterEncoding("utf-8");
 		String tel = request.getParameter("uname"); //接受电话参数[表单提交时]
 		String RCode = request.getParameter("code");//接受验证码[表单提交时]
+		
+		
 		JSONObject json = null;
 		if(tel != null && code != null){ 
 			Login login =  new Login(tel);
