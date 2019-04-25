@@ -18,6 +18,9 @@ $(function () {
 	                
 	            }
 	            resolve(res);
+	        },
+	        error:function(err){
+	        	throw err;
 	        }
 	    });
 	})

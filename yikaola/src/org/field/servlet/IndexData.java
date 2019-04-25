@@ -34,6 +34,7 @@ public class IndexData extends HttpServlet {
 		 *
 		 * */
 		Goods [] goods = new Goods[10];
+		//Goods [] goodsYouLove = new Goods[10];
 		
 		Goods goods01 = new Goods(1,"牙膏",5.20,"/storage/01.png","好货");
 		Goods goods02 = new Goods(2,"牙膏",5.20,"/storage/01.png","好货");
@@ -42,6 +43,9 @@ public class IndexData extends HttpServlet {
 		Goods goods05 = new Goods(5,"牙膏",5.20,"/storage/01.png","好货");
 		Goods goods06 = new Goods(6,"牙膏",5.20,"/storage/01.png","好货");
 		Goods goods07 = new Goods(7,"牙膏",5.20,"/storage/01.png","好货");
+		
+		
+		
 		
 		goods[0] = goods01;
 		goods[1] = goods02;
