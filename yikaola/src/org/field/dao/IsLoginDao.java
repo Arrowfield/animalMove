@@ -16,8 +16,8 @@ public class IsLoginDao {
 		String result = "";
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			conn =  DriverManager.getConnection("jdbc:mysql://localhost:3306/wyy","root","root");
-			String sql = "select uname from xz_user where tel = ?";
+			conn =  DriverManager.getConnection("jdbc:mysql://localhost:3306/d_easybuy","root","root");
+			String sql = "select uname from t_khb where tel = ?";
 			pstmt = conn.prepareStatement(sql);
 			//缺少手机号码
 			pstmt.setString(1, login.getTel());
