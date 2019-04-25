@@ -184,7 +184,6 @@
 		<div class="my-intro">★猜你喜欢★</div>
 		<ul class="my-section">
 			<%
-				System.out.println(1);
 				for (int i = 0; i < 6; i++) {
 			%>
 

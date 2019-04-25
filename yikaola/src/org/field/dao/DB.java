@@ -33,7 +33,7 @@ public class DB {
 	public void getCon() {
 		try {
 			con = DriverManager.getConnection(url, username, password);
-			System.out.println("获取数据库连接成功！");
+			//System.out.println("获取数据库连接成功！");
 		} catch (SQLException e) {
 			System.out.println("获取数据库连接失败！");
 			e.printStackTrace();
@@ -42,7 +42,7 @@ public class DB {
 	
 	public void doPstm(String sql,Object[] params){
         if(sql!=null && !sql.equals("")){
-            System.out.println(sql);
+            //System.out.println(sql);
             if(con==null)
                 getCon();
             try {

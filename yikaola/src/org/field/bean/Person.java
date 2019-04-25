@@ -5,6 +5,9 @@ public class Person {
 	private int  id ;
 	private String name;
 	private boolean isChina;
+	
+	
+	
 	public int getId() {
 		return id;
 	}

@@ -38,7 +38,7 @@ public class IsLogin extends HttpServlet {
 		} else {
 			//{code:301,msg:"用户未登录"}
 			json.put("code", "301");
-			json.put("msg", "用户为登录");
+			json.put("msg", "用户没有登录");
 			response.getWriter().print(json.toString());
 		}
 	}

@@ -57,7 +57,7 @@ public class IndexData extends HttpServlet {
 			
 			while(rs.next()) {
 				int id = rs.getInt(1);
-				System.out.print("\n"+id);
+				//System.out.print("\n"+id);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
