@@ -1,11 +1,13 @@
 package org.field.bean;
 
 public class Goods {
-	int id;
-	String goodName;
-	double price;
-	String imgUrl;
-	String desc;
+	private int id;
+	private String goodName;
+	private double price;
+	private String imgUrl;
+	private String desc;
+	
+	
 	public Goods(){
 		
 	}
