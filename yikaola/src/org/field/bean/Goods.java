@@ -5,19 +5,23 @@ public class Goods {
 	private String goodName;
 	private double price;
 	private String imgUrl;
+	private int num;
 	private String desc;
+	private int type;
 	
 	
-	public Goods(){
+	public Goods(int i, String string, double d, String string2, String string3){
 		
 	}
 
-	public Goods(int id, String goodName, double d, String imgUrl, String desc) {
+	public Goods(int id, String goodName,int num ,double d ,String desc,String imgUrl, int type) {
 		this.id = id;
 		this.goodName = goodName;
 		this.price = d;
 		this.imgUrl = imgUrl;
 		this.desc = desc;
+		this.type = type;
+		this.num = num;
 	}
 
 	public int getId() {
@@ -58,5 +62,21 @@ public class Goods {
 
 	public void setDesc(String desc) {
 		this.desc = desc;
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
+	}
+
+	public int getNum() {
+		return num;
+	}
+
+	public void setNum(int num) {
+		this.num = num;
 	}
 }

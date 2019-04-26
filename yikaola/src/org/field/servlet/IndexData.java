@@ -3,6 +3,7 @@ package org.field.servlet;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.collections.map.HashedMap;
 import org.field.bean.Goods;
 import org.field.dao.DB;
 
@@ -45,18 +47,31 @@ public class IndexData extends HttpServlet {
 		db.doPstm(sql, params);
 		ResultSet rs = db.getRs();
 		LinkedList<Goods> myGoods = new LinkedList<Goods>();
+		
+		
+		HashMap<String,Goods> hashgoods = new HashMap<String,Goods>(); 
+		
 		//System.out.print(rs);
+		
 		try {
+			rs.last();
 			int lastNumber = rs.getRow();
-			for(int i = 1;i<lastNumber;i++) {
+
+			System.out.print(rs.getRow());
+			for(int i = 0;i<lastNumber;i++) {
+				rs.absolute(i+1);
+				goods[i] = new Goods(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getDouble(4),rs.getString(5),rs.getString(6),rs.getInt(7));
 				
-				goods[i] = new Goods(rs.getInt(1),rs.getString(2),rs.getDouble(3),rs.getString(4),rs.getString(5));
 				
 				myGoods.add(goods[i]);
+				
+				Goods obj= hashgoods.put(Integer.toString(goods[i].getType()),goods[i]);
+				//Goods obj= hashgoods.put(goods[i].getDesc().toString(),goods[i]);
+				myGoods.add(obj);
 			}
 			
 			while(rs.next()) {
-				int id = rs.getInt(1);
+				//int id = rs.getInt(1);
 				//System.out.print("\n"+id);
 			}
 		} catch (SQLException e) {
@@ -64,6 +79,10 @@ public class IndexData extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		//System.out.print(myGoods);
+		
+		System.out.print(hashgoods);
+		//System.out.print(myGoods);
 		
 		//Goods [] goodsYouLove = new Goods[10];
 		
@@ -90,6 +109,7 @@ public class IndexData extends HttpServlet {
 		json.put("code", 200);
 		json.put("msg", "数据获取成功");
 		json.put("data",myGoods);
+		json.put("goods",hashgoods);
 		response.getWriter().print(json.toString());
 	}
 
