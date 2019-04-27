@@ -278,19 +278,22 @@
 				</div>
 				
 				<!--中间的内容-->
-				<div class="ml-2 border" style="width: 738px;">
+				
+				<div class="ml-2" style="width: 738px;">
 					<!-- 为button添加事件-->
 					<div class="w-100 my_bg4 my_fixed">
 						<button
-							class="btn rounded-0 bg-white my_top_border border-bottom-0"
+							class="btn rounded-0"
 							type="button" data-toggle='tab' data-target='#my_button1'>
-							<span class="ml-4 d-block mt-2 mb-2 mr-4 pr-2 pl-2">商品详情</span>
+							<span class="ml-4 d-block mt-2 mb-2 mr-4">商品详情</span>
 						</button>
-						<button class="btn rounded-0 border-secondary border-right-0"
+						
+						<button class="btn rounded-0"
 							type="button" data-toggle='tab' data-target='#my_button2'>
 							<span class="ml-4 d-block mt-2 mb-2 mr-4">累计评价5</span>
 						</button>
-						<button class="btn rounded-0 border-secondary" type="button"
+						
+						<button class="btn rounded-0"
 							data-toggle='tab' data-target='#my_button3'>
 							<span class="ml-4 d-block mt-2 mb-2 mr-4">本地同类商品</span>
 						</button>
@@ -401,7 +404,8 @@
 					</div>
 				</div>
 				<!--右边的内容-->
-				<div style="width: 240px; height: 1000px;" class="border my_fixed">
+				
+				<div style="width: 240px;" class="my_fixed">
 					<button class="btn rounded-0 w-100">
 						<span class="d-inline-block mt-2 mb-2 mr-4">手机扫码下单</span> <span
 							class="d-inline-block mt-2 mb-2">二维码</span>
