@@ -14,7 +14,7 @@
 		background:white;	
 	}
 	.login-header{
-		width:1010px;
+		width:1090px;
 		margin:0px auto;
 		padding:20px 0;
 		position:relative;
