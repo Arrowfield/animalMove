@@ -14,7 +14,7 @@
 		<div class="my-nav">
 			<div class="my-header">
 				<div class="my-left">
-					<span>衣佳欢迎你！</span> <span class="login-after"></span> <a
+					<span><a href='./index.jsp'>衣佳欢迎你！</a></span> <span class="login-after"></span> <a
 						class="header-href login-after" href="javascript:" id="destory">注销</a>
 					<a class="header-href login-before" href="login.jsp">登录</a> <a
 						class="header-href login-before" href="reg.jsp">免费注册</a> <a
