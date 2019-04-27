@@ -1,6 +1,4 @@
-﻿<%@page import="java.util.LinkedList"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!Doctype html>
+﻿<!Doctype html>
 <html lang='en'>
 <!-- 此处不可以换行 -->
 <jsp:include page="./common/head.jsp" flush="true">

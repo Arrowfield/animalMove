@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+em, i {
+	font-style: normal;
+}
+
+input:focus{
+	outline:none;
+}

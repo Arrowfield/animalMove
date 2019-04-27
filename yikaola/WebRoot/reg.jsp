@@ -1,29 +1,8 @@
-<!-- 文件1 -->
-<%@ page language="java" contentType="text/html;charset=utf-8" pageEncoding="utf-8" %>
-<%@ page import="java.util.*,java.sql.*" %>
-<%@ page import="cn.com.database.ConnectionDb" %>
-<!-- 文件2 -->
-<% 
-	ConnectionDb cd = new ConnectionDb();
-	Connection conn = cd.getConnection();
-	String sql = "SELECT * FROM t_life WHERE lid = 1";
-	Statement stat = conn.createStatement();
-	//在执行的时候添加sql语句
-	ResultSet res = stat.executeQuery(sql);
-	while(res.next()){
-		System.out.println(res.getString(2));
-	}		 
-%>
-<!-- 文件部分四 -->
+﻿<!-- 文件部分四 -->
 <!Doctype html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-		<title>零食屋-注册</title>
-		<link rel="stylesheet" href="../static/css/base.css">
-<link rel="stylesheet" href="//at.alicdn.com/t/font_956294_u2z4dlng6df.css">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+<jsp:include page="./common/head.jsp" flush="true">
+	<jsp:param value="衣佳首页" name="title" /></jsp:include>
 <style>
 	body,html{
 		min-width:1090px;
@@ -44,7 +23,7 @@
 		width:100%;
 		height:500px;
 		position:relative;
-		background:url("../static/img/login/01.jpg") no-repeat;
+		background:url("./static/img/login/01.jpg") no-repeat;
 		background-position: 50% 50%;
 		background-size:cover;
 	}
@@ -148,13 +127,13 @@
 		top:0;
 	}
 </style>
-</head>
+
 <body>
 	<div class="container-login">
 		<div class="header-color">
 			<div class="login-header">
-				<a href="../index.jsp"><img src="../static/img/login/01.png"></a>
-				<img class="my-img01" src="../static/img/register/01.jpg">
+				<a href="./index.jsp"><img src="./static/img/login/01.png"></a>
+				<img class="my-img01" src="./static/img/register/01.jpg">
 			</div>
 		</div>
 		<div class="center">
@@ -192,5 +171,6 @@
 			</div>
 		</div>
 	</div>
+	<%@ include file='../common/footer.jsp'%>
 </body>
 </html>

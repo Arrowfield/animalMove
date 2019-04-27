@@ -5,9 +5,9 @@
 	<jsp:param value="衣佳首页" name="title" /></jsp:include>
 <!-- 定义变量构造数据 -->
 <style>
-	
 </style>
 <body>
+	
 	<%@ include file='../common/footer.jsp'%>
 </body>
 </html>

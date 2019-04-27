@@ -65,9 +65,9 @@ public class IndexData extends HttpServlet {
 				
 				myGoods.add(goods[i]);
 				
-				Goods obj= hashgoods.put(Integer.toString(goods[i].getType()),goods[i]);
+				//Goods obj= hashgoods.put(Integer.toString(goods[i].getType()),goods[i]);
 				//Goods obj= hashgoods.put(goods[i].getDesc().toString(),goods[i]);
-				myGoods.add(obj);
+				//myGoods.add(obj);
 			}
 			
 			while(rs.next()) {
