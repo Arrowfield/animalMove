@@ -11,11 +11,6 @@
 %>
 <body>
 	<div class="my-container Page IndexPage">
-		<div class="header">
-			<a href="#" class="my-href"> <img class="top-img"
-				src="./static/img/index/01.jpg"> <span class="my-hide-img">&times;</span>
-			</a>
-		</div>
 		<div class="my-nav">
 			<div class="my-header">
 				<div class="my-left">

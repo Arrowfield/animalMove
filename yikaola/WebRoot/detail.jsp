@@ -74,7 +74,8 @@
 						<div id='div-lg' class="position-absolute d-none"></div>
 						<!--用来存放大图片的div-->
 					</div>
-					<div class="my_margin my_card" style="width: 400px">
+					
+					<div class="my_margin my_card mt-1" style="width: 400px">
 						<!--放置两个按钮-->
 						<img src="img/pro_detail/hover-prev.png" alt=""
 							class="disabled btn pt-4 pb-4 float-left btn-light border-0">
@@ -173,36 +174,44 @@
 			</div>
 			
 			<!--商品详情介绍完毕-->
-			<div
-				class="DetailInvite">
-				<p class="mt-3 mb-3 ml-4">
-					<span class="text-primary"><span class="text-danger">蘑菇</span>拼团</span>
-					<span class="small">小伙伴发起的拼团:</span> <span
-						class="my_margin1 my_small" style="margin-left: 60%">开团后邀请好友参团，人数不足自动退款。
-						<a href="" class="my_small text-muted">详细规则</a>
+			<div class="DetailInvite">
+				<p class='d-flex align-items-center justify-content-between'>
+					<span class="text-primary">
+						<span class="text-danger">蘑菇</span>拼团
+						<span class="small">小伙伴发起的拼团:</span>
+					</span>
+					
+					<span class="my_small">
+						开团后邀请好友参团，人数不足自动退款。<a href="" class="my_small text-muted">详细规则</a>
 					</span>
 				</p>
-				<hr class="" style="width: 95%;">
-				<div class="d-flex  my_bg2 pl-3 ml-3 small" style="width: 395px">
+				
+				<hr>
+				
+				<div class="DetailTime d-flex my_bg2 small align-items-center">
 					<div>
-						<img src="img/pro_detail/1-9.jpg" alt="" class="rounded-circle">
+						<img src="./static/img/1-1.png" alt="" class="rounded-circle">
 						<span class="ml-2 mr-5">朴素的小市民</span>
 					</div>
+					
 					<div>
-						<p class="mb-2 text-danger pt-1">还差一个人成团</p>
-						<span class="text-muted pb-1">还剩47:40:25</span>
+						<p class="text-danger mb-0">还差一个人成团</p>
+						<span class="text-muted">还剩47:40:25</span>
 					</div>
-					<div class="ml-5 pt-3 pr-2 pl-2 my_bg3">
+					
+					<div class="DetailGo my_bg3">
 						<a href="#" class="text-danger">去参团</a>
 					</div>
 				</div>
 			</div>
+			
+			
 			<!--累计评价-->
-			<div style="width: 1199px" class="mt-5 d-flex  ml-5">
+			<div class="d-flex DetailComment">
 				<!--左边的内容-->
 				<div>
 					<div id="my_xiaoshou" style="width: 198px"
-						class="small text-muted border">
+						class="small text-muted">
 						<p
 							class="text-center bg-secondary text-dark pt-3 pb-3 font-weight-bold my_fixed">
 							小手温柔衣橱欢迎您！</p>
@@ -225,18 +234,28 @@
 							<input type="text" style="width: 92px">
 							<button>店内搜索</button>
 						</div>
+						
 						<!--第一次出现空格-->
-						<div class="mt-4 border small">
-							<p
-								class="text-center bg-secondary text-dark pt-3 pb-3 font-weight-bold">本店分类</p>
-							<p class="ml-3">
-								<a href="" class="text-muted">全部商品</a>
-							</p>
+						<div class="mt-3 small">
+							<p class="text-center bg-secondary text-dark pt-3 pb-3 font-weight-bold">本店分类</p>
+							<ul class="DetailNoFloat clearfix list-unstyled text-center">
+							
+								<li class="pb-3"><a href=""> <img
+										src="img/pro_detail/1-13.jpg" alt="" class="my_img4">
+										<p class="mb-0 text-muted">套装</p> <span class="text-muted">￥45.00</span>
+								</a></li>
+								<li class="pb-3"><a href=""> <img
+										src="img/pro_detail/1-11.jpg" alt="" class="my_img4">
+										<p class="mb-0 text-muted">套装</p> <span class="text-muted">￥42.00</span>
+								</a></li>
+							</ul>
 						</div>
-						<div class="mt-3 border small">
-							<p
-								class="text-center bg-secondary text-dark pt-3 pb-3 font-weight-bold">看了有看</p>
-							<ul class="list-unstyled text-center">
+						
+						<div class="mt-3 small">
+							<p class="text-center bg-secondary text-dark pt-3 pb-3 font-weight-bold">看了有看</p>
+							
+							<ul class="DetailNoFloat clearfix list-unstyled text-center">
+							
 								<li class="pb-3"><a href=""> <img
 										src="img/pro_detail/1-13.jpg" alt="" class="my_img4">
 										<p class="mb-0 text-muted">套装</p> <span class="text-muted">￥45.00</span>
@@ -257,8 +276,9 @@
 						</div>
 					</div>
 				</div>
+				
 				<!--中间的内容-->
-				<div class="ml-4 bg-white border" style="width: 738px;">
+				<div class="ml-2 border" style="width: 738px;">
 					<!-- 为button添加事件-->
 					<div class="w-100 my_bg4 my_fixed">
 						<button
