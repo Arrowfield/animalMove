@@ -21,3 +21,8 @@ function getCookie(name) {
 function destoryCookie(name){
 	setCookie(name, '', -1);
 }
+
+
+window.scroll(function(){
+	console.log($(window).scrollTop());
+});
