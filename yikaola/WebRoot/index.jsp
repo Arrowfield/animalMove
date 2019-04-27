@@ -191,7 +191,7 @@
 				<div class="show-border">
 					<img src="./static/img/index/02.webp">
 					<div class="change-color">
-						<span class="my-first-span title"> <a href="#">Dr.Jart+宛若新生水漾保湿急救面膜
+						<span class="my-first-span title"> <a href="detail.jsp">Dr.Jart+宛若新生水漾保湿急救面膜
 								5片/盒</a>
 						</span> <span class="my-first-span sub-title">肌肤重现水润健康</span> <span
 							class="my-first-span price"> <em> <i
@@ -237,8 +237,8 @@
 				</div></li>
 		</ul>
 		<div class="toast"></div>
-		<%@ include file='../common/footer.jsp'%>
 	</div>
+	<%@ include file='../common/footer.jsp'%>
 	<script src="./static/javascript/index.js"></script>
 </body>
 </html>
