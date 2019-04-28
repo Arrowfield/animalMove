@@ -11,7 +11,7 @@
 %>
 <body>
 	<div class="my-container Page IndexPage">
-		<div class="my-nav">
+		<div class="NewAddClass">
 			<div class="my-header">
 				<div class="my-left">
 					<span><a href='./index.jsp'>衣佳欢迎你！</a></span> <span class="login-after"></span> <a

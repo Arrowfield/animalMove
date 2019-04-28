@@ -77,6 +77,52 @@
 	float:none !important;
 }
 
+.AddNewClass01{
+	margin-left:10px;
+	width:750px;
+}
+.AddBtn button{
+	border:none;
+	height:51px;
+	line-height:51px;
+	padding:0 20px;
+}
+
+.DetailLeft a{
+	display:block;
+	height:200px;
+}
+.DetailLeft a img{
+	width:100%;
+	height:150px;
+}
+.DetailLeft a span{
+	display:block;
+	text-align:center;
+	line-height:50px;
+}
+.DetailRight button{
+	height:51px;
+	line-height:51px;
+	border:none;
+	text-align:center;
+	font-size:14px;
+	width:200px;
+}
+
+.DetailRight ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+
+.DetailRight ul a{
+	display:block;
+	padding:10px 0;
+	text-align:center;
+}
+
+
 #header1 ul li {
 	width: 10px;
 	height: 10px;
@@ -224,6 +270,7 @@ table tr td {
 #my_button {
 	position: relative;
 	overflow: hidden;
+	min-height:100%;
 }
 
 .my_button {
@@ -234,9 +281,20 @@ table tr td {
 	display: none;
 }
 
-.active {
-	display: block;
+#my_button>div{
+	padding-top:20px;
 }
+
+#my_button>div h5{
+	padding:10px 0;
+	color:black;
+	font-weight:bold;
+}
+
+#my_button>div:not(:nth-child(1)){
+	display:none;
+}
+
 
 /**放大镜功能实现的相关样式**/
 #mask {

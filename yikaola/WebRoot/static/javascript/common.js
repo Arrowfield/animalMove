@@ -22,7 +22,11 @@ function destoryCookie(name){
 	setCookie(name, '', -1);
 }
 
-
-window.scroll(function(){
+$(window).scroll(function(e){
 	console.log($(window).scrollTop());
-});
+	if($(window).scrollTop()<10){
+		$('.NewAddClass').removeClass('my-nav');
+	}else{
+		$('.NewAddClass').addClass('my-nav');
+	}
+})
