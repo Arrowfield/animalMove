@@ -45,6 +45,14 @@
 	text-align:center;
 }
 
+.UserSendAvatar button{
+	height:50px;
+	width:200px;
+	line-height:50px;
+	text-align:center;
+	margin-top:30px;
+}
+
 .UserSendAvatar input{
 	display:none;
 }

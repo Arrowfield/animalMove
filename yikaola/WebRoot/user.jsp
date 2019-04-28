@@ -101,6 +101,7 @@
 			<div class="UserSendAvatar">
 				<div class='avatar'><img src="" alt=""></div>
 				<input onchange='handleChange()' class='InputForAva' type='file' accept="image/*">
+				<button>确认更换</button>
 			</div>
 		</div>
 	</div>
