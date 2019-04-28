@@ -23,7 +23,7 @@
 				<ul class="my-right">
 					<li>每日签到</li>
 					<li>我的订单</li>
-					<li>个人中心<i class="iconfont icon-sanjiao"></i></li>
+					<li><a href='./user.jsp'>个人中心<i class="iconfont icon-sanjiao"></i></a></li>
 					<li>客户服务<i class="iconfont icon-sanjiao"></i></li>
 					<li>充值中心<i class="iconfont icon-sanjiao"></i></li>
 					<li>消费者权益<i class="iconfont icon-sanjiao"></i></li>
