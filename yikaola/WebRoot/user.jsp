@@ -78,12 +78,12 @@
 					</ul></li>
 			</ul>
 		</div>
-		<div class="UserRight">
+		
+		<!--div class="UserRight">
 			<div>
 				<input type="text" placeholder="请输入订单中的商品名称或订单编号">
 				<button>搜索</button>
 			</div>
-			
 			<table class="table border">
 				<tr>
 					<th>商品</th>
@@ -95,6 +95,9 @@
 					<th>操作</th>
 				</tr>
 			</table>
+		</div-->
+		<div class="UserRight">
+			<h5>帐号设置/修改头像</h5>
 		</div>
 	</div>
 
