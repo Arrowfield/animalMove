@@ -20,7 +20,7 @@
 }
 
 .UserRight{
-	padding:10px 0 0 20px;
+	padding:2px 0 0 20px;
 	width:100%; 
 }
 
@@ -33,6 +33,35 @@
 }
 .UserRight>div:nth-child(1){
 	margin-bottom:10px;
+}
+.UserRight h5{
+	padding:15px 5px;
+	background:gray;
+	font-size:14px;
+}
+
+.UserSendAvatar{
+	padding:50px 0;
+	text-align:center;
+}
+
+.UserSendAvatar input{
+	display:none;
+}
+
+.avatar img{
+	width:100%;
+	height:100%;
+}
+
+.avatar{
+	width:110px;
+	height:110px;
+	border-radius:50%;
+	cursor:pointer;
+	overflow:hidden;
+	margin:0 auto;
+	border:1px solid gray;
 }
 
 .UserMenu li a{

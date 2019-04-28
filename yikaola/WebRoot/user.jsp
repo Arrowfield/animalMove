@@ -98,6 +98,10 @@
 		</div-->
 		<div class="UserRight">
 			<h5>帐号设置/修改头像</h5>
+			<div class="UserSendAvatar">
+				<div class='avatar'><img src="" alt=""></div>
+				<input onchange='handleChange()' class='InputForAva' type='file' accept="image/*">
+			</div>
 		</div>
 	</div>
 
