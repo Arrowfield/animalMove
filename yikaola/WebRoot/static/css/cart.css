@@ -242,3 +242,44 @@ tr td span {
 #my_money input {
   margin-top: 19px;
 }
+
+
+/**/
+#myModal{
+	padding:0 !important;
+}
+.MyModalBody{
+	height:180px;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-cnetent:space-between;
+}
+
+.MyModalBody img{
+	width:80px;
+	height:80px;
+}
+
+.MyModalBody p{
+	line-height:25px;
+	font-size:14px;
+	color:gray;
+}
+
+.CartBtn button{
+	font-size:14px;
+	border:0;
+	padding:5px;
+	color:gray;
+	cursor:pointer;
+}
+
+.modal-dialog{
+	margin-top:70px !important;
+}
+
+.CartBtn button:nth-child(1){
+	background:pink;
+	color:white;
+}

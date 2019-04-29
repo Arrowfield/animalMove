@@ -37,7 +37,7 @@
 			</div>
 			<ul class="right-nav">
 				<li><a href="./static/login.html?uid=1">首页</a></li>
-				<li>今日限时购</li>
+				<li><a href="./list.jsp">今日限时购</a></li>
 				<li>每日上新</li>
 				<li>国家馆</li>
 				<li>海外旗舰店</li>

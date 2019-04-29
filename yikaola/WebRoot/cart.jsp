@@ -134,7 +134,7 @@
 							</div>
 						</td>
 						<td class="text-danger h5">25.90</td>
-						<td>删除</td>
+						<td><a data-toggle="modal" data-target="#myModal" href='javascritp:'>删除</a></td>
 					</tr>
 				</table>
 				<div id="my_money" class="CartFooter">
@@ -151,8 +151,24 @@
 	</section>
 	<%@ include file='../common/footer.jsp'%>
 	<!--弹窗-->
-	<div>
-		
-	</div>
+<div>
+ <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+        	<div class='MyModalBody'>
+        		<img src="./static/img/index/02.webp" alt="">
+        		<p>2018春秋新款韩版纯色毛衣外套中长款宽松显瘦连帽女针织开衫</p>
+        		<div class='CartBtn'>
+        			<button>确认删除</button>
+        			<button>取消</button>
+        		</div>
+        	</div>
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+	<script src="./static/javascript/cart.js"></script>
 </body>
 </html>

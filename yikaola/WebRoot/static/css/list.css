@@ -1,3 +1,16 @@
+.ListPageClass{
+	padding-top:50px;
+}
+
+.ListPageUl li{
+	padding:10px;
+}
+
+.ListPageFlex{
+	display:flex;
+	justify-content:center;
+}
+
 header{
     background-color: #F2F2F2;
     color:gray;
@@ -67,9 +80,8 @@ a{
     background:#F3F3F3;
     margin-bottom: 0;
 }
-#body div div{
+#body div{
     background-color: #FAFAFA;
-    width:1118px;
     height: 51px;
 }
 /*body部分的样式*/
@@ -104,7 +116,6 @@ button{
     height:293.33px;
 }
 #body3 p{
-    width:218px;
     margin-bottom: 0;
 }
 #body3 span{

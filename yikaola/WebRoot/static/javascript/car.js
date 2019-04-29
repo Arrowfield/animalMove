@@ -1,13 +1,5 @@
 (function () {
-  $("<link rel='stylesheet' href='css/header.css'>").appendTo('head');
-  $.ajax({
-    url: "/sub/header2.html",
-    type: "GET",
-    success: function (res) {
-      $(res).replaceAll("#header");
-      $('<script src="js/header.js"></script>').appendTo('head');
-    }
-  });
+
   //功能:用户单击加入购物车就可以实现总价的计算
   $('table').on('click', 'BUTTON', function () {
     $button = $(this);
