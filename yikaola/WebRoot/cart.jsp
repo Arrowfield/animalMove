@@ -144,7 +144,7 @@
 					 <span>删除</span> <span>清空失效商品</span>
 					<span>移入收藏夹</span> <span>共有 <b class="text-danger">0</b> 件商品
 					</span> <span>总计:</span> <span class="text-danger h3 my_span">￥0.00</span>
-					<button class="my_btn1">去支付 ></button>
+					<button class="my_btn1" onclick='goToPage()'>去支付 ></button>
 				</div>
 			</div>
 		</div>
@@ -170,5 +170,10 @@
   </div>
 </div>
 	<script src="./static/javascript/cart.js"></script>
+	<script>
+		function goToPage(){
+			window.location.href = './pay.jsp';
+		}
+	</script>
 </body>
 </html>
