@@ -1,0 +1,120 @@
+header{
+    background-color: #F2F2F2;
+    color:gray;
+    min-width:1349px;
+}
+header span a{
+    text-decoration: none;
+    color: #5a6268;
+    font-size: 0.6rem;
+    padding-right:9px;
+}
+header ul li b{
+    color:#c6c8ca;
+    font-weight: normal;
+    font-size: 0.5rem;
+    vertical-align: 1px;
+}
+a:link{
+    text-decoration: none;
+}
+a{
+    color: #5a6268;
+}
+.my_img1{
+    width:240px;
+    height:90px;
+}
+.my_img2{
+    width:220px;
+    height:90px;
+}
+.header input{
+    height: 38px;
+    width:315px;
+    vertical-align: bottom;
+    outline:none;
+}
+/*header部分的样式*/
+.my_bg1{
+    background-color: #FF0077;
+}
+.my_small{
+    font-size: 0.6rem;
+}
+.my_padding{
+    padding-right: 34px;
+    padding-left: 34px;
+}
+.my_padding1{
+    padding-top: 17px;
+    width:80px;
+    height:51px;
+}
+.my_padding2{
+    padding-left: 10px;
+}
+.my_border_top{
+    border-top:2px solid #FF0077;
+}
+#body ul li{
+    float:left;
+    margin-right: 2.5rem;
+}
+#body h3{
+    color:black;
+    font-weight: bold;
+    background:#F3F3F3;
+    margin-bottom: 0;
+}
+#body div div{
+    background-color: #FAFAFA;
+    width:1118px;
+    height: 51px;
+}
+/*body部分的样式*/
+.my_margin{
+    margin: 1rem auto;
+}
+#body1 ul li{
+    float: left;
+    margin-right: 2rem;
+}
+#body1{
+    background-color:#FAFAFA;
+}
+#body2 a{
+
+    vertical-align: -2px;
+    padding:0.4rem 1rem;
+}
+#body2 input{
+    width:34px;
+    border:0;
+}
+input:focus{
+    outline: none;
+}
+button{
+    outline: none;
+    box-shadow: none;
+}
+.my_margin .my_img{
+    width:220px;
+    height:293.33px;
+}
+#body3 p{
+    width:218px;
+    margin-bottom: 0;
+}
+#body3 span{
+    font-size: 1rem;
+    color: black;
+    font-weight: bold;
+}
+.my_bottom_padding{
+    padding-left: 28rem;
+}
+#body2{
+    border:1px solid lightgray;
+}

@@ -1,0 +1,244 @@
+.CartPageAddClass{
+	width:1090px;
+	margin: 0 auto;
+	align-items:center;
+	justify-content:space-between;
+	padding:20px 0;
+} 
+
+.CartPageAddUl{
+	list-style:none;
+	clearfix:both;
+	padding:0;
+	margin:0;
+}
+
+.CartPageAddUl li{
+	margin:0 0 0 40px;
+	position:relative;
+	border:1px solid pink;
+	padding:5px 0;
+	border-radius:50%;
+	width:64px;
+	height:64px;
+}
+
+
+.CartAddClassSort{
+	margin:0 auto !important;
+	padding:20px 0;
+	width:1090px;
+}
+
+.CartPageAddUl li:not(:nth-child(4))::after{
+	content:'';
+	display:block;
+	position:absolute;
+	height:2px;
+	left:100%;
+	top:50%;
+	margin-top:-1px;
+	background:pink;
+	width:40px;
+}
+
+
+.CartPageAddUl li p.my_circle{
+	margin:0 auto;
+}
+
+.CartPageAddUl li p , .CartPageAddUl li div{
+	margin:0;
+}
+
+.CartTableClass th,.CartTableClass td{
+	vertical-align:middle;
+}
+
+.CartAddFlex{
+	display:flex;
+	align-items:center;
+	
+}
+
+.CartAddFlex p{
+	margin:0;
+	text-align:center;
+}
+
+.CartFooter{
+	display:flex;
+	width:1090px;
+	margin:0 auto;
+	padding-left:0.75rem;
+	align-items:center;
+	justify-content:space-between;
+	font-size:12px;
+	color:gray;
+}
+
+header {
+  background-color: #F2F2F2;
+}
+
+.my_circle {
+  width: 25px;
+  height: 25px;
+  background-color: pink;
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  margin: 0 auto;
+}
+
+.my_rectangle {
+  width: 79px;
+  height: 3px;
+  background-color: pink;
+  position: absolute;
+  top: 0.7rem;
+  left: 2.8rem;
+
+}
+
+header ul li {
+  position: relative;
+  margin-top: 5px;
+  float: left;
+  margin-right: 2.5rem;
+  /*overflow: hidden;*/
+  width: 4rem;
+  color: pink;
+}
+
+.my_padding {
+  margin-right: 18rem;
+}
+
+.my_bg {
+  background-color: #F2F2F2;
+  border-bottom: 1px solid lightgrey;
+}
+
+table {
+  width: 1090px !important;
+  margin: 0 auto;
+  color: gray;
+  font-size: 0.6rem;
+}
+
+#section ul {
+  list-style: none;
+  overflow: hidden;
+  margin-top: 4rem;
+  margin-left: 38px;
+  margin-bottom: 0;
+}
+
+#section ul li {
+  float: left;
+  width: 7rem;
+  text-align: center;
+  line-height: 3rem;
+  font-size: 1.3rem;
+}
+
+#section ul li:first-child a {
+  color: pink;
+  border-bottom: 3px solid #FF0077;
+  padding-bottom: 0.6rem;
+}
+
+table tr:first-child {
+  background-color: #f2f2f2;
+}
+
+table tr td:nth-child(2) {
+  width: 34rem;
+}
+
+a {
+  color: black;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+#section ul li:hover {
+  cursor: pointer;
+}
+
+tr td span {
+  font-size: 0.5rem;
+  color: gray;
+  margin-right: 0.5rem;
+}
+
+.my_input {
+  vertical-align: -2px;
+}
+
+.my_img {
+  width: 80px;
+  height: 80px;
+}
+
+.my_input1 {
+  width: 45px;
+  height: 30px;
+  text-align: center;
+  /*font-size: 1.1rem;*/
+  font-weight: bold;
+  border: 1px solid gray;
+}
+
+.my_btn {
+  width: 30px;
+  height: 30px;
+  font-size: 1.2rem;
+  vertical-align: -3px;
+  line-height: 11px;
+  background-color: white;
+  border: 1px solid gray;
+}
+
+.my_padding1 {
+  padding-left: 0.75rem;
+}
+
+.my_padding1 span {
+  margin-left: 0.8rem;
+}
+
+.my_padding1 span:nth-child(6) {
+  display: inline-block;
+  margin-left: 27rem;
+}
+
+.my_btn1 {
+  height: 3rem;
+  width: 10rem;
+  background: gray;
+  opacity: 0.5;
+  font-size: 1.6rem;
+  color: white;
+}
+
+.my_btn1:hover {
+  cursor: pointer;
+}
+
+.my_span {
+  display: inline-block;
+  padding-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+#my_money span:not(:nth-child(8)) {
+  padding-top: 1rem;
+}
+
+#my_money input {
+  margin-top: 19px;
+}

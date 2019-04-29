@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
+encoding//WebRoot/cart.jsp=UTF-8
 encoding//WebRoot/common/footer.jsp=UTF-8
+encoding//WebRoot/common/header.jsp=UTF-8
 encoding//WebRoot/detail.jsp=UTF-8
 encoding//WebRoot/filesystem/testForDatabase.jsp=UTF-8
 encoding//WebRoot/index.jsp=UTF-8
