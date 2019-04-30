@@ -23,7 +23,6 @@ function destoryCookie(name){
 }
 
 $(window).scroll(function(e){
-	console.log($(window).scrollTop());
 	if($(window).scrollTop()<10){
 		$('.NewAddClass').removeClass('my-nav');
 	}else{

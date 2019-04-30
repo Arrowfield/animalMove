@@ -77,19 +77,26 @@
 		border:1px solid blue !important;
 	} 
 	.huakuai{
-		padding:2px 8px;
+		padding:2px 0;
 		margin:20px 0;
 		border-radius:10px;
 		border:1px solid #ddd;
 		background-color:#EEEEEE;
+		position:relative;
+		text-align:center;
+		overflow:hidden;
 	}
 	.huakuai em{
 		-moz-user-select:none;
-		margin-left:20px;
 		color:gray;
+		user-select:none;
 	}
 	.huakuai i{
-		cursor:pointer;
+		cursor:move;
+		padding:0 8px;
+		position:absolute;
+		left:0;
+		z-index:10
 	}
 	.get-code{
 		border:1px solid #ddd;
@@ -115,6 +122,7 @@
 		padding:8px 0;
 		border:0;
 		margin-top:30px;
+		cursor:pointer;
 	}
 	.icons{
 		padding-left:30px;
@@ -131,6 +139,14 @@
 	.RegAddClass{
 		text-decoration:none;
 		color:black;
+	}
+	.RegBgColor{
+		position:absolute;
+		left:0;
+		height:100%;
+		background:#ADD8E6;
+		opacity:0.3;
+		top:0;
 	}
 </style>
 
@@ -158,13 +174,14 @@
 				</div>
 				<div class="huakuai">
 					<i class="iconfont icon-huadong"></i>
-					<em>按住滑块，拖动完成上方拼图</em>
+					<em>按住滑块，拖动完成相关验证</em>
+					<div class='RegBgColor'></div>
 				</div>
 				<div class="get-code clearfix">
 					<input type="text" placeholder="请输入短信验证码">
 					<button>获取验证码</button>
 				</div>
-				<button class="btn-login">登录</button>
+				<button disabled class="btn-login">登录</button>
 			</div>
 				<div class="phone-email">
 					<div class="icons">
@@ -178,5 +195,50 @@
 		</div>
 	</div>
 	<%@ include file='../common/footer.jsp'%>
+	<script>
+		var allWidth = $('.huakuai').width();
+		var dom = $('.huakuai>i');
+		var bgDom = $('.RegBgColor');
+		var width = dom.innerWidth();
+		var needWidth = allWidth - width;
+		var downX;
+		dom.mousedown(function(e){
+			var isSuccess = false;
+			var left = $(this).offset().left;
+			
+			downX = e.clientX;
+			document.onmousemove = function(e){
+				var e = e || window.event ||　window.which;
+				
+				var d = e.clientX - downX;
+				
+				if(d　<　0){
+					d = 0;
+				}else if(d >　needWidth){
+					d = needWidth;
+					
+				}else if(d == needWidth){
+					isSuccess = true;
+				}
+				
+				dom.css({'left':d});
+				
+				bgDom.width(d);
+			};
+			
+			document.onmouseup = function(e){
+				if(!isSuccess){
+					//dom.css({'left':0});
+					dom.animate({'left':0},500);
+					bgDom.animate({'width':0},500);
+				}else{
+					$('.huakuai>em').html('验证通过');
+				}
+				document.onmousemove = null;
+				document.onmouseup = null;
+			};
+		})
+		
+	</script>
 </body>
 </html>
