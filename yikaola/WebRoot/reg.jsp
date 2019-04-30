@@ -47,6 +47,7 @@
 		padding:0 50px;
 		font-weight:blod;
 	}
+	
 	.phone-email em:nth-child(1){
 		border-right:1px solid gray;
 		color:red
@@ -98,12 +99,13 @@
 		padding:8px;
 		border:none;
 		float:right;
+		cursor:pointer;
 	}
 	.get-code input{
 		border:none;
 		width:60%;
 		float:left;
-		padding:8px 4px;
+		padding:8px;
 	}
 	.btn-login{
 		width:100%;
@@ -126,6 +128,10 @@
 		left:450px;
 		top:0;
 	}
+	.RegAddClass{
+		text-decoration:none;
+		color:black;
+	}
 </style>
 
 <body>
@@ -139,15 +145,15 @@
 		<div class="center">
 			<div class="like-table">
 				<div class="phone-email">
-					<em>欢迎注册</em><em>已有账号？<a href="#">去登录</a></em>
+					<em>欢迎注册</em><em>已有账号？<a class='RegAddClass' href="./login.jsp">去登录</a></em>
 				</div>
 				<div class="table-center">
 				<div class="clearfix">
 					<em class="vail">
-					<i class="iconfont icon-suo"></i>使用密码验证登录</em>
+					<i class="iconfont icon-suo"></i>使用手机号注册</em>
 				</div>
 				<div class="my-input">
-					<i class="iconfont icon-shouji"></i>
+					
 					<input type="text" placeholder="请输入手机号">
 				</div>
 				<div class="huakuai">
