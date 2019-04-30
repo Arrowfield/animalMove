@@ -121,7 +121,6 @@
 		color:white;
 		padding:8px 0;
 		border:0;
-		margin-top:30px;
 		cursor:pointer;
 	}
 	.icons{
@@ -148,6 +147,13 @@
 		opacity:0.3;
 		top:0;
 	}
+	.LoginMsg{
+		font-size:12px;
+		color:red;
+		line-height:25px;
+		display:block;
+		height:25px;
+	}
 </style>
 
 <body>
@@ -170,7 +176,7 @@
 				</div>
 				<div class="my-input">
 					
-					<input type="text" placeholder="请输入手机号">
+					<input id='phone' data-reg='^1[34578][0-9]{9}$' type="text" placeholder="请输入手机号">
 				</div>
 				<div class="huakuai">
 					<i class="iconfont icon-huadong"></i>
@@ -181,6 +187,7 @@
 					<input type="text" placeholder="请输入短信验证码">
 					<button>获取验证码</button>
 				</div>
+				<span class='LoginMsg'></span>
 				<button disabled class="btn-login">登录</button>
 			</div>
 				<div class="phone-email">
@@ -216,9 +223,10 @@
 					d = 0;
 				}else if(d >　needWidth){
 					d = needWidth;
+					isSuccess = true;
 					
 				}else if(d == needWidth){
-					isSuccess = true;
+					
 				}
 				
 				dom.css({'left':d});
@@ -233,11 +241,23 @@
 					bgDom.animate({'width':0},500);
 				}else{
 					$('.huakuai>em').html('验证通过');
+					bgDom.css({'background':'#90EE90'});
 				}
 				document.onmousemove = null;
 				document.onmouseup = null;
 			};
 		})
+		
+		$('#phone').blur(function(){
+			var reg = $(this).data('reg');
+			reg = new RegExp(reg,'g');
+			console.log(reg,$(this).val());
+			if(!reg.test($(this).val())){
+				$('.LoginMsg').html('输入格式错误');
+			}else{
+				$('.LoginMsg').html('输入格式正确');
+			}
+		});
 		
 	</script>
 </body>
