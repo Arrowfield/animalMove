@@ -259,6 +259,17 @@
 			}
 		});
 		
+		//调接口获取验证码
+		$('.get-code button').click(function(){
+			$.ajax({
+				url:"LoginServlet",
+				type:'GET',
+				success:(res) => {
+					console.log(res);
+				}
+			});
+		});
+		
 	</script>
 </body>
 </html>
