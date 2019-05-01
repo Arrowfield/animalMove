@@ -54,7 +54,7 @@ public class DB {
                 for(int i=0;i<params.length;i++){
                     pstm.setObject(i+1,params[i]);
                 }
-                pstm.execute();
+                pstm.executeQuery();
             } catch (SQLException e) {
                 System.out.println("调用DB类中doPstm方法时出错！");
                 e.printStackTrace();

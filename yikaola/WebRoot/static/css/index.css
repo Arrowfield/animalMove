@@ -5,8 +5,7 @@
 	left: 50%;
 	height: 50px;
 	padding:0 20px;
-	margin-left: -100px;
-	margin-top: -25px;
+	transform:translate(-50%,-50%);
 	line-height: 50px;
 	text-align: center;
 	color: white;

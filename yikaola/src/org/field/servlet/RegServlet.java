@@ -55,14 +55,20 @@ public class RegServlet extends HttpServlet {
 		
 		Login reg = new Login(phone,code);
 		
-		boolean result = regDao.reg(reg);
+		int result = regDao.reg(reg);
 		
+		System.out.print(result);
 		
-		if(result){
+		if(result == 1){
 			json.put("code", 200);
 			json.put("message", "注册成功");
 			response.getWriter().print(json.toString());
-		}else {
+		}else if(result == -1) {
+			json.put("code", 304);
+			json.put("message", "您的手机号码已经注册请直接登录");
+			response.getWriter().print(json.toString());
+			
+		}else{
 			json.put("code", 400);
 			json.put("message", "服务器崩溃");
 			response.getWriter().print(json.toString());
