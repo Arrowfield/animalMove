@@ -12,7 +12,6 @@ $(function () {
 	        success: function (res) {
 	            if (res.code == 200) {
 	            	var html = res.uname;
-	            	
 	                $("span.login-after").html(html);
 	                $(".login-after").show();
 	                $(".login-before").hide();

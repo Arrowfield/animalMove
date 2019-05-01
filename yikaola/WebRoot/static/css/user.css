@@ -20,8 +20,21 @@
 }
 
 .UserRight{
-	padding:2px 0 0 20px;
+	padding:0 0 0 20px;
 	width:100%; 
+}
+
+.UserDou{
+	padding-left:20px;
+	width:100%;
+}
+
+.UserFirst{
+	justify-content:space-between;
+	align-items:center;
+}
+.UserFirst a{
+	font-size:13px;
 }
 
 .UserRight input{
@@ -77,6 +90,7 @@
 	display:block;
 	padding:0 10px;
 	line-height:50px;
+	font-size:14px;
 }
 .my_img1{
     width:50px;
@@ -103,4 +117,25 @@
 .in/*显示*/{
 	height:auto;
     opacity: 1;
+}
+
+.in-active{
+	position:relative;
+}
+
+.in-active::after{
+	position:absolute;
+	content:'';
+	display:block;
+	top:0;
+	left:3px;
+	width:5px;
+	top:50%;
+	height:16px;
+	margin-top:-8px;
+	background:#D21F46;
+}
+
+.in-active>a{
+	color:#D21F46 !important;
 }

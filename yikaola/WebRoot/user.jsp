@@ -9,7 +9,7 @@
 './static/css/user.css'
 </style>
 <body>
-	<%@ include file="../common/header.jsp" %>
+	<%@ include file="../common/header.jsp"%>
 	<div class="d-flex UserSection">
 		<div class="bg-secondary" id="my_bar">
 			<div class='UserAvatar'>
@@ -22,7 +22,7 @@
 			<!--手风琴效果的实现-->
 			<ul class="UserMenu">
 				<li><a href="">我的订单 ></a>
-					<ul class="list-unstyled fade in">
+					<ul class="list-unstyled fade">
 						<li><a href="">全部订单</a></li>
 						<li><a href="">待付款</a></li>
 						<li><a href="">待收货</a></li>
@@ -45,6 +45,7 @@
 						<li><a href="">店铺优惠券</a></li>
 						<li><a href="">全场优惠券</a></li>
 						<li><a href="">活动优惠券</a></li>
+						<li><a href="">每日日常打卡</a></li>
 					</ul></li>
 				<li><a href="">地址管理 ></a></li>
 				<li><a href="">安全设置 ></a></li>
@@ -56,7 +57,7 @@
 					</ul></li>
 			</ul>
 		</div>
-		
+
 		<!--div class="UserRight">
 			<div>
 				<input type="text" placeholder="请输入订单中的商品名称或订单编号">
@@ -74,14 +75,28 @@
 				</tr>
 			</table>
 		</div-->
-		<div class="UserRight">
+
+		<!--div class="UserRight">
 			<h5>帐号设置/修改头像</h5>
 			<div class="UserSendAvatar">
 				<div class='avatar'><img src="" alt=""></div>
 				<input onchange='handleChange()' class='InputForAva' type='file' accept="image/*">
 				<button>确认更换</button>
 			</div>
+		</div-->
+
+		<div class="UserDou">
+			<div class='UserFirst d-flex'>
+				<h5 class="mb-0">我的衣佳豆</h5>
+				<a href="#">如何赚取考拉豆？</a>
+			</div>
+			<div>
+				<div class="UserBtnRed">
+					
+				</div>
+			</div>
 		</div>
+
 	</div>
 
 	<%@ include file='../common/footer.jsp'%>
