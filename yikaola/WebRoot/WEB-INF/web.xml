@@ -45,7 +45,6 @@
     <servlet-name>ExitServlet</servlet-name>
     <url-pattern>/ExitServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>IndexData</servlet-name>
     <servlet-class>org.field.servlet.IndexData</servlet-class>
@@ -54,5 +53,14 @@
     <servlet-name>IndexData</servlet-name>
     <url-pattern>/IndexData</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <description></description>
+    <display-name>RegServlet</display-name>
+    <servlet-name>RegServlet</servlet-name>
+    <servlet-class>org.field.servlet.RegServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegServlet</servlet-name>
+    <url-pattern>/RegServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

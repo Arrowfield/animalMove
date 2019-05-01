@@ -5,6 +5,7 @@ public class Login {
 	private int uid ;
 	private String uname;
 	private String tel;
+	private String code;
 	
 	public Login() {
 	}
@@ -13,6 +14,13 @@ public class Login {
 		this.tel = tel;
 	}
 	
+	
+	
+	public Login(String tel, String code) {
+		this.tel = tel;
+		this.code = code;
+	}
+
 	public Login(int uid, String uname, String tel) {
 		this.uid = uid;
 		this.uname = uname;
@@ -35,5 +43,13 @@ public class Login {
 	}
 	public void setTel(String tel) {
 		this.tel = tel;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
 	}
 }

@@ -22,6 +22,18 @@ function destoryCookie(name){
 	setCookie(name, '', -1);
 }
 
+function getToast(data){
+	var dom = document.createElement('div');
+    dom.classList.add('toast');
+    //消息
+    dom.innerHTML = data;
+    document.body.appendChild(dom);
+    dom.style.display = 'block';
+    setTimeout(() => {
+  	  dom.style.display = 'none';
+    },3000)
+}
+
 $(window).scroll(function(e){
 	if($(window).scrollTop()<10){
 		$('.NewAddClass').removeClass('my-nav');

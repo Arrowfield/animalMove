@@ -184,11 +184,11 @@
 					<div class='RegBgColor'></div>
 				</div>
 				<div class="get-code clearfix">
-					<input type="text" placeholder="请输入短信验证码">
-					<button>获取验证码</button>
+					<input id='code' maxlength='6' type="text" placeholder="请输入短信验证码">
+					<button disabled>获取验证码</button>
 				</div>
 				<span class='LoginMsg'></span>
-				<button disabled class="btn-login">登录</button>
+				<button disabled class="btn-login">注册</button>
 			</div>
 				<div class="phone-email">
 					<div class="icons">
@@ -209,8 +209,9 @@
 		var width = dom.innerWidth();
 		var needWidth = allWidth - width;
 		var downX;
+		var isSuccess;
 		dom.mousedown(function(e){
-			var isSuccess = false;
+			isSuccess = false;
 			var left = $(this).offset().left;
 			
 			downX = e.clientX;
@@ -248,16 +249,26 @@
 			};
 		})
 		
-		$('#phone').blur(function(){
-			var reg = $(this).data('reg');
-			reg = new RegExp(reg,'g');
-			console.log(reg,$(this).val());
+		
+		var reg = $('#phone').data('reg');
+			reg = new RegExp(reg);
+		$('#phone').blur(function(e){
+			e.preventDefault;
 			if(!reg.test($(this).val())){
 				$('.LoginMsg').html('输入格式错误');
 			}else{
 				$('.LoginMsg').html('输入格式正确');
 			}
 		});
+		
+		$('#phone').on('input','',function(){
+			if(!reg.test($(this).val())){
+				$('.get-code button').attr({'disabled':true});
+			}else{
+				$('.get-code button').attr({'disabled':false});
+				$('.btn-login').attr({disabled:false});
+			}
+		})
 		
 		//调接口获取验证码
 		$('.get-code button').click(function(){
@@ -266,9 +277,33 @@
 				type:'GET',
 				success:(res) => {
 					console.log(res);
+					getToast(res);
 				}
 			});
 		});
+		
+		//操作注册
+		$('.btn-login').click(function(){
+			var phone = $('#phone').val();
+			var code = $('#code').val();
+			$.ajax({
+				url:"RegServlet",
+				type:'GET',
+				dataType:'json',
+				data:{phone,code},
+				success:function(res){
+					if(res.code == 200){
+						
+					}else{
+						console.log(res);
+						getToast(res.message);
+					}
+				},
+				error:function(err){
+					throw  err;
+				}
+			})
+		})
 		
 	</script>
 </body>
