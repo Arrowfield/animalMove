@@ -23,10 +23,27 @@ button:focus{
 	box-shadow:none !important;
 }
 
-/**/
 .my-nav{
 	position:fixed !important;
 	width:100%;
 	z-index:10000;
 	box-shadow:0 0 10px gray;
 }
+
+@keyframes myloading{
+	0%{
+		transform:rotate(0);
+	}
+	100%{
+		transform:rotate(360deg);
+	}
+}
+
+.MyAllLoading{
+	margin-right:10px;
+	display:inline-block;
+	animation:myloading 0.5s infinite linear;
+}
+
+
+

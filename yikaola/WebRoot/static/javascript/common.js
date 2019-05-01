@@ -26,7 +26,7 @@ function getToast(data){
 	var dom = document.createElement('div');
     dom.classList.add('toast');
     //消息
-    dom.innerHTML = data;
+    dom.innerHTML = "<span class='MyAllLoading'><i class='iconfont icon-loading'></i></span>"+data;
     document.body.appendChild(dom);
     dom.style.display = 'block';
     setTimeout(() => {

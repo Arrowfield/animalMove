@@ -293,7 +293,10 @@
 				data:{phone,code},
 				success:function(res){
 					if(res.code == 200){
-						
+						getToast(res.message+'进入登录界面...');
+						setTimeout(()=>{
+							location.href = "./login.jsp";
+						},2000);
 					}else{
 						console.log(res);
 						getToast(res.message);

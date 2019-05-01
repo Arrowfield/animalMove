@@ -57,7 +57,16 @@ public class RegServlet extends HttpServlet {
 		
 		boolean result = regDao.reg(reg);
 		
-		System.out.print(result);
+		
+		if(result){
+			json.put("code", 200);
+			json.put("message", "注册成功");
+			response.getWriter().print(json.toString());
+		}else {
+			json.put("code", 400);
+			json.put("message", "服务器崩溃");
+			response.getWriter().print(json.toString());
+		}
 		
 	}
 	@Override
