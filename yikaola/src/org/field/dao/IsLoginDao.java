@@ -17,14 +17,16 @@ public class IsLoginDao {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			conn =  DriverManager.getConnection("jdbc:mysql://localhost:3306/d_easybuy","root","root");
-			String sql = "select uname from t_khb where tel = ?";
+			String sql = "select username from t_khb where tel = ?";
 			pstmt = conn.prepareStatement(sql);
 			//缺少手机号码
 			pstmt.setString(1, login.getTel());
 			rs = pstmt.executeQuery();
-			//System.out.print(rs.next());
+			
 			if(rs.next()){
-				return result = rs.getString(1);
+				result = rs.getString(1);
+				System.out.print(result);
+				return result;
 			}else{
 				return result = "用户手机号码错误";
 			}

@@ -80,6 +80,7 @@
             	},2000);
             }else{
             	console.log(res);
+            	getToast(res.msg);
             }
           }
         });

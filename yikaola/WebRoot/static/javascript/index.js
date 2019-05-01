@@ -1,4 +1,8 @@
 $(function () {
+	function getRandomName(){
+		//随机生成20位字母带数字的用户名
+		//return Math.random().toString(36).substr(2);
+	}
     //判断用户是否在线
 	var pro = new Promise((resolve,reject)=>{
 		$.ajax({
@@ -6,8 +10,11 @@ $(function () {
 	        type: "GET",
 	        dataType: "json",
 	        success: function (res) {
+	        	console.log(res);
 	            if (res.code == 200) {
-	                $("span.login-after").html(res.uname);
+	            	var html = res.uname;
+	            	
+	                $("span.login-after").html(html);
 	                $(".login-after").show();
 	                $(".login-before").hide();
 	               
