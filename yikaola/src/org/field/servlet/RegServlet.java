@@ -57,10 +57,6 @@ public class RegServlet extends HttpServlet {
 		
 		int result = regDao.reg(reg);
 		
-		
-
-		System.out.print(result);
-		
 	}
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

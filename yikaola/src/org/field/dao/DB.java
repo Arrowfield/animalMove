@@ -5,11 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
+import com.sun.xml.internal.ws.Closeable;
 
 import java.sql.Connection;
 
 public class DB {
+	
 	private String className; // 驱动名
 	private String url; // 连接数据库的URL地址
 	private String username; // 数据库的用户名
@@ -42,11 +43,11 @@ public class DB {
 	
 	public void doPstm(String sql,Object[] params){
         if(sql!=null && !sql.equals("")){
-            //System.out.println(sql);
+        	
             if(con==null)
                 getCon();
             try {
-                pstm=con.prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
+                pstm=con.prepareStatement(sql);
                 if(params==null){
                     params=new Object[0];
                 }
@@ -57,10 +58,33 @@ public class DB {
             } catch (SQLException e) {
                 System.out.println("调用DB类中doPstm方法时出错！");
                 e.printStackTrace();
-            }
+            }finally {
+            	close(null,pstm,con);
+			}
         }
     }
 	
+	public void executeUpdate(String sql,Object[] params){
+		if(sql != null && sql.length() != 0) {
+			if(con == null) {
+				getCon();
+			}
+			try {
+				pstm = con.prepareStatement(sql);
+				for(int i = 0;i<params.length;i++) {
+					pstm.setObject(i+1,params[i]);
+				}
+				pstm.executeUpdate();
+				
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}finally {
+				close(null,pstm,con);
+			}
+		}
+	}
+	
+
 	public ResultSet getRs(){
         try {            
             return pstm.getResultSet();
@@ -70,5 +94,36 @@ public class DB {
             return null;
         }
     }
+	
+	public void close(ResultSet rs,PreparedStatement ps,Connection con) {
+		if(rs!=null){
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}finally{
+				if(ps!=null){
+					try {
+						ps.close();
+					} catch (SQLException e) {
+						
+						e.printStackTrace();
+					}finally{
+						if(con!=null){
+							try {
+								con.close();
+							} catch (SQLException e) {
+								
+								e.printStackTrace();
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
 	
 }

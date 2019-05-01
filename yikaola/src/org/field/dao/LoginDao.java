@@ -23,6 +23,7 @@ public class LoginDao {
 			//缺少手机号码
 			pstmt.setString(1, login.getTel());
 			rs = pstmt.executeQuery();
+			
 			if(rs.next()){
 				result = rs.getInt(1);
 			}

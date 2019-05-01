@@ -1,14 +1,17 @@
 package org.field.dao;
 
+import java.sql.ResultSet;
 import org.field.bean.Login;
 
 public class regDao {
 	public static int reg(Login login) {
-		String phone = login.getTel();
-		//String code = login.getCode();
 		DB db = new DB();
-		db.getCon();
-		
+		String sql = "INSERT INTO `t_khb`(`uid`, `username`, `tel`, `password`, `passwordAgain`) VALUES (NULL,NULL,?,NULL,NULL)";
+		//构造参数
+		Object[] obj = {login.getTel()};
+		db.executeUpdate(sql,obj);
+		ResultSet rs = db.getRs();
+		System.out.print(rs);
 		return 0;
 	}
 
