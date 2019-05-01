@@ -64,7 +64,8 @@ public class DB {
         }
     }
 	
-	public void executeUpdate(String sql,Object[] params){
+	public boolean executeUpdate(String sql,Object[] params){
+		int count;
 		if(sql != null && sql.length() != 0) {
 			if(con == null) {
 				getCon();
@@ -74,14 +75,18 @@ public class DB {
 				for(int i = 0;i<params.length;i++) {
 					pstm.setObject(i+1,params[i]);
 				}
-				pstm.executeUpdate();
+				count = pstm.executeUpdate();
 				
+				if(count > 0) {
+					return true;
+				}
 			}catch(SQLException e) {
 				e.printStackTrace();
 			}finally {
 				close(null,pstm,con);
 			}
 		}
+		return false;	
 	}
 	
 

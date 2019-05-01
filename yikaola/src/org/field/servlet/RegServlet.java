@@ -55,7 +55,9 @@ public class RegServlet extends HttpServlet {
 		
 		Login reg = new Login(phone,code);
 		
-		int result = regDao.reg(reg);
+		boolean result = regDao.reg(reg);
+		
+		System.out.print(result);
 		
 	}
 	@Override
