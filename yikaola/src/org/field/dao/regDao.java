@@ -17,7 +17,7 @@ public class regDao {
 		Object[] params = {login.getTel()};
 		db.doPstm(mysql,params);
 		ResultSet rs = db.getRs();
-		System.out.printf(login.getTel()+"\n",rs+"\n");
+		//System.out.printf(login.getTel()+"\n",rs+"\n");
 		try {
 			int id = 0;
 			while(rs.next()){
@@ -33,7 +33,7 @@ public class regDao {
 			e.printStackTrace();
 		}
 		//将新用户插入数据库
-		/*
+		
 		Date now = new Date();
  		SimpleDateFormat matter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		mysql = "INSERT INTO `t_khb`(`uid`, `username`, `tel`, `password`, `passwordAgain`,`sex`,`registerTime`) VALUES (NULL,NULL,?,NULL,NULL,NULL,?)";
@@ -42,7 +42,7 @@ public class regDao {
 		boolean bool =  db.executeUpdate(mysql,obj);
 		if(bool) {
 			return 1;//每一次return结束就退出
-		}*/
+		}
 		return 0;
 	}
 

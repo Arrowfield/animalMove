@@ -57,7 +57,7 @@ public class RegServlet extends HttpServlet {
 		
 		int result = regDao.reg(reg);
 		
-		System.out.print(result);
+		//System.out.print(result);
 		
 		if(result == 1){
 			json.put("code", 200);

@@ -74,7 +74,10 @@
           data:{uname:uname,code:code},
           success: function (res) {
             if(res.code == 200){
-            	window.location.href="index.jsp";
+            	getToast('登录成功');
+            	setTimeout(()=>{
+            		window.location.href="index.jsp";
+            	},2000);
             }else{
             	console.log(res);
             }
