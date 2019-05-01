@@ -38,6 +38,33 @@
 		padding:10px 30px;
 		background:white;
 	}
+	
+	.d-flex{
+		display:flex;
+		align-items:center;
+	}
+	
+	.PayFlex{
+		display:flex;
+		padding:30px 50px;
+	}
+	.PayFlex div{
+		flex:1 1 auto;
+		text-align:center;
+	}
+	.PayFlex div p{
+		font-size:13px;
+	}
+	.PayFlex div:nth-child(1){
+		background:white;
+	}
+	.PayFlex div:nth-child(2){
+		background:#ddd;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		flex-direction:column;
+	}
 </style>
 <body>
 	<%@ include file='../common/header.jsp'%>
@@ -51,8 +78,18 @@
 				<h4>微信支付</h4>
 				<h5>实付金额：￥29.90</h5>
 			</div>
-			<div>
-				<img src="" alt="">
+			
+			<div class="PayFlex">
+				<div>
+					<img src="./static/img/code.png" alt="">
+				</div>
+				
+				<div>
+					<p>请使用微信扫描二维码以完成支付</p>
+					<p><a href="">详细使用帮助</a></p>
+					<p>（如果支付遇到问题，<a href="">可联系客服</a>）</p>
+				</div>
+				
 			</div>
 		</div>
 	</section>

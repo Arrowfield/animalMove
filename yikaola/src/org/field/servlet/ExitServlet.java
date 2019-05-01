@@ -19,14 +19,17 @@ public class ExitServlet extends HttpServlet {
 	}
 
 	
+	@Override
 	public void destroy() {
 		super.destroy(); 
 	}
 
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
 		response.setCharacterEncoding("utf-8");
+		//让session失效
 		HttpSession session = request.getSession();
 		session.removeAttribute("tel");
 		JSONObject json = new JSONObject();
@@ -37,12 +40,14 @@ public class ExitServlet extends HttpServlet {
 	}
 
 	
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request,response);
 
 	}
 
+	@Override
 	public void init() throws ServletException {
 	
 	}

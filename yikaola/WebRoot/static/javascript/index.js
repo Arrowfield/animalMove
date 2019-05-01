@@ -10,7 +10,6 @@ $(function () {
 	        type: "GET",
 	        dataType: "json",
 	        success: function (res) {
-	        	console.log(res);
 	            if (res.code == 200) {
 	            	var html = res.uname;
 	            	

@@ -6,8 +6,6 @@
 <!-- 定义变量构造数据 -->
 <%
 	
-
-	
 %>
 <body>
 	<%@ include file='../common/header.jsp'%>

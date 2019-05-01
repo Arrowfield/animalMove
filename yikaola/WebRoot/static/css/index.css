@@ -73,6 +73,8 @@
 	white-space: nowrap;
 	word-break: keep-all;
 	cursor: pointer;
+	height:35px;
+	line-height:35px;
 }
 
 .IndexPage .my-right li:hover {
