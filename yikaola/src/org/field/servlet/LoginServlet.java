@@ -21,10 +21,12 @@ public class LoginServlet extends HttpServlet {
 	
 	private String code;
 	
+	@Override
 	public void init() throws ServletException {
 		//System.out.println("init...");
 	}
 
+	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		//获取验证码
@@ -33,6 +35,13 @@ public class LoginServlet extends HttpServlet {
 		response.setHeader("centent-type", "text/html;charset=utf-8");
 		code = randomCode();
 		String data = code;
+		
+		//将获取的code共享到其他的servlet
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("code", code);
+		
+		
 		OutputStream out = response.getOutputStream();
 		out.write(data.getBytes("utf-8"));
 	}
@@ -42,6 +51,7 @@ public class LoginServlet extends HttpServlet {
 		return flag;
 	}
 
+	@Override
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		response.setContentType("text/html;charset=utf-8");
@@ -88,6 +98,7 @@ public class LoginServlet extends HttpServlet {
 	}
 	
 	//servlet销毁
+	@Override
 	public void destroy() {
 		System.out.println("destroy...");
 	}
