@@ -38,7 +38,7 @@ INSERT INTO t_spb VALUES(NULL,'kele','4.00',null,'1',"/storage/goods/05.png",2);
 INSERT INTO t_spb VALUES(NULL,'xuebi','3.00',null,'2',"/storage/goods/06.png",3);
 INSERT INTO t_spb VALUES(NULL,'xuebi','3.00',null,'2',"/storage/goods/06.png",3);
 
-##客户订购表
+##购物车表
 CREATE TABLE t_khdgb(
 	kid INT  PRIMARY KEY AUTO_INCREMENT,
 	sid INT,

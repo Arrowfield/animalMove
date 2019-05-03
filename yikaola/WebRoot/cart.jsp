@@ -77,7 +77,7 @@
 						<th>操作</th>
 					</tr>
 					<tr>
-						<td><input type="checkbox" class="my_input"></td>
+						
 						<td colspan="6"><span class="text-dark font-weight-bold">浓妆公主</span>
 							<span>满88元减3</span> <span><a href="#">优惠券</a></span> <span>去店铺凑单
 								></span></td>
@@ -95,7 +95,7 @@
 						</td>
 						<td><span>颜色：灰色</span>
 							<p>尺码：L</p></td>
-						<td><i>58.16</i>
+						<td><i class="CartLine">58.16</i>
 							<p class="mb-1 text-muted">34.90</p>
 							<p class="text-danger mt-0">拼团价</p></td>
 						<td>
@@ -123,7 +123,7 @@
 						</td>
 						<td><span>颜色：灰色</span>
 							<p>尺码：L</p></td>
-						<td><i>58.16</i>
+						<td><i class="CartLine">58.16</i>
 							<p class="mb-1 text-muted">25.90</p>
 							<p class="text-danger mt-0">拼团价</p></td>
 						<td>
@@ -142,8 +142,8 @@
 					<input type="checkbox" class="my_input"> <span>全选</span>
 				</div>
 					 <span>删除</span> <span>清空失效商品</span>
-					<span>移入收藏夹</span> <span>共有 <b class="text-danger">0</b> 件商品
-					</span> <span>总计:</span> <span class="text-danger h3 my_span">￥0.00</span>
+					<span>移入收藏夹</span> <span>共有 <b class="text-danger">2</b> 件商品
+					</span>
 					<button class="my_btn1" onclick='goToPage()'>去支付 ></button>
 				</div>
 			</div>

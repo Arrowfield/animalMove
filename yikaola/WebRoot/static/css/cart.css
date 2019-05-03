@@ -13,6 +13,10 @@
 	margin:0;
 }
 
+.CartLine{
+	text-decoration:line-through;
+}
+
 .CartPageAddUl li{
 	margin:0 0 0 40px;
 	position:relative;

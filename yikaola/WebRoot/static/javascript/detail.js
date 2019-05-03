@@ -27,13 +27,14 @@
   //功能结束
   //功能：放大镜
   var lgDiv = document.getElementById('div-lg');
-  lgDiv.style.backgroundImage = "url(./img/pro_detail/magn3_1.jpg)";
+  lgDiv.style.backgroundImage = "url(./static/img/detail01.jpg)";
   var LIWIDTH = 74;
   var $my_magn = $('#my_magn');
   var $prev = $my_magn.parent().prev();
   var $next = $my_magn.parent().next();
   var moved = 0;
   var $ul = $my_magn;
+  
   $next.click(function () {
     var $next = $(this);
     if (!$next.is('.disabled')) {

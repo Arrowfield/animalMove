@@ -14,7 +14,7 @@
 			<img class="my-img" src="./static/img/index/copy.png">
 			<div class="input-container">
 				<i class="icon iconfont icon-sousuo"></i> <input class="rel-input"
-					placeholder="无敌保温杯" type="text">
+					placeholder="夏季衬衫" type="text">
 				<div class="search">
 					<i class="icon iconfont icon-sousuo"></i>
 				</div>
@@ -35,14 +35,10 @@
 			</div>
 			<ul class="right-nav">
 				<li><a href="./static/login.html?uid=1">首页</a></li>
-				<li><a href="./list.jsp">今日限时购</a></li>
-				<li>每日上新</li>
-				<li>国家馆</li>
-				<li>海外旗舰店</li>
-				<li>工厂店</li>
-				<li>品质奶粉</li>
-				<li>人气面膜</li>
-				<li>充值</li>
+				<li><a href="./list.jsp">男装</a></li>
+				<li>女装</li>
+				<li>儿童装</li>
+				<li>夏季优惠服饰</li>
 			</ul>
 		</div>
 
@@ -57,8 +53,8 @@
 			</ol>
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img class="d-block w-100" src="./static/img/index/02.jpg"
-						alt="First slide">
+					<img class="d-block w-100" src="./static/img/index/bg01.webp"
+						alt="">
 				</div>
 				<div class="carousel-item">
 					<img class="d-block w-100" src="./static/img/index/03.jpg"
@@ -66,11 +62,11 @@
 				</div>
 				<div class="carousel-item">
 					<img class="d-block w-100" src="./static/img/index/04.jpg"
-						alt="Third slide">
+						alt="">
 				</div>
 				<div class="carousel-item">
 					<img class="d-block w-100" src="./static/img/index/05.jpg"
-						alt="fouth slide">
+						alt="">
 				</div>
 			</div>
 			<a class="carousel-control-prev" href="#carouselExampleIndicators"

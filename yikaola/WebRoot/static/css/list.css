@@ -1,131 +1,182 @@
-.ListPageClass{
-	padding-top:50px;
+.ListPageClass {
+	padding-top: 50px;
 }
 
-.ListPageUl li{
-	padding:10px;
+.ListPageUl {
+	list-style: none;
+	width: 1090px;
+	margin: 0 auto 10px;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
 }
 
-.ListPageFlex{
-	display:flex;
-	justify-content:center;
+.ListPageUl li {
+	margin-right: 10px;
+	width: 210px;
 }
 
-header{
-    background-color: #F2F2F2;
-    color:gray;
-    min-width:1349px;
+.ListPageUl li:nth-child(5n) {
+	margin-right: 0;
 }
-header span a{
-    text-decoration: none;
-    color: #5a6268;
-    font-size: 0.6rem;
-    padding-right:9px;
+
+.ListPageUl li p {
+	font-size: 13px;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
 }
-header ul li b{
-    color:#c6c8ca;
-    font-weight: normal;
-    font-size: 0.5rem;
-    vertical-align: 1px;
+
+.ListPageUl li img {
+	width: 100%;
 }
-a:link{
-    text-decoration: none;
+
+.ListPageFlex {
+	display: flex;
+	justify-content: center;
 }
-a{
-    color: #5a6268;
+
+header {
+	background-color: #F2F2F2;
+	color: gray;
+	min-width: 1349px;
 }
-.my_img1{
-    width:240px;
-    height:90px;
+
+header span a {
+	text-decoration: none;
+	color: #5a6268;
+	font-size: 0.6rem;
+	padding-right: 9px;
 }
-.my_img2{
-    width:220px;
-    height:90px;
+
+header ul li b {
+	color: #c6c8ca;
+	font-weight: normal;
+	font-size: 0.5rem;
+	vertical-align: 1px;
 }
-.header input{
-    height: 38px;
-    width:315px;
-    vertical-align: bottom;
-    outline:none;
+
+a:link {
+	text-decoration: none;
+}
+
+a {
+	color: #5a6268;
+}
+
+.my_img1 {
+	width: 240px;
+	height: 90px;
+}
+
+.my_img2 {
+	width: 220px;
+	height: 90px;
+}
+
+.header input {
+	height: 38px;
+	width: 315px;
+	vertical-align: bottom;
+	outline: none;
 }
 /*header部分的样式*/
-.my_bg1{
-    background-color: #FF0077;
+.my_bg1 {
+	background-color: #FF0077;
 }
-.my_small{
-    font-size: 0.6rem;
+
+.my_small {
+	font-size: 0.6rem;
 }
-.my_padding{
-    padding-right: 34px;
-    padding-left: 34px;
+
+.my_padding {
+	padding-right: 34px;
+	padding-left: 34px;
 }
-.my_padding1{
-    padding-top: 17px;
-    width:80px;
-    height:51px;
+
+.my_padding1 {
+	padding-top: 17px;
+	width: 80px;
+	height: 51px;
 }
-.my_padding2{
-    padding-left: 10px;
+
+.my_padding2 {
+	padding-left: 10px;
 }
-.my_border_top{
-    border-top:2px solid #FF0077;
+
+.my_border_top {
+	border-top: 2px solid #FF0077;
 }
-#body ul li{
-    float:left;
-    margin-right: 2.5rem;
+
+#body ul li {
+	float: left;
+	margin-right: 2.5rem;
 }
-#body h3{
-    color:black;
-    font-weight: bold;
-    background:#F3F3F3;
-    margin-bottom: 0;
+
+#body h3 {
+	color: black;
+	font-weight: bold;
+	background: #F3F3F3;
+	margin-bottom: 0;
 }
-#body div{
-    background-color: #FAFAFA;
-    height: 51px;
+
+#body div {
+	background-color: #FAFAFA;
+	height: 51px;
 }
 /*body部分的样式*/
-.my_margin{
-    margin: 1rem auto;
+.my_margin {
+	margin: 1rem auto;
 }
-#body1 ul li{
-    float: left;
-    margin-right: 2rem;
-}
-#body1{
-    background-color:#FAFAFA;
-}
-#body2 a{
 
-    vertical-align: -2px;
-    padding:0.4rem 1rem;
+#body1 ul li {
+	float: left;
+	margin-right: 2rem;
 }
-#body2 input{
-    width:34px;
-    border:0;
+
+#body1 {
+	background-color: #FAFAFA;
 }
-input:focus{
-    outline: none;
+
+#body2 a {
+	vertical-align: -2px;
+	padding: 0.4rem 1rem;
 }
-button{
-    outline: none;
-    box-shadow: none;
+
+#body2 input {
+	width: 34px;
+	border: 0;
 }
-.my_margin .my_img{
-    width:220px;
-    height:293.33px;
+
+input:focus {
+	outline: none;
 }
-#body3 p{
-    margin-bottom: 0;
+
+button {
+	outline: none;
+	box-shadow: none;
 }
-#body3 span{
-    font-size: 1rem;
-    color: black;
-    font-weight: bold;
+
+.my_margin .my_img {
+	width: 220px;
+	height: 293.33px;
 }
-.my_bottom_padding{
-    padding-left: 28rem;
+
+#body3 p {
+	margin-bottom: 0;
 }
-#body2{
-    border:1px solid lightgray;
+
+#body3 span {
+	font-size: 1rem;
+	color: black;
+	font-weight: bold;
+}
+
+.my_bottom_padding {
+	padding-left: 28rem;
+}
+
+#body2 {
+	border: 1px solid lightgray;
 }

@@ -67,7 +67,7 @@
 				<div>
 					<!--此处实现放大镜效果-->
 					<div class="my_hidden" style="height: 500px">
-						<img src="img/pro_detail/magn2_1.jpg" alt="" class="my_img1">
+						<img src="./static/img/detail01.jpg" alt="" class="my_img1">
 						<div id="mask" class="position-absolute d-none"></div>
 						<!--小正方形-->
 						<div id="super-mask" class="position-absolute"></div>
@@ -78,36 +78,18 @@
 
 					<div class="my_margin my_card mt-1" style="width: 400px">
 						<!--放置两个按钮-->
-						<img src="img/pro_detail/hover-prev.png" alt=""
-							class="disabled btn pt-4 pb-4 float-left btn-light border-0">
+						<div class="NewClass">《</div>
 						<div>
 							<ul id="my_magn">
-								<li><img src="img/pro_detail/magn1_1.jpg" alt=""
-									class="my_img2" data-md='img/pro_detail/magn2_1.jpg'
-									data-lg='img/pro_detail/magn3_1.jpg'></li>
-								<li><img src="img/pro_detail/magn1_2.jpg" alt=""
-									class="my_img2" data-md='img/pro_detail/magn2_2.jpg'
-									data-lg='img/pro_detail/magn3_2.jpg'></li>
-								<li><img src="img/pro_detail/magn1_3.jpg" alt=""
-									class="my_img2" data-md='img/pro_detail/magn2_3.jpg'
-									data-lg='img/pro_detail/magn3_3.jpg'></li>
-								<li><img src="img/pro_detail/magn1_4.jpg" alt=""
-									class="my_img2" data-md='img/pro_detail/magn2_4.jpg'
-									data-lg='img/pro_detail/magn3_6.jpg'></li>
-								<li><img src="img/pro_detail/magn1_5.jpg" alt=""
-									class="my_img2" data-md='img/pro_detail/magn2_5.jpg'
-									data-lg='img/pro_detail/magn3_5.jpg'></li>
-								<li><img src="img/pro_detail/magn1_6.jpg" alt=""
-									class="my_img2" data-md='img/pro_detail/magn2_6.jpg'
-									data-lg='img/pro_detail/magn3_6.jpg'></li>
-								<li><img src="img/pro_detail/magn1_6.jpg" alt=""
-									class="my_img2" data-md='img/pro_detail/magn2_7.jpg'
-									data-lg='img/pro_detail/magn3_7.jpg'></li>
+								<li><img src="./static/img/detail01.jpg" alt=""
+									class="my_img2" data-md='./static/img/detail01.jpg'
+									data-lg='./static/img/detail01.jpg'></li>
+								<li><img src="./static/img/detail02.jpg" alt=""
+									class="my_img2" data-md='./static/img/detail01.jpg'
+									data-lg='./static/img/detail01.jpg'></li>
 							</ul>
 						</div>
-						<img src="img/pro_detail/hover-next.png" alt=""
-							class="btn pt-4 pb-4 btn-light float-right
-                    border-0">
+						<div class="NewClass">》</div>
 					</div>
 				</div>
 				<div class="small text-muted DetailCenter">
@@ -164,11 +146,11 @@
 				<div>
 					<h5 class="text-center text-muted">热卖推荐</h5>
 					<ul class="list-unstyled">
-						<li><img src="img/pro_detail/1-6.jpg" alt="" class="my_img3">
+						<li><img src="./static/img/detail04.jpg" alt="" class="my_img3">
 							<p class="mb-0">￥124.9</p></li>
-						<li><img src="img/pro_detail/1-7.jpg" alt="" class="my_img3">
+						<li><img src="./static/img/detail04.jpg" alt="" class="my_img3">
 							<p class="mb-0">￥120.9</p></li>
-						<li><img src="img/pro_detail/1-8.jpg" alt="" class="my_img3">
+						<li><img src="./static/img/detail04.jpg" alt="" class="my_img3">
 							<p class="mb-0">￥122.9</p></li>
 					</ul>
 				</div>
@@ -237,12 +219,10 @@
 							<p
 								class="text-center bg-secondary text-dark pt-3 pb-3 font-weight-bold">本店分类</p>
 							<ul class="DetailNoFloat clearfix list-unstyled text-center">
-								<li class='DetailLeft'>
-								<a href="javascript:"> 
-								<img src="img/pro_detail/1-13.jpg" alt="">
-								<span class="text-muted">套装<i>￥45.00</i></span>
-								</a>
-								</li>
+								<li class='DetailLeft'><a href="javascript:"> <img
+										src="img/pro_detail/1-13.jpg" alt=""> <span
+										class="text-muted">套装<i>￥45.00</i></span>
+								</a></li>
 							</ul>
 						</div>
 
@@ -260,7 +240,7 @@
 				<!--中间的内容-->
 
 				<div class="AddNewClass01">
-				
+
 					<div class="AddBtn">
 						<button data-toggle='tab' data-target='#my_button1'>商品详情
 						</button>
@@ -305,8 +285,7 @@
 									<img src="img/pro_detail/2-6.jpg" alt="" class="d-block">
 								</div>
 								<div>
-									<img src="img/pro_detail/2-7.jpg" alt=""
-									>
+									<img src="img/pro_detail/2-7.jpg" alt="">
 								</div>
 							</div>
 							<h5>尺码说明</h5>

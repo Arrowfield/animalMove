@@ -217,7 +217,16 @@ table tr td {
 .my_hidden {
 	width: 400px;
 	position: relative;
-	/*overflow-y: hidden;*/
+	cursor:crosshair;
+}
+
+.NewClass{
+	width:30px !important;
+	height:70px;
+	line-height:70px;
+	text-align:center;
+	display:inline-block;
+	cursor:pointer;
 }
 
 .my_margin1 {
@@ -334,20 +343,29 @@ table tr td {
 	margin-bottom: 0px;
 	width: 800px;
 	transition: all .5s linear;
+	clear:both;
 }
 
 /*为ul设置宽度*/
 #my_magn li {
 	float: left;
-	padding-top: 10px;
 	text-align: center;
-	padding-left: 14px;
+	padding:5px;
+}
+
+#my_magn li img{
+	vertical-align:top;
+}
+
+.my_card{
+	display:flex;
 }
 
 .my_card>div {
 	overflow: hidden;
-	width: 308px;
+	width: 340px;
 	display: inline-block;
+	overflow:hidden;
 }
 
 /*放大镜功能样式的结束*/
