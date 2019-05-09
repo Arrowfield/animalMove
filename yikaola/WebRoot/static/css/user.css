@@ -2,6 +2,7 @@
 	width:1090px;
 	margin:0 auto;
 	padding-top:20px;
+	overflow:hidden;
 }
 .UserSection>div:nth-child(1){
 	flex:0 0 180px;
@@ -32,6 +33,7 @@
 .UserFirst{
 	justify-content:space-between;
 	align-items:center;
+	margin-bottom:20px;
 }
 .UserFirst a{
 	font-size:13px;
@@ -56,6 +58,84 @@
 .UserSendAvatar{
 	padding:50px 0;
 	text-align:center;
+}
+
+.UserBtnRed{
+	padding:20px;
+	width:220px;
+	background-color:#f2f2f2;
+}
+
+.UserBtnRed>p{
+	margin-top:5px !important;
+	font-size:13px;
+}
+
+.UserBtnRed>p i{
+	color:red;
+}
+
+.UserBtnRed button{
+	margin-top:20px;
+	padding:10px 0;
+	width:100%;
+	text-align:center;
+	font-size:14px;
+	color:white;
+	background:#E31436;
+	border:none;
+	border-radius:5px;
+	cursor:pointer;
+}
+
+.UserMemeber{
+	list-style:none;
+	margin:0;
+	padding:0;
+	clear:both;
+}
+.UserMemeber li{
+	border:1px solid #ddd;
+	padding:10px 0;
+	float:left;
+	width:440px;
+}
+.UserMemeber li:nth-child(2n-1){
+	margin-right:10px;
+}
+
+.UserMemeber li>div:nth-child(1){
+	width:188px;
+	height:188px;
+	font-size:0;
+	line-height:188px;
+	margin-right:20px;
+}
+.UserWidth{
+	width:670px;
+}
+
+.UserRedDetail p:nth-child(4){
+	text-decoration:line-through;
+}
+
+.UserMemeber li>div:nth-child(1) img{
+	width:100%;
+}
+
+.UserBtnRed p{
+	margin:0;
+}
+.UserBtnRed img{
+	width:50px;
+	height:50px;
+	margin-right:10px;
+	border-radius:50%;
+}
+
+.UserRedAvatar{
+	display:flex;
+	align-items:center;
 }
 
 .UserSendAvatar button{

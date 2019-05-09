@@ -63,4 +63,24 @@
     <servlet-name>RegServlet</servlet-name>
     <url-pattern>/RegServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoCard</display-name>
+    <servlet-name>DoCard</servlet-name>
+    <servlet-class>org.field.servlet.DoCard</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoCard</servlet-name>
+    <url-pattern>/DoCard</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+    <display-name>MyFilter</display-name>
+    <filter-name>MyFilter</filter-name>
+    <filter-class>org.field.servlet.MyFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>MyFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>

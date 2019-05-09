@@ -70,7 +70,7 @@
 	<%@ include file='../common/header.jsp'%>
 	<section class='PayPage'>
 		<p class='PayPageTitle'>4.8-5.14白付美分期享受前3期免息啦</p>
-		<p>新款少女甜美蝴蝶结小胸聚拢文胸内衣套装无钢圈性感美背学生胸罩 等1件</p>
+		<p>2018秋季新款Chic韩版休闲长款纯色T恤女短袖连衣裙修身显瘦百搭简约基础款圆领长裙裙子</p>
 		<p>请您于 <span>0时1分5秒</span>内完成支付 (逾期将被取消)</p>
 		<hr>
 		<div class="PayForWx">

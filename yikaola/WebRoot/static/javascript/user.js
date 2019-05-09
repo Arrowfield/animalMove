@@ -7,6 +7,7 @@
       .children("ul")
       .removeClass('in');
   })
+  
   $('.avatar').click(function(){
 	  $('.InputForAva').click();
   })
@@ -27,5 +28,11 @@
 	  .children('li:last-child')
 	  .addClass('in-active');
   }
+  
+  //获取数据
+  $.ajax({
+	  url:"",
+  });
+  
   
   

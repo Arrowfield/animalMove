@@ -13,7 +13,7 @@
 	<div class="d-flex UserSection">
 		<div class="bg-secondary" id="my_bar">
 			<div class='UserAvatar'>
-				<img src="img/index/my_index2.png" alt="" class="my_img1">
+				<img src="./static/img/avatar.png" alt="" class="my_img1">
 			</div>
 			<p class="text-center mt-0">field@qq.com.cn</p>
 
@@ -90,11 +90,52 @@
 				<h5 class="mb-0">我的衣佳豆</h5>
 				<a href="#">如何赚取考拉豆？</a>
 			</div>
-			<div>
+			
+			<div class="d-flex">
 				<div class="UserBtnRed">
-					
+					<div class="UserRedAvatar">
+						<img src="./static/img/avatar.png" alt="">
+						
+						<div>
+							<span>0</span>
+							<p><a href="javscript:">衣佳豆明细></a></p>
+						</div>
+					</div>
+					<button>签到领取</button>
+					<p>今日签到可领<i>衣佳豆大礼包</i></p>
+				</div>
+				<div>
+					<img class="UserWidth" src="./static/img/bg01.jpg" alt=""> 
 				</div>
 			</div>
+			
+			<h4 class="mt-3">兑换特权</h4>
+			<ul class="UserMemeber">
+				<li class="d-flex">
+					<div>
+						<img  src="./static/img/bg02.jpg" alt="">
+					</div>
+					<div class="UserRedDetail">
+						<p>华住会酒店</p>
+						<p>华住会酒店权益</p>
+						<span>20<i>衣佳豆</i></span>
+						<p>原价： ￥299</p>
+						<button>立即兑换</button>
+					</div>
+				</li>
+				<li class="d-flex">
+					<div>
+						<img src="./static/img/bg02.jpg" alt="">
+					</div>
+					<div class="UserRedDetail">
+						<p>华住会酒店</p>
+						<p>华住会酒店权益</p>
+						<span>20<i>衣佳豆</i></span>
+						<p>原价： ￥299</p>
+						<button>立即兑换</button>
+					</div>
+				</li>
+			</ul>
 		</div>
 
 	</div>

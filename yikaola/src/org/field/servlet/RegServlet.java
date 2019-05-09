@@ -20,8 +20,9 @@ public class RegServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/html;charset=utf-8");
-		response.setCharacterEncoding("utf-8");
+		//response.setContentType("text/html;charset=utf-8");
+		//response.setCharacterEncoding("utf-8");
+		
 		String phone = request.getParameter("phone");
 		String code = request.getParameter("code");
 		JSONObject json = new JSONObject();
