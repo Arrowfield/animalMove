@@ -37,6 +37,8 @@ public class UserAvatar extends HttpServlet {
 		
 		/*将用户的图片存储到本地，并返回路径*/
 		
+		//导入两个jar包
+		
 		JSONObject json = new JSONObject();
 		
 		String str = System.getProperty("user.dir");
