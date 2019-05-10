@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+
 import net.sf.json.JSONObject;
 
 /**
@@ -33,7 +35,7 @@ public class UserAvatar extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		
 		/*将用户的图片存储到本地，并返回路径*/
 		
@@ -42,6 +44,10 @@ public class UserAvatar extends HttpServlet {
 		JSONObject json = new JSONObject();
 		
 		String str = System.getProperty("user.dir");
+		
+		System.out.print(1);
+		
+		System.out.print(str);
 		
 		File file = new File(str + "/image/");
 		
@@ -66,6 +72,13 @@ public class UserAvatar extends HttpServlet {
 		
 		
 		//获取二进制流
+		
+		//DiskFileItemFactory factory = new DiskFileItemFactory();
+		
+		String realPath = getServletContext().getRealPath("/");
+		
+		System.out.print(realPath);
+		
 		
 		InputStream stream = request.getInputStream();
 		
@@ -101,3 +114,10 @@ public class UserAvatar extends HttpServlet {
 	}
 
 }
+
+/*
+ * 问题：
+ * 
+ * 修改servlet没有成功 
+ * 
+ * */

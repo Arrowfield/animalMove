@@ -122,6 +122,7 @@
     <servlet-name>OrderSearch</servlet-name>
     <url-pattern>/OrderSearch</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>UserAvatar</display-name>
@@ -132,4 +133,5 @@
     <servlet-name>UserAvatar</servlet-name>
     <url-pattern>/UserAvatar</url-pattern>
   </servlet-mapping>
+  
 </web-app>

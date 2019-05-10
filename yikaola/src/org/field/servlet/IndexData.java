@@ -59,7 +59,8 @@ public class IndexData extends HttpServlet {
 			rs.last();
 			int lastNumber = rs.getRow();
 
-			System.out.print(rs.getRow());
+			//System.out.print(rs.getRow()+10);
+			
 			for(int i = 0;i<lastNumber;i++) {
 				
 				rs.absolute(i+1);
