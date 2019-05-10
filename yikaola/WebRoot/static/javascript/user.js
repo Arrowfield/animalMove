@@ -27,7 +27,6 @@
 	  if(file){
 		  //console.log(file);
 		  var formData = new FormData();
-		  formData.append("filename","avatar");
 		  formData.append("file",file);
 		  $.ajax({
 			  url:"UserAvatar",

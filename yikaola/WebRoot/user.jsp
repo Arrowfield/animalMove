@@ -103,7 +103,7 @@
 				<h5>帐号设置/修改头像</h5>
 				<div class="UserSendAvatar">
 					<div class='avatar'>
-						<img src="" alt="">
+						<img src="./static/img/avatar.png" alt="">
 					</div>
 					<input onchange='handleChange()' class='InputForAva' type='file'
 						accept="image/*">
