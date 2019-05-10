@@ -82,14 +82,14 @@ time = setInterval(()=>{
 	$('.progress-bar').width(i+'%');
 },20);
 
-function handleEveryday(){
+function handleEveryday(url){
 	if(!isLogin){
 		getToast('您处于为登录状态，请先登录');
 		setTimeout(()=>{
 			location.href = './login.jsp';
 		},3000);
 	}else{
-		location.href = './user.jsp?everyday=1';
+		location.href = './user.jsp?'+url;
 	}
 }
 

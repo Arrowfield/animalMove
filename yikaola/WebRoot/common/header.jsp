@@ -17,8 +17,8 @@
 			</a>
 		</div>
 		<ul class="my-right">
-			<li onclick="handleEveryday()">每日签到</li>
-			<li><a href='./cart.jsp'>我的订单</a></li>
+			<li onclick="handleEveryday('everyday=1')">每日签到</li>
+			<li><a href='javascript:handleEveryday("order=1")'>我的订单</a></li>
 			<li><a href='./user.jsp'>个人中心<i
 					class="iconfont icon-sanjiao"></i></a></li>
 		</ul>

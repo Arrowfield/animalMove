@@ -1,7 +1,10 @@
 package org.field.servlet;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -61,6 +64,13 @@ public class AddCard extends HttpServlet {
 		num++;
 
 		String timeString = matter.format(now);
+		
+		/*
+		 * 用户当天点击获取时间
+		 * */
+		
+		//sqlString = "SELECT * FROM `t_khb` WHERE 1";
+		
 
 		if (Integer.parseInt(numString) == 0) {
 
@@ -72,13 +82,53 @@ public class AddCard extends HttpServlet {
 			
 			//System.out.print(bool);
 		}else {
+			
+			sqlString = "SELECT `time` FROM `t_docard` WHERE `tel` = ?";
+			
+			Object[] params = {tel};
+			
+			db.doPstm(sqlString, params);
+			
+			ResultSet rs = db.getRs();
+			
+			try {
+				//System.out.print(rs);
+				while(rs.next()) {
+					String time = rs.getString(1);
+					
+					Calendar c = Calendar.getInstance();
+					
+					int day = c.get(Calendar.DAY_OF_MONTH);
+					
+					//System.out.print(day);
+					
+					String str = time.split(" ")[0].toString().split("-")[2].toString();
+					
+					System.out.print(str);
+					
+					if(Integer.parseInt(str) == day) {
+						
+						jsonObject.put("code", 301);
+						
+						response.getWriter().print(jsonObject.toString());
+						
+						return;
+					};
+					
+				}
+				
+			} catch (SQLException e) {
+				
+				e.printStackTrace();
+			}
+			
 			sqlString = "UPDATE `t_docard` SET `num`= ? ,`time` = ? ,`tel`= ?  WHERE `tel` = ?";
 			
 			Object[] paramsObjects = {num,timeString,tel,tel};
 			
 			boolean bool = db.executeUpdate(sqlString, paramsObjects);
 			
-			System.out.print(bool);
+			//System.out.print(bool);
 		}
 
 		// 如果是第二次就执行更新操作

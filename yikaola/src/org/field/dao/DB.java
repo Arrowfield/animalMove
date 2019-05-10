@@ -52,6 +52,9 @@ public class DB {
                     params=new Object[0];
                 }
                 for(int i=0;i<params.length;i++){
+                	
+                	//System.out.print(params[i]);
+                	
                     pstm.setObject(i+1,params[i]);
                 }
                 pstm.executeQuery();

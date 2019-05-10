@@ -150,6 +150,11 @@
 	text-align: center;
 }
 
+.IndexPage .my-cart a{
+	display:block;
+	color:black;
+}
+
 .IndexPage .my-cart:hover {
 	color: red;
 	background-color: lightgray;

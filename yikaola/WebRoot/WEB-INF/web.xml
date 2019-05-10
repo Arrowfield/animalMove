@@ -92,4 +92,34 @@
     <servlet-name>AddCard</servlet-name>
     <url-pattern>/AddCard</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>OrderList</display-name>
+    <servlet-name>OrderList</servlet-name>
+    <servlet-class>org.field.example.OrderList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrderList</servlet-name>
+    <url-pattern>/OrderList</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>OrderDel</display-name>
+    <servlet-name>OrderDel</servlet-name>
+    <servlet-class>org.field.example.OrderDel</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrderDel</servlet-name>
+    <url-pattern>/OrderDel</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>OrderSearch</display-name>
+    <servlet-name>OrderSearch</servlet-name>
+    <servlet-class>org.field.example.OrderSearch</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OrderSearch</servlet-name>
+    <url-pattern>/OrderSearch</url-pattern>
+  </servlet-mapping>
 </web-app>

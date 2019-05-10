@@ -152,6 +152,7 @@
 	<%@ include file='../common/footer.jsp'%>
 	<!--弹窗-->
 <div>
+
  <div class="modal fade" id="myModal">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
@@ -168,7 +169,9 @@
       </div>
     </div>
   </div>
+  
 </div>
+
 	<script src="./static/javascript/cart.js"></script>
 	<script>
 		function goToPage(){

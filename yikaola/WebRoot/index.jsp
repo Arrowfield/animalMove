@@ -20,7 +20,10 @@
 				</div>
 			</div>
 			<div class="my-cart">
-				<i class="icon iconfont icon-shangcheng"></i> <span class="cart">购物车</span>
+				<a href="./cart.jsp">
+					<i class="icon iconfont icon-shangcheng"></i> 
+					<span class="cart">购物车</span>
+				</a>
 			</div>
 		</div>
 		<div class="my-navbar d-flex">

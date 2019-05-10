@@ -15,7 +15,7 @@ CREATE TABLE  t_khb(
 
 );
 
-INSERT INTO t_khb VALUES(1,'Feild','18186228854','123456','123456',null,null);
+INSERT INTO t_khb VALUES(1,'Feild','15118099616','123456','123456',null,null);
 INSERT INTO t_khb VALUES(2,'Tom','18186228854','123456','123456',null,null);
 
 #商品表
@@ -46,8 +46,11 @@ CREATE TABLE t_khdgb(
 	goodname VARCHAR(32),
 	number   VARCHAR(32),
 	price    DECIMAL(6,2),
-	sum      DECIMAL(6,2)	
+	sum      DECIMAL(6,2),
+	status int	
 );
+
+
 
 #打卡表
 CREATE TABLE t_docard(

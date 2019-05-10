@@ -27,6 +27,7 @@ public class IndexData extends HttpServlet {
     }
 
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
@@ -46,6 +47,7 @@ public class IndexData extends HttpServlet {
 		Object[] params = null;
 		db.doPstm(sql, params);
 		ResultSet rs = db.getRs();
+		
 		LinkedList<Goods> myGoods = new LinkedList<Goods>();
 		
 		
@@ -59,15 +61,13 @@ public class IndexData extends HttpServlet {
 
 			System.out.print(rs.getRow());
 			for(int i = 0;i<lastNumber;i++) {
-				rs.absolute(i+1);
-				goods[i] = new Goods(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getDouble(4),rs.getString(5),rs.getString(6),rs.getInt(7));
 				
+				rs.absolute(i+1);
+				
+				goods[i] = new Goods(rs.getInt(1),rs.getString(2),rs.getInt(3),rs.getDouble(4),rs.getString(5),rs.getString(6),rs.getInt(7));
 				
 				myGoods.add(goods[i]);
 				
-				//Goods obj= hashgoods.put(Integer.toString(goods[i].getType()),goods[i]);
-				//Goods obj= hashgoods.put(goods[i].getDesc().toString(),goods[i]);
-				//myGoods.add(obj);
 			}
 			
 			while(rs.next()) {
@@ -116,6 +116,7 @@ public class IndexData extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

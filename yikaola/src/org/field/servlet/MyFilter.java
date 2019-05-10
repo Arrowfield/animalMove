@@ -40,9 +40,15 @@ public class MyFilter implements Filter {
 		// pass the request along the filter chain
 		if(request.getCharacterEncoding() == null) {
 			
+			
 		}
+		
+		request.setCharacterEncoding("utf-8");
+		
 		response.setContentType("text/html;charset=utf-8");
+		
 		response.setCharacterEncoding("utf-8");
+		
 		chain.doFilter(request, response);
 	}
 

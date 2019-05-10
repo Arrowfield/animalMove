@@ -20,7 +20,24 @@
 	padding:0 0 20px;
 }
 
+#UserRight{
+	width:100%;
+}
+
+.OrderList{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	margin-top:50px;
+	display:none;
+}
+
+.OrderList>img{
+	margin-right:50px;
+}
+
 .UserRight{
+	display:none;
 	padding:0 0 0 20px;
 	width:100%; 
 }
@@ -188,15 +205,25 @@
     border-left: 0;
 }
 /*实现手风琴相关的类*/
-.fade/*隐藏*/{
+.UserMenu .fade/*隐藏*/{
     height:0;
     overflow:hidden;
     opacity: 0;
     transition: all 0.6s linear;
 }
-.in/*显示*/{
+.UserMenu .in/*显示*/{
 	height:auto;
     opacity: 1;
+}
+
+.id{
+	margin:0;
+	opacity: 0;
+	height:0;
+}
+
+.add{
+	display:none;
 }
 
 .in-active{
