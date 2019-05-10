@@ -46,9 +46,6 @@ public class UserAvatar extends HttpServlet {
 		
 		String str = System.getProperty("user.dir");
 		
-		System.out.print(1);
-		
-		System.out.print(str);
 		
 		File file = new File(str + "/image/");
 		
