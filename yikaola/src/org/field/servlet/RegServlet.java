@@ -25,6 +25,7 @@ public class RegServlet extends HttpServlet {
 		
 		String phone = request.getParameter("phone");
 		String code = request.getParameter("code");
+		
 		JSONObject json = new JSONObject();
 		
 		HttpSession session = request.getSession();

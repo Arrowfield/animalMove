@@ -37,6 +37,7 @@ public class regDao {
 
 		Date now = new Date();
 		SimpleDateFormat matter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
 		mysql = "INSERT INTO `t_khb`(`uid`, `username`, `tel`, `password`, `passwordAgain`,`sex`,`registerTime`) VALUES (NULL,?,?,NULL,NULL,NULL,?)";
 		// 构造参数
 		Object[] obj = { getRandomName(20), login.getTel(), matter.format(now) };

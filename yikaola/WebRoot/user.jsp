@@ -97,11 +97,11 @@
 						<img src="./static/img/avatar.png" alt="">
 						
 						<div>
-							<span>0</span>
+							<span id="UserNum">0</span>
 							<p><a href="javscript:">衣佳豆明细></a></p>
 						</div>
 					</div>
-					<button>签到领取</button>
+					<button onclick="handleClick()">签到领取</button>
 					<p>今日签到可领<i>衣佳豆大礼包</i></p>
 				</div>
 				<div>

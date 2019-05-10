@@ -31,8 +31,39 @@
   
   //获取数据
   $.ajax({
-	  url:"",
+	  url:"DoCard",
+	  type:'GET',
+	  dataType:"json",
+	  success:function(res){
+		  //console.log(res);
+		  if(res.num > 0){
+			  $("#UserNum").html(res.num);
+		  }
+	  },
+	  error:function(err){
+		  throw err;
+	  }
   });
+  
+  function handleClick(){
+	  //alert(1);
+	  var num = $("#UserNum").html();
+	  $.ajax({
+		  url:"AddCard",
+		  data:{num},
+		  type:"get",
+		  dataType:"json",
+		  success:(res)=>{
+			  console.log(res);
+			  $("#UserNum").html(res.num);
+			  getToast("签到成功");
+		  },
+		  error:(err)=>{
+			  throw err
+		  }
+	  })
+	  
+  }
   
   
   
