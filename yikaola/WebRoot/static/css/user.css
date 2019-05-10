@@ -24,6 +24,10 @@
 	width:100%;
 }
 
+#UserRight button{
+	cursor:pointer;
+}
+
 .OrderList{
 	display:flex;
 	align-items:center;
@@ -68,7 +72,6 @@
 }
 .UserRight h5{
 	padding:15px 5px;
-	background:gray;
 	font-size:14px;
 }
 

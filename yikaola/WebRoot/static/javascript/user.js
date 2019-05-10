@@ -12,11 +12,37 @@
 	  $('.InputForAva').click();
   })
   
+  let file = "";
+  
   function handleChange(){
-	  let file = $('.InputForAva')[0].files[0];
+	   file = $('.InputForAva')[0].files[0];
+	  // file对象诞生
 	  const imgUrl = window.URL.createObjectURL(file);
 	  $('.avatar>img').attr("src",imgUrl);
 	  
+  }
+  
+  function handleAvatar(){
+	 
+	  if(file){
+		  //console.log(file);
+		  var formData = new FormData();
+		  formData.append("filename","avatar");
+		  formData.append("file",file);
+		  $.ajax({
+			  url:"UserAvatar",
+			  data:formData,
+			  type:"POST",
+			  dataType:"json",
+			  processData:false,
+			  success:function(res){
+				  console.log(res);
+			  }
+		  })
+	  }else{
+		  //getToast("请选择图片");
+		  return;
+	  }
   }
   // 获取
   
@@ -75,6 +101,14 @@
 			  }
 		  }
 	  });
+  }else if(url.indexOf('user')>-1){
+	  
+	  $('.UserMenu>li:last-child>ul')
+	  .addClass('in')
+	  .children('li:last-child')
+	  .addClass('in-active');
+	  
+	  $('#UserRight>div:nth-child(2)').show();
   }
   
   function handleDel(id,name){

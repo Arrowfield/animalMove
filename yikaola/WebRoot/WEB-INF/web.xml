@@ -122,4 +122,14 @@
     <servlet-name>OrderSearch</servlet-name>
     <url-pattern>/OrderSearch</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserAvatar</display-name>
+    <servlet-name>UserAvatar</servlet-name>
+    <servlet-class>org.field.example.UserAvatar</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserAvatar</servlet-name>
+    <url-pattern>/UserAvatar</url-pattern>
+  </servlet-mapping>
 </web-app>

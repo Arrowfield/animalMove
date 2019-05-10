@@ -52,6 +52,7 @@
 				<li><a href="">地址管理 ></a></li>
 				<li><a href="">安全设置 ></a></li>
 				<li><a href="">维权管理 ></a></li>
+				
 				<li><a href="">账号设置 ></a>
 					<ul class="list-unstyled fade">
 						<li><a href="">基本信息</a></li>
@@ -106,7 +107,7 @@
 					</div>
 					<input onchange='handleChange()' class='InputForAva' type='file'
 						accept="image/*">
-					<button>确认更换</button>
+					<button onclick="handleAvatar()">确认更换</button>
 				</div>
 			</div>
 
