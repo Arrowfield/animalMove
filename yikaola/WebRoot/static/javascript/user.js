@@ -33,6 +33,7 @@
 			  data:formData,
 			  type:"POST",
 			  dataType:"json",
+			  contentType: false,
 			  processData:false,
 			  success:function(res){
 				  console.log(res);
