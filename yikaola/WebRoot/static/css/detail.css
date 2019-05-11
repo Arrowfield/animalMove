@@ -233,6 +233,11 @@ table tr td {
 	
 }
 
+.TextLine{
+	text-decoration:line-through;
+	margin-left:20px;
+}
+
 .my_bg1 p span {
 	vertical-align: middle;
 }

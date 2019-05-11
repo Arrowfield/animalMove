@@ -31,14 +31,10 @@
 					<div>
 						<div class="my_bg1 pt-2 pb-2 mb-3 pl-2">
 							<p>
-								<span class="font-weight-bold">现价：￥89.00</span> <span><i>￥172.50</i></span>
+								<span class="font-weight-bold">现价：￥${arr[3]}</span> 
+								<span><i class="TextLine">原价：￥${arr[4]}</i></span>
 							</p>
-							<p>
-								<span class="text-danger">2人拼团：</span> <span
-									class="text-danger h3">￥78.00</span> <span class="my_margin1">
-									评价： 1 累积销量： 29 </span>
-							</p>
-							<p>魔豆折扣：该商品可使用魔豆低扣3% 价格</p>
+							
 							<p>
 								店铺优惠：
 								<!--小方制作-->
@@ -63,7 +59,7 @@
 							<button class="my_btn">-</button>
 							<input type="text" placeholder="1" class="my_input">
 							<button class="my_btn">+</button>
-							<span>库存127件</span>
+							<span>库存${arr[2]}件</span>
 						</p>
 						
 						<p class="mb-4">
