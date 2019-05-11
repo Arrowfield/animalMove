@@ -1,4 +1,14 @@
-  $('#my_bar>ul>li>a').click(function (e) {
+$.ajax({
+	url:"UserMessage",
+	type:"get",
+	dataType:"json",
+	success:function(res){
+		console.log(res);
+		$('.avatar>img').attr("src","upload/"+res.avatar);
+	},
+});
+
+$('#my_bar>ul>li>a').click(function (e) {
     e.preventDefault();
     $a = $(this);
     $a.next().toggleClass("in")
@@ -15,17 +25,15 @@
   let file = "";
   
   function handleChange(){
-	   file = $('.InputForAva')[0].files[0];
-	  // file对象诞生
+	  file = $('.InputForAva')[0].files[0];
 	  const imgUrl = window.URL.createObjectURL(file);
 	  $('.avatar>img').attr("src",imgUrl);
-	  
   }
   
   function handleAvatar(){
 	 
 	  if(file){
-		  //console.log(file);
+		  // console.log(file);
 		  var formData = new FormData();
 		  formData.append("file",file);
 		  $.ajax({
@@ -36,11 +44,13 @@
 			  contentType: false,
 			  processData:false,
 			  success:function(res){
-				  console.log(res);
+				  if(res.code == 200){
+					  getToast("修改成功");
+				  }
 			  }
 		  })
 	  }else{
-		  //getToast("请选择图片");
+		  // getToast("请选择图片");
 		  return;
 	  }
   }

@@ -108,11 +108,17 @@ public class UserAvatar extends HttpServlet {
 			DiskFileItemFactory factory = new DiskFileItemFactory();
 
 			ServletFileUpload upload = new ServletFileUpload(factory);
+			
+			//String demo = request.getContextPath();
+			
+			//System.out.print(this.getServletContext());
+			
+			String str = System.getProperty("catalina.home");
+			
+			//String uploadPath = str + "/webapps/upload";
 
-			String uploadPath = this.getServletContext().getRealPath("/upload");
-
-			// System.out.print(uploadPath);
-
+			String uploadPath = "E:\\workspace_project\\毕业设计与论文编写的专属文件夹\\animalmove\\yikaola\\WebRoot\\upload";
+			
 			File file = new File(uploadPath);
 
 			if (!file.exists() && !file.isDirectory()) {
@@ -155,6 +161,8 @@ public class UserAvatar extends HttpServlet {
 							new FileOutputStream(new File(uploadPath + "\\" + filename)));
 
 					Streams.copy(bis, bos, true);
+					
+					
 
 					DB db = new DB();
 
@@ -164,7 +172,7 @@ public class UserAvatar extends HttpServlet {
 
 					String sql = "update t_khb set avatar = ? where tel = ?";
 
-					String avatar = uploadPath + "\\" + filename;
+					String avatar = filename;
 
 					Object[] params = { avatar, tel };
 
@@ -176,7 +184,7 @@ public class UserAvatar extends HttpServlet {
 
 						json.put("message", "修改成功");
 
-						json.put("path", uploadPath + "\\" + filename);
+						json.put("path", filename);
 
 						response.getWriter().print(json.toString());
 					}else {
