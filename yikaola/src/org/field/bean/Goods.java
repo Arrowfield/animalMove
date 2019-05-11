@@ -8,20 +8,29 @@ public class Goods {
 	private int num;
 	private String desc;
 	private int type;
+	private double oldPrice;
 	
 	
 	public Goods(int i, String string, double d, String string2, String string3){
 		
 	}
 
-	public Goods(int id, String goodName,int num ,double d ,String desc,String imgUrl, int type) {
+	public Goods(int id, String goodName,int num ,double d ,double oldPrice,String desc,String imgUrl, int type) {
 		this.id = id;
+		
 		this.goodName = goodName;
+		
 		this.price = d;
+		
 		this.imgUrl = imgUrl;
+		
 		this.desc = desc;
+		
 		this.type = type;
+		
 		this.num = num;
+		
+		this.setOldPrice(oldPrice);
 	}
 
 	public int getId() {
@@ -78,5 +87,13 @@ public class Goods {
 
 	public void setNum(int num) {
 		this.num = num;
+	}
+
+	public double getOldPrice() {
+		return oldPrice;
+	}
+
+	public void setOldPrice(double oldPrice) {
+		this.oldPrice = oldPrice;
 	}
 }

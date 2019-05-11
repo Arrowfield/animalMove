@@ -153,30 +153,7 @@
 				</div></li>
 		</ul>
 		<div class="my-intro">★猜你喜欢★</div>
-		<ul class="my-section">
-			<%
-				for (int i = 0; i < 6; i++) {
-			%>
-
-			<li>
-				<div class="show-border">
-					<img src="./static/img/index/02.webp">
-					<div class="change-color">
-						<span class="my-first-span title"> <a href="detail.jsp">Dr.Jart+宛若新生水漾保湿急救面膜
-								5片/盒</a>
-						</span> <span class="my-first-span sub-title">肌肤重现水润健康</span> <span
-							class="my-first-span price"> <em> <i
-								class="new-price">￥</i>69<i class="old">￥128</i>
-						</em>
-							<button class="my-buy">立即购买</button>
-						</span>
-					</div>
-				</div>
-			</li>
-
-			<%
-				}
-			%>
+		<ul class="my-section YouLike">
 		</ul>
 		<div class="my-intro IndexPageBg">★商家推荐★</div>
 		<ul class="my-section">

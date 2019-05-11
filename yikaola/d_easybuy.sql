@@ -21,22 +21,31 @@ INSERT INTO t_khb VALUES(2,'Tom','18186228854','123456','123456',null,null,null)
 #商品表
 CREATE TABLE t_spb(
 	sid INT PRIMARY KEY AUTO_INCREMENT,
-	sname VARCHAR(16),
+	sname VARCHAR(128),
 	snum VARCHAR(8),#商品库存
 	sprice DECIMAL(6,2),#商品价格
-	sdesc VARCHAR(120),
+	old_price DECIMAL(6,2),
+	sdesc VARCHAR(128),
 	simage VARCHAR(32),
 	type INT
-);  
+);
+
+#SKU
+CREATE TABLE t_sku(
+	sid INT PRIMARY KEY AUTO_INCREMENT,
+	sname VARCHAR(128),
+	size VARCHAR(32),
+	color VARCHAR(16)
+);
+
 
 #向商品表中插入信息
-INSERT INTO t_spb VALUES(NULL,'apple','12.00','1',"苹果","/storage/goods/01.png",1);
-INSERT INTO t_spb VALUES(NULL,'lizi','8.00','2',"梨子","/storage/goods/02.png",1);
-INSERT INTO t_spb VALUES(NULL,'xiangjiao','6.00','3',"香蕉","/storage/goods/03.png",2);
-INSERT INTO t_spb VALUES(NULL,'xigua','10.00','4',null,"/storage/goods/04.png",2);
-INSERT INTO t_spb VALUES(NULL,'kele','4.00',null,'1',"/storage/goods/05.png",2);
-INSERT INTO t_spb VALUES(NULL,'xuebi','3.00',null,'2',"/storage/goods/06.png",3);
-INSERT INTO t_spb VALUES(NULL,'xuebi','3.00',null,'2',"/storage/goods/06.png",3);
+
+INSERT INTO t_spb VALUES(NULL,'冷淡风赫本小黑裙女2019春装新款韩版宽松显瘦抽绳系带灯笼袖波点连衣裙女长裙子潮','100','50.50',"55.50",'简约时尚，美式格调',"/storage/goods/01.png",1);
+INSERT INTO t_spb VALUES(NULL,'【i.t潮牌】Rocket x lunch 春季女士风衣','1000','180.00',"190.00",'春季新品女士风衣',"/storage/goods/02.png",1);
+INSERT INTO t_spb VALUES(NULL,'宽松落肩胸口侧边字母印染连帽卫衣男女同款','2000','190.00',"300.00",'优质面料，简约设计',"/storage/goods/03.png",2);
+INSERT INTO t_spb VALUES(NULL,'【刘亚仁宋仲基同款】Studio Concrete韩国进口数字心情中性款情侣卫衣男女同款1/LOW黑色','800','300.00','400.00','时尚潮流，基础简约',"/storage/goods/04.png",2);
+
 
 #购物车表
 CREATE TABLE t_khdgb(

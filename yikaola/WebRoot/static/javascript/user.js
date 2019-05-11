@@ -3,8 +3,11 @@ $.ajax({
 	type:"get",
 	dataType:"json",
 	success:function(res){
-		console.log(res);
-		$('.avatar>img').attr("src","upload/"+res.avatar);
+		//console.log(res);
+		if(res.avatar){
+			$('.avatar>img').attr("src","upload/"+res.avatar);
+			$('.UserAvatar>img').attr("src","upload/"+res.avatar);
+		}
 	},
 });
 

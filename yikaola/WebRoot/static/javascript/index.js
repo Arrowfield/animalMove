@@ -37,6 +37,42 @@ $(function () {
 	        dataType: "json",
 	        success: function (res) {
 	           console.log(res);
+	           
+	           
+	           if(res.code == 200){
+	        	   
+	        	   var html = "";
+	        	   
+	        	   for(var i=0;i<res.data.length;i++){
+	        		   
+	        		   var tmp = res.data[i]
+	        		   
+	        		   html += `
+	        			   <li>
+							<div class="show-border">
+								<img src="./static/img/index/02.webp">
+								
+								<div class="change-color">
+									<span class="my-first-span title"> 
+										<a href="detail.jsp?id=${tmp.id}">${tmp.goodName}</a>
+									</span> 
+									
+									<span class="my-first-span sub-title">${tmp.desc}</span> 
+									
+									<span class="my-first-span price"> 
+										<em> 
+											<i class="new-price">￥</i>${tmp.price}<i class="old">￥1${tmp.oldPrice}</i>
+										</em>
+										<button onclick=handleBuy(${tmp.id}) class="my-buy">立即购买</button>
+									</span>
+								</div>
+							</div>
+	        			   </li>
+	        		   `
+	        	   }
+	        	   $(".YouLike").append(html);
+	        	   
+	           }
 	        }
 	    });
 	}).catch((err)=>{
@@ -60,3 +96,8 @@ $(function () {
         $(this).parent("a").hide();
     });
 });
+
+function handleBuy(id){
+	
+	window.location.href = "./pay.jsp?sid="+id; 
+}
