@@ -93,56 +93,6 @@
 					</div>
 				</div>
 				<div class="small text-muted DetailCenter">
-				
-					<h4 class="font-weight-bold">2018秋季新款Chic韩版休闲长款纯色T恤女短袖连衣裙
-						修身显瘦百搭简约基础款圆领长裙裙子</h4>
-					<div>
-						<div class="my_bg1 pt-2 pb-2 mb-3 pl-2">
-							<p>
-								<span class="font-weight-bold">现价：￥89.00</span> <span><i>￥172.50</i></span>
-							</p>
-							<p>
-								<span class="text-danger">2人拼团：</span> <span
-									class="text-danger h3">￥78.00</span> <span class="my_margin1">
-									评价： 1 累积销量： 29 </span>
-							</p>
-							<p>魔豆折扣：该商品可使用魔豆低扣3% 价格</p>
-							<p>
-								店铺优惠：
-								<!--小方制作-->
-								<span class="border border-danger p-1 text-danger ">
-									满99立减3元 </span><a href="#"
-									class=" bg-danger btn  text-white rounded-0 p-0 my_small pt-1"
-									style="width: 55px; height: 27px"> 领取</a> <span
-									class="border border-danger p-1 text-danger "> 满199立减15元
-								</span><a href="#"
-									class=" bg-danger btn  text-white rounded-0 p-0 my_small pt-1"
-									style="width: 55px; height: 27px"> 领取</a>
-							</p>
-						</div>
-						<p>
-							客服：
-							<button class="bg-white">联系客服</button>
-						</p>
-						<p>颜色：</p>
-						<p>尺码：</p>
-						<p>
-							数量：
-							<button class="my_btn">-</button>
-							<input type="text" placeholder="1" class="my_input">
-							<button class="my_btn">+</button>
-							<span>库存127件</span>
-						</p>
-						<p class="mb-4">
-							<a href="#" class="btn bg-danger text-white rounded-0">2人拼团购买</a>
-							<a href="#"
-								class="btn bg-secondary text-white mr-2 ml-2 rounded-0">现价单独购买</a>
-							<a href="#" class="btn bg-danger text-white rounded-0">购物车</a>
-						</p>
-						<p>收藏 分享 举报</p>
-						<p>服务承诺：全国包邮 七天无理由退货 72小时发货 退货补运费</p>
-						<p>支付方式：微信 支付宝 微博</p>
-					</div>
 				</div>
 				<div>
 					<h5 class="text-center text-muted">热卖推荐</h5>
