@@ -142,4 +142,14 @@
     <servlet-name>UserMessage</servlet-name>
     <url-pattern>/UserMessage</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GoodsMessage</display-name>
+    <servlet-name>GoodsMessage</servlet-name>
+    <servlet-class>org.field.example.GoodsMessage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoodsMessage</servlet-name>
+    <url-pattern>/GoodsMessage</url-pattern>
+  </servlet-mapping>
 </web-app>

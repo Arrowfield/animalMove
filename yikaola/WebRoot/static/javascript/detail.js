@@ -1,3 +1,5 @@
+//获取数据
+
 (function () {
   //功能：引入头文件
   $("<link rel='stylesheet' href='css/header.css'>").appendTo('head');
@@ -9,6 +11,19 @@
       $('<script src="js/header.js"></script>').appendTo('head');
     }
   });
+  
+  var id = location.href.split("?")[1].split("=")[1];
+
+  $.ajax({
+  	url:"GoodsMessage",
+  	type:"get",
+  	dataType:"json",
+  	data:{id},
+  	success:function(res){
+  		console.log(res);
+  	}
+  })
+  
   //功能：tabbar的自由切换
   var tabs = document.querySelectorAll('[data-toggle=tab]');
   for (var tab of tabs) {

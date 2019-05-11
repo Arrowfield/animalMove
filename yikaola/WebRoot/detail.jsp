@@ -93,6 +93,7 @@
 					</div>
 				</div>
 				<div class="small text-muted DetailCenter">
+				
 					<h4 class="font-weight-bold">2018秋季新款Chic韩版休闲长款纯色T恤女短袖连衣裙
 						修身显瘦百搭简约基础款圆领长裙裙子</h4>
 					<div>

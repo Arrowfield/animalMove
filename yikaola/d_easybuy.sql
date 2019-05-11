@@ -33,9 +33,10 @@ CREATE TABLE t_spb(
 #SKU
 CREATE TABLE t_sku(
 	sid INT PRIMARY KEY AUTO_INCREMENT,
-	sname VARCHAR(128),
+	#sname VARCHAR(128),
 	size VARCHAR(32),
-	color VARCHAR(16)
+	color VARCHAR(16),
+	spb_id int
 );
 
 
@@ -46,6 +47,7 @@ INSERT INTO t_spb VALUES(NULL,'【i.t潮牌】Rocket x lunch 春季女士风衣'
 INSERT INTO t_spb VALUES(NULL,'宽松落肩胸口侧边字母印染连帽卫衣男女同款','2000','190.00',"300.00",'优质面料，简约设计',"/storage/goods/03.png",2);
 INSERT INTO t_spb VALUES(NULL,'【刘亚仁宋仲基同款】Studio Concrete韩国进口数字心情中性款情侣卫衣男女同款1/LOW黑色','800','300.00','400.00','时尚潮流，基础简约',"/storage/goods/04.png",2);
 
+INSERT INTO t_sku VALUES(NULL,'L X M S','1 2 3 4',1);
 
 #购物车表
 CREATE TABLE t_khdgb(
