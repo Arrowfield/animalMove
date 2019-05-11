@@ -1,18 +1,29 @@
 package org.field.example;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Iterator;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItemFactory;
+import org.apache.commons.fileupload.FileItemIterator;
+import org.apache.commons.fileupload.FileItemStream;
+import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.fileupload.util.Streams;
 
 import net.sf.json.JSONObject;
 
@@ -42,10 +53,9 @@ public class UserAvatar extends HttpServlet {
 		
 		//导入两个jar包
 		
-		JSONObject json = new JSONObject();
+		/*
 		
 		String str = System.getProperty("user.dir");
-		
 		
 		File file = new File(str + "/image/");
 		
@@ -68,18 +78,7 @@ public class UserAvatar extends HttpServlet {
 		
 		String imagePath =  str + "/image/" + strCurrentTime + ".png";
 		
-		
-		//获取二进制流
-		
-		//DiskFileItemFactory factory = new DiskFileItemFactory();
-		
-		String realPath = getServletContext().getRealPath("/");
-		
-		System.out.print(realPath);
-		
-		
 		InputStream stream = request.getInputStream();
-		
 		
 		FileOutputStream fos = new FileOutputStream(imagePath);
 		
@@ -95,11 +94,75 @@ public class UserAvatar extends HttpServlet {
         
         fos.close();
         
-        stream.close();
+        stream.close();*/
 		
-		json.put("code", 200);
 		
-		response.getWriter().print(json.toString());
+		//获取二进制流
+		
+		try {
+			
+			JSONObject json = new JSONObject();
+			
+			DiskFileItemFactory factory = new DiskFileItemFactory();
+			
+			ServletFileUpload upload = new ServletFileUpload(factory);
+			
+			String uploadPath = this.getServletContext().getRealPath("/upload");
+			
+			System.out.print(uploadPath);
+			
+			File file = new File(uploadPath);
+			
+			if(!file.exists() && !file.isDirectory()) {
+				try {
+					
+					file.mkdir();
+					
+				} catch (Exception e) {
+					
+					e.printStackTrace();
+					
+				}
+				
+			}
+			
+			FileItemIterator fii = upload.getItemIterator(request);
+			
+			while(fii.hasNext()){
+				
+				FileItemStream fis = fii.next();
+				
+				if(fis.isFormField()) {
+					
+					json.put("code", "301");
+					
+					json.put("message", "请输入正确的信息");
+					
+					response.getWriter().print(json.toString());
+					
+				}else {
+					
+					String path = fis.getName();
+					
+					String filename = path.substring(path.lastIndexOf("\\") + 1);
+					
+					BufferedInputStream bis = new BufferedInputStream(fis.openStream());
+					
+					BufferedOutputStream bos = new BufferedOutputStream(
+							new FileOutputStream(new File(uploadPath + "\\" + filename)));
+					
+					Streams.copy(bis, bos, true);
+					
+					
+					
+				}
+			}
+			
+		} catch (FileUploadException e) {
+			
+			e.printStackTrace();
+		}
+		
 	}
 
 	/**
