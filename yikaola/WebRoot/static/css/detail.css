@@ -238,6 +238,24 @@ table tr td {
 	margin-left:20px;
 }
 
+.AddDetailC{
+	margin-bottom:10px;
+}
+
+.AddDetailC button{
+	margin-right:5px;
+}
+
+.AddDetailC button:focus{
+	
+	border:1px solid red;
+}
+
+.AddDetailC button:active{
+	
+	border:1px solid red;
+}
+
 .my_bg1 p span {
 	vertical-align: middle;
 }

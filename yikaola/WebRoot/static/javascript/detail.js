@@ -52,8 +52,8 @@
 							客服：
 							<button class="bg-white">联系客服</button>
 						</p>
-						<p>颜色：</p>
-						<p>尺码：</p>
+						<div class="AddDetailC">颜色：<div class="color"></div></div>
+						<div class="AddDetailC">尺码：<div class="size"></div></div>
 						<p>
 							数量：
 							<button class="my_btn">-</button>
@@ -74,7 +74,46 @@
 					</div>
   		`
   			$('.DetailCenter').prepend(html);
+  		
+  		if(res.sku){
+  			
+  			var size = res.sku[1].split(' ');
+  			
+  			var html = "";
+  			
+  			for(var i=0;i<size.length;i++){
+  				
+  				html += `<button>${size[i]}</button>`
+  			}
+  			
+  			$(html).replaceAll(".size");
+  			
+  			var html = "";
+  			
+  			var color = res.sku[2].split(' ');
+  			
+  			for(var i=0;i<color.length;i++){
+  				
+  				switch(color[i]){
+  				
+  					case "1":color[i] = "红";break;
+  					case "2":color[i] = "绿";break;
+  					case "3":color[i] = "黄";break;
+  					case "4":color[i] = "蓝";break;
+  				
+  				}
+  				
+  				html += `
+  					<button>${color[i]}</button>
+  				`
+  			}
+  			
+  			$(html).replaceAll(".color");
+  			
   		}
+  		//添加sku结束
+  		
+  	}
   	}
   })
   
