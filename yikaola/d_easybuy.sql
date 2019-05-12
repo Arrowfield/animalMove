@@ -54,11 +54,13 @@ CREATE TABLE t_khdgb(
 	kid INT  PRIMARY KEY AUTO_INCREMENT,
 	sid INT,
 	tel      VARCHAR(11),
-	goodname VARCHAR(32),
+	goodname VARCHAR(256),
 	number   VARCHAR(32),
 	price    DECIMAL(6,2),
 	sum      DECIMAL(6,2),
-	status int	
+	status int,
+	color VARCHAR(32),
+	size VARCHAR(32)	
 );
 
 

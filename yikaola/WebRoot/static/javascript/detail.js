@@ -24,7 +24,10 @@ var goodMessage = {num:1};
   			
   		var arr = res.good;
   		
-  		goodMessage.good = res.good;
+  		goodMessage.price = arr[3];
+  		
+  		goodMessage.name = arr[1];
+  		
   		
   		var html = `
  
@@ -290,7 +293,7 @@ function handleAddCart(){
 	$.ajax({
 		url:"AddCart",
 		type:"post",
-		data:{goodMessage},
+		data:goodMessage,
 		dataType:"json",
 		success:function(res){
 			console.log(res);

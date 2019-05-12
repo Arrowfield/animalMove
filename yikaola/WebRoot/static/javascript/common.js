@@ -94,7 +94,7 @@ function handleEveryday(url){
 		if(url){
 			location.href = './user.jsp?'+url;
 		}else{
-			return;
+			return true;
 		}
 	}
 }
