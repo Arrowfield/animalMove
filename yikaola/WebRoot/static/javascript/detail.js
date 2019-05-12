@@ -1,12 +1,4 @@
-//获取数据
-
-function handleAddCart(){
-	  
-	  //判断用户是否处于登录状态
-	  handleEveryday();
-	 
-}
-
+var goodMessage = {num:1};
 (function () {
   //功能：引入头文件
   $("<link rel='stylesheet' href='css/header.css'>").appendTo('head');
@@ -31,6 +23,8 @@ function handleAddCart(){
   		if(res.code == 200){
   			
   		var arr = res.good;
+  		
+  		goodMessage.good = res.good;
   		
   		var html = `
  
@@ -64,7 +58,7 @@ function handleAddCart(){
 						<p>
 							数量：
 							<button class="my_btn">-</button>
-							<input type="text" placeholder="1" class="my_input">
+							<input disabled value="1" min="1" max=${arr[2]} type="text" class="text-center my_input">
 							<button class="my_btn">+</button>
 							<span>库存${arr[2]}件</span>
 						</p>
@@ -82,6 +76,39 @@ function handleAddCart(){
   		`
   			$('.DetailCenter').prepend(html);
   		
+  		var numTow = 1;
+  		
+  		$(".my_btn").click(function(){
+  			
+  			//console.log(numTow,arr[2]);
+  			
+  			
+  			
+  			if($(this).html() == "-"){
+  				
+  				numTow --;
+  				
+  			}else if($(this).html() == "+"){
+  				
+  				numTow ++;
+  			}
+  			
+  			if(numTow <= 0){ numTow = 1;return;}
+  			
+  			if(numTow > arr[2]){
+  				
+  				numTow = arr[2];
+  				
+  				return;
+  			}
+  			
+  			$(".my_input").val(numTow);
+  			
+  			goodMessage.num = numTow; 
+  		})
+  		
+  		
+  		
   		if(res.sku){
   			
   			var size = res.sku[1].split(' ');
@@ -90,16 +117,29 @@ function handleAddCart(){
   			
   			for(var i=0;i<size.length;i++){
   				
-  				html += `<button>${size[i]}</button>`
+  				html += `<button class="sizeBtn">${size[i]}</button>`
   			}
   			
   			$(html).replaceAll(".size");
+  			
+  			$(".sizeBtn").click(function(){
+  				
+  				var val = $(this).html();
+  				
+  				$(this).css("border","1px solid red").siblings().css("border","1px solid gray");
+  				
+  				goodMessage.size = val;
+  				
+  			})
+  		
   			
   			var html = "";
   			
   			var color = res.sku[2].split(' ');
   			
   			for(var i=0;i<color.length;i++){
+  				
+  				var num = color[i];
   				
   				switch(color[i]){
   				
@@ -111,11 +151,26 @@ function handleAddCart(){
   				}
   				
   				html += `
-  					<button>${color[i]}</button>
+  					<button data-value=${num} class="colorBtn">${color[i]}</button>
   				`
   			}
   			
   			$(html).replaceAll(".color");
+  			
+  			//并且绑定事件
+  			
+  			
+
+  			$(".colorBtn").click(function(){
+  				
+  				
+  				var val = $(this).attr('data-value');
+  				
+  				$(this).css("border","1px solid red").siblings().css("border","1px solid gray");
+  				
+  				goodMessage.color = val;
+  				
+  			})
   			
   		}
   		//添加sku结束
@@ -203,3 +258,41 @@ function handleAddCart(){
   });
   //功能结束
 })();
+
+
+
+function handleAddCart(){
+	  
+	//判断用户是否处于登录状态
+	handleEveryday();
+	
+	console.log(goodMessage);
+	
+	//数量默认1
+	
+	if(!goodMessage.color){
+		
+		getToast("请选择颜色");
+		
+		return;
+	}
+	
+	if(!goodMessage.size){
+		
+		getToast("请选择型号大小");
+		
+		return;
+	}
+	
+	//加入购物车
+	
+}
+
+//事件绑定
+function handleColor(){
+	
+	
+}
+
+
+
