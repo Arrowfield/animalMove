@@ -10,34 +10,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.field.bean.Goods;
 import org.field.dao.DB;
 
 import net.sf.json.JSONObject;
 
 /**
- * Servlet implementation class OrderList
+ * Servlet implementation class CartMessage
  */
-public class OrderList extends HttpServlet {
+public class CartMessage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public CartMessage() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public OrderList() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+		
 		JSONObject json = new JSONObject();
 
 		HttpSession session = request.getSession();
@@ -69,10 +66,13 @@ public class OrderList extends HttpServlet {
 			if (last == 0) {
 
 				json.put("code", 301);
+				
+				json.put("message", "获取信息失败");
 
 				response.getWriter().print(json.toString());
 
 				return;
+				
 			} else {
 
 				for (int i = 0; i < last; i++) {
@@ -87,7 +87,10 @@ public class OrderList extends HttpServlet {
 							rs.getObject(4),
 							rs.getObject(5), 
 							rs.getObject(6), 
-							rs.getObject(7) 
+							rs.getObject(7),
+							rs.getObject(8), 
+							rs.getObject(9),
+							rs.getObject(10),
 							
 					};
 
@@ -113,13 +116,11 @@ public class OrderList extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-
 	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

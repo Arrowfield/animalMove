@@ -162,4 +162,14 @@
     <servlet-name>AddCart</servlet-name>
     <url-pattern>/AddCart</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CartMessage</display-name>
+    <servlet-name>CartMessage</servlet-name>
+    <servlet-class>org.field.example.CartMessage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CartMessage</servlet-name>
+    <url-pattern>/CartMessage</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -20,7 +20,7 @@
 				</div>
 			</div>
 			<div class="my-cart">
-				<a href="./cart.jsp">
+				<a href="javascript:handleEveryday('cart.jsp')">
 					<i class="icon iconfont icon-shangcheng"></i> 
 					<span class="cart">购物车</span>
 				</a>

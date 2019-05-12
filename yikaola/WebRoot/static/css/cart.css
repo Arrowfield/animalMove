@@ -153,12 +153,16 @@ table {
   padding-bottom: 0.6rem;
 }
 
-table tr:first-child {
+table thead tr:first-child {
   background-color: #f2f2f2;
 }
 
 table tr td:nth-child(2) {
   width: 34rem;
+}
+
+.LoadMore{
+	cursor:pointer;
 }
 
 a {

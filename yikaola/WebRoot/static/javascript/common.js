@@ -92,7 +92,13 @@ function handleEveryday(url){
 		return false;
 	}else{
 		if(url){
-			location.href = './user.jsp?'+url;
+			
+			if(url.indexOf('cart') > -1){
+				location.href = url;
+			}else{
+				location.href = './user.jsp?'+url;
+			}
+			
 		}else{
 			return true;
 		}

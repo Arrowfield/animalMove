@@ -61,13 +61,14 @@
 		<div class="container-fluid pl-0 pr-0">
 			<div id="section">
 				<ul class="CartAddClassSort">
-					<li><a href="#">全部商品 2</a></li>
+					<li><a href="#">全部商品 <i class="SumNum">2</i></a></li>
 					<li><a href="#">优惠 2</a></li>
 					<li><a href="#">库存紧张 0</a></li>
 				</ul>
 
 
 				<table class="table CartTableClass">
+					<thead>
 					<tr>
 						<th><input type="checkbox" class="my_input"></th>
 						<th colspan="2">商品信息</th>
@@ -82,60 +83,9 @@
 							<span>满88元减3</span> <span><a href="#">优惠券</a></span> <span>去店铺凑单
 								></span></td>
 					</tr>
-					<tr>
-						<td><input type="checkbox" class="my_input"></td>
-						<td>
-							<div class="CartAddFlex">
-								<div>
-									<img src="./static/img/index/02.webp" alt="" class="my_img">
-									<p>减价5.81元</p>
-								</div>
-								<p class='ml-2'>2018春秋新款韩版纯色毛衣外套中长款宽松显瘦连帽女针织开衫</p>
-							</div>
-						</td>
-						<td><span>颜色：灰色</span>
-							<p>尺码：L</p></td>
-						<td><i class="CartLine">58.16</i>
-							<p class="mb-1 text-muted">34.90</p>
-							<p class="text-danger mt-0">拼团价</p></td>
-						<td>
-						<div class='d-flex align-items-center'>
-							<button class="my_btn">-</button> <input type="text"
-							class="my_input1" value="1">
-							<button class="my_btn">+</button>
-							</div>
-						</td>
-						<td class="text-danger h5">34.90</td>
-						<td>删除</td>
-					</tr>
-
-					<tr>
-						<td><input type="checkbox" class="my_input"></td>
-
-						<td>
-							<div class="CartAddFlex">
-								<div class="float-left mr-2">
-									<img src="./static/img/index/02.webp" alt="" class="my_img">
-									<p class="text-center small text-danger">减价5.81元</p>
-								</div>
-								<p class="small">2018春秋新款韩版纯色毛衣外套中长款宽松显瘦连帽女针织开衫</p>
-							</div>
-						</td>
-						<td><span>颜色：灰色</span>
-							<p>尺码：L</p></td>
-						<td><i class="CartLine">58.16</i>
-							<p class="mb-1 text-muted">25.90</p>
-							<p class="text-danger mt-0">拼团价</p></td>
-						<td>
-						<div class='d-flex align-items-center'>
-							<button class="my_btn">-</button> <input type="text"
-							class="my_input1" value="1">
-							<button class="my_btn">+</button>
-							</div>
-						</td>
-						<td class="text-danger h5">25.90</td>
-						<td><a data-toggle="modal" data-target="#myModal" href='javascritp:'>删除</a></td>
-					</tr>
+					</thead>
+					<tbody><tr></tr></tbody>
+					
 				</table>
 				<div id="my_money" class="CartFooter">
 				<div>

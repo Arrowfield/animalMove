@@ -98,7 +98,7 @@ $('#my_bar>ul>li>a').click(function (e) {
 					  
 					  html += `
 						  <tr>
-						  	<td>${arr[3]}</td>
+						  	<td class="TooLong" title=${arr[3]}>${arr[3]}</td>
 						  	<td>${arr[5]}</td>
 						  	<td>${arr[4]}</td>
 						  	<td>暂无</td>
@@ -158,7 +158,7 @@ $('#my_bar>ul>li>a').click(function (e) {
 					  
 					  html += `
 						  <tr>
-						  	<td>${arr[3]}</td>
+						  	<td class="TooLong">${arr[3]}</td>
 						  	<td>${arr[5]}</td>
 						  	<td>${arr[4]}</td>
 						  	<td>暂无</td>
