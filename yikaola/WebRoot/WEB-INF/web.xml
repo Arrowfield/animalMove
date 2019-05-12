@@ -152,4 +152,14 @@
     <servlet-name>GoodsMessage</servlet-name>
     <url-pattern>/GoodsMessage</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddCart</display-name>
+    <servlet-name>AddCart</servlet-name>
+    <servlet-class>org.field.example.AddCart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddCart</servlet-name>
+    <url-pattern>/AddCart</url-pattern>
+  </servlet-mapping>
 </web-app>

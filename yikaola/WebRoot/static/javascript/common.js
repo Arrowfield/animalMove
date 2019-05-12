@@ -88,6 +88,8 @@ function handleEveryday(url){
 		setTimeout(()=>{
 			location.href = './login.jsp';
 		},3000);
+		
+		return false;
 	}else{
 		if(url){
 			location.href = './user.jsp?'+url;

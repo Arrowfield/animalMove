@@ -264,9 +264,10 @@ var goodMessage = {num:1};
 function handleAddCart(){
 	  
 	//判断用户是否处于登录状态
-	handleEveryday();
-	
-	console.log(goodMessage);
+
+	if(!handleEveryday()){
+		return;
+	}
 	
 	//数量默认1
 	
@@ -285,6 +286,16 @@ function handleAddCart(){
 	}
 	
 	//加入购物车
+	
+	$.ajax({
+		url:"AddCart",
+		type:"post",
+		data:{goodMessage},
+		dataType:"json",
+		success:function(res){
+			console.log(res);
+		}
+	})
 	
 }
 
