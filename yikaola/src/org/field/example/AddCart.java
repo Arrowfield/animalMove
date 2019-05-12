@@ -1,9 +1,6 @@
 package org.field.example;
 
 import java.io.IOException;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -50,12 +47,19 @@ public class AddCart extends HttpServlet {
 		
 		String tel = (String) session.getAttribute("tel");
 		
+		//获取库存量
+		
+		String count = request.getParameter("count");
+		
+		String id = request.getParameter("id");
+		
 		//Float sum =num * price;
 		
 		JSONObject json = new JSONObject();
 		
 		float sum = Float.parseFloat(num) * Float.parseFloat(price);
 		
+		int countTow = Integer.parseInt(count) - Integer.parseInt(num);
 		
 		DB db = new DB();
 		
@@ -67,11 +71,33 @@ public class AddCart extends HttpServlet {
 		
 		if(bool) {
 			
-			json.put("code", 200);
 			
-			json.put("message", "添加购物车成功");
+			//修改库存量
 			
-			response.getWriter().print(json.toString());
+			String sqlTow = "UPDATE `t_spb` SET `snum` = ? WHERE sid = ?";
+			
+			Object[] paramsTow = {countTow,id};
+			
+			boolean boolTow = db.executeUpdate(sqlTow, paramsTow);
+			
+			if(boolTow) {
+				
+				json.put("code", 200);
+				
+				json.put("message", "添加购物车成功");
+				
+				response.getWriter().print(json.toString());
+				
+			}else {
+				
+				json.put("code", 401);
+				
+				json.put("message", "添加购物车失败");
+				
+				response.getWriter().print(json.toString());
+				
+			}
+			
 			
 		}else {
 			

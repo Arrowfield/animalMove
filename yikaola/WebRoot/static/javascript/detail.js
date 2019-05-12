@@ -28,6 +28,9 @@ var goodMessage = {num:1};
   		
   		goodMessage.name = arr[1];
   		
+  		goodMessage.count = arr[2];
+  		
+  		goodMessage.id = id;
   		
   		var html = `
  
@@ -297,6 +300,11 @@ function handleAddCart(){
 		dataType:"json",
 		success:function(res){
 			console.log(res);
+			if(res.code == 200){
+				getToast("添加购物车成功，可以进入购物车中查看！");
+			}else{
+				getToast("添加失败");
+			}
 		}
 	})
 	
