@@ -1,5 +1,12 @@
 //获取数据
 
+function handleAddCart(){
+	  
+	  //判断用户是否处于登录状态
+	  handleEveryday();
+	 
+}
+
 (function () {
   //功能：引入头文件
   $("<link rel='stylesheet' href='css/header.css'>").appendTo('head');
@@ -66,7 +73,7 @@
 							<a href="#" class="btn bg-danger text-white rounded-0">2人拼团购买</a>
 							<a href="#"
 								class="btn bg-secondary text-white mr-2 ml-2 rounded-0">现价单独购买</a>
-							<a href="#" class="btn bg-danger text-white rounded-0">购物车</a>
+							<a href="javascript:handleAddCart()" class="btn bg-danger text-white rounded-0">加入购物车</a>
 						</p>
 						<p>收藏 分享 举报</p>
 						<p>服务承诺：全国包邮 七天无理由退货 72小时发货 退货补运费</p>

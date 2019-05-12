@@ -89,7 +89,11 @@ function handleEveryday(url){
 			location.href = './login.jsp';
 		},3000);
 	}else{
-		location.href = './user.jsp?'+url;
+		if(url){
+			location.href = './user.jsp?'+url;
+		}else{
+			return;
+		}
 	}
 }
 
