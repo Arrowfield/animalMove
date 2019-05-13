@@ -73,3 +73,48 @@ CREATE TABLE t_docard(
 	time DATETIME,
 	tel      VARCHAR(11)
 );
+
+#图片表
+CREATE TABLE t_img(
+	id INT  PRIMARY KEY AUTO_INCREMENT,
+	path VARCHAR(128),
+	num int,
+	size  VARCHAR(16),
+	pid INT
+);
+
+#订单表
+CREATE TABLE t_order(
+	id INT  PRIMARY KEY AUTO_INCREMENT,
+	phone VARCHAR(11),
+	time DATETIME,
+	money DECIMAL(6,2),
+	sort VARCHAR(128)
+);
+
+#优惠券表
+CREATE TABLE t_discount(
+	id INT  PRIMARY KEY AUTO_INCREMENT,
+	type VARCHAR(32),
+	num int,
+	tel      VARCHAR(11)
+);
+
+#店铺表
+CREATE TABLE t_shop(
+	id INT  PRIMARY KEY AUTO_INCREMENT,
+	s_name varchar(32),
+	s_address varchar(32),
+	type VARCHAR(11)
+);
+
+#用户关注店铺表
+CREATE TABLE t_user_shop(
+	id INT  PRIMARY KEY AUTO_INCREMENT,
+	tel      VARCHAR(11),
+	type VARCHAR(32),
+	num int,
+	discount_id int
+);
+
+

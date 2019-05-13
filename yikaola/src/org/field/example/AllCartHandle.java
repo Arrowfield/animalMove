@@ -13,7 +13,7 @@ public class AllCartHandle extends BaseServlet {
 	
 	private static final long serialVersionUID = 1L;
        
-    /**
+    /**  
      * @see HttpServlet#HttpServlet()
      */
     public AllCartHandle() {
@@ -26,7 +26,19 @@ public class AllCartHandle extends BaseServlet {
 	 */
 	public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		String id = request.getParameter("id");
+		
+		String price = request.getParameter("price");
+		
+		String num = request.getParameter("num");
+		
+		//System.out.printf("%s,%s,%s",id,price,num);
+		
+		 
+		
 		response.getWriter().append("Served at:update ").append(request.getContextPath());
+	
 	}
 
 	/**
