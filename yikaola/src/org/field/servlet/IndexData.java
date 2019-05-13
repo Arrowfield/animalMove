@@ -98,7 +98,7 @@ public class IndexData extends HttpServlet {
 		
 		//System.out.print(myGoods);
 		
-		System.out.print(hashgoods);
+		
 		//System.out.print(myGoods);
 		
 		//Goods [] goodsYouLove = new Goods[10];

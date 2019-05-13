@@ -5,6 +5,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.field.dao.DB;
 
 /**
  * Servlet implementation class AllCartHandle
@@ -33,9 +36,23 @@ public class AllCartHandle extends BaseServlet {
 		
 		String num = request.getParameter("num");
 		
-		//System.out.printf("%s,%s,%s",id,price,num);
+		HttpSession session = request.getSession();
 		
-		 
+		String tel = (String)session.getAttribute("tel");
+		
+		System.out.printf("%s,%s,%s",id,price,num);
+		
+		float sum = Float.parseFloat(price) * Float.parseFloat(num);
+		
+		DB db = new DB();
+		
+		String sql = "update t_khdgb set number = ? , sum = ?  where kid = ? and tel = ?";
+		
+		Object[] params = {num,sum,id,tel};
+		
+		boolean bool = db.executeUpdate(sql, params);
+		
+		System.out.print(bool);
 		
 		response.getWriter().append("Served at:update ").append(request.getContextPath());
 	

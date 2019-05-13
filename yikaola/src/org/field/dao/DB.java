@@ -75,18 +75,28 @@ public class DB {
 			}
 			try {
 				pstm = con.prepareStatement(sql);
+				
 				for(int i = 0;i<params.length;i++) {
+					
 					pstm.setObject(i+1,params[i]);
+					
 				}
+				
 				count = pstm.executeUpdate();
 				
 				if(count > 0) {
+					
 					return true;
+					
 				}
 			}catch(SQLException e) {
+				
 				e.printStackTrace();
+				
 			}finally {
+				
 				close(null,pstm,con);
+				
 			}
 		}
 		return false;	
