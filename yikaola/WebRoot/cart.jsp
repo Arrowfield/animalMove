@@ -111,7 +111,6 @@
         		<img src="./static/img/index/02.webp" alt="">
         		<p>2018春秋新款韩版纯色毛衣外套中长款宽松显瘦连帽女针织开衫</p>
         		<em class="d-none"></em>
-        		
         		<div class='CartBtn'>
         			<button>确认删除</button>
         			<button>取消</button>

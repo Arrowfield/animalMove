@@ -12,8 +12,12 @@ function handleCart(id,num,price){
 
 function handleDel(id,name){
 	console.log(id,name);
+	
 	$(".MyModalBody>p").html(name);
-	$(".MymodalBody>em").html(id);
+	
+	console.log($(".MyModalBody>em"));
+	
+	$(".MyModalBody>em").html(id);
 }
 
 $('.CartBtn>button:nth-child(2)').click(function(){
@@ -26,6 +30,22 @@ $('.CartBtn>button:nth-child(1)').click(function(){
 	
 	//操作删除
 	//$("#myModal").click();
+	
+	var id = $(".MyModalBody>em").html();
+	
+	$.ajax({
+		
+		url:"AllCartHandle",
+		type:"get",
+		dataType:"json",
+		data:{method:"delete",id},
+		success:function(res){
+			
+			console.log(res);
+		
+		}
+		
+	})
 	
 });
 

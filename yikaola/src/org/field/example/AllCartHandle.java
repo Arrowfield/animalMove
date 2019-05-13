@@ -9,6 +9,8 @@ import javax.servlet.http.HttpSession;
 
 import org.field.dao.DB;
 
+import net.sf.json.JSONObject;
+
 /**
  * Servlet implementation class AllCartHandle
  */
@@ -66,10 +68,38 @@ public class AllCartHandle extends BaseServlet {
 	public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		response.getWriter().append("Served at:delete ").append(request.getContextPath());
+		JSONObject json = new JSONObject();
 		
-		//操作删除
+		String id = request.getParameter("id");
 		
+		HttpSession session = request.getSession();
+		
+		String tel = (String)session.getAttribute("tel");
+		
+		DB db = new DB();
+		
+		String sql = "delete from t_khdgb where tel = ? and kid = ?";
+		
+		Object[] params = {tel,id};
+		
+		boolean bool = db.executeUpdate(sql, params);
+		
+		if(bool) {
+			
+			json.put("code", 200);
+			
+			json.put("message", "删除成功");
+			
+			response.getWriter().print(json.toString());
+		}else {
+			
+			json.put("code", 401);
+			
+			json.put("message", "删除失败");
+			
+			response.getWriter().print(json.toString());
+			
+		}
 		
 	}
 
