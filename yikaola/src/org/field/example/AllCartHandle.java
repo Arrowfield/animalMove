@@ -30,6 +30,8 @@ public class AllCartHandle extends BaseServlet {
 	public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		//操作修改
+		
 		String id = request.getParameter("id");
 		
 		String price = request.getParameter("price");
@@ -57,7 +59,7 @@ public class AllCartHandle extends BaseServlet {
 		response.getWriter().append("Served at:update ").append(request.getContextPath());
 	
 	}
-
+ 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -65,6 +67,9 @@ public class AllCartHandle extends BaseServlet {
 		// TODO Auto-generated method stub
 		
 		response.getWriter().append("Served at:delete ").append(request.getContextPath());
+		
+		//操作删除
+		
 		
 	}
 

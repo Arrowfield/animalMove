@@ -1,7 +1,4 @@
 function handleCart(id,num,price){
-
-	
-	
 	$.ajax({
 		url:"AllCartHandle",
 		type:"post",
@@ -12,6 +9,26 @@ function handleCart(id,num,price){
 		}
 	})
 }
+
+function handleDel(id,name){
+	console.log(id,name);
+	$(".MyModalBody>p").html(name);
+	$(".MymodalBody>em").html(id);
+}
+
+$('.CartBtn>button:nth-child(2)').click(function(){
+	
+	$("#myModal").click();
+	
+});
+
+$('.CartBtn>button:nth-child(1)').click(function(){
+	
+	//操作删除
+	//$("#myModal").click();
+	
+});
+
 (function () {
 	
 	$.ajax({
@@ -66,7 +83,7 @@ function handleCart(id,num,price){
 						
 						<td class="text-danger h5">${(arr[4]*arr[5]).toFixed(2)}</td>
 						
-						<td>删除</td>
+						<td class="MyNewsDel" data-toggle="modal" data-target="#myModal" onclick="handleDel(${arr[0]},'${arr[3]}')">删除</td>
 					</tr>
 					`;
 				}

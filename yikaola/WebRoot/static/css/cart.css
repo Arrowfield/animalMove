@@ -1,3 +1,21 @@
+.MyNewsDel{
+	cursor:pointer;
+}
+
+.MyModalBody p{
+
+	overflow:hidden; 
+
+	text-overflow:ellipsis; 
+
+	display:-webkit-box;
+
+   -webkit-box-orient:vertical; 
+
+   -webkit-line-clamp:2;
+
+}
+
 .CartPageAddClass{
 	width:1090px;
 	margin: 0 auto;
