@@ -182,4 +182,14 @@
     <servlet-name>AllCartHandle</servlet-name>
     <url-pattern>/AllCartHandle</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetGoodsList</display-name>
+    <servlet-name>GetGoodsList</servlet-name>
+    <servlet-class>org.field.example.GetGoodsList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetGoodsList</servlet-name>
+    <url-pattern>/GetGoodsList</url-pattern>
+  </servlet-mapping>
 </web-app>

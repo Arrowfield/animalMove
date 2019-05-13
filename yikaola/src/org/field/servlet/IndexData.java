@@ -27,6 +27,7 @@ public class IndexData extends HttpServlet {
     }
 
 
+	@SuppressWarnings("null")
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -41,7 +42,7 @@ public class IndexData extends HttpServlet {
 		 *
 		 * */
 		/*获取数据库中的数据*/
-		Goods [] goods = new Goods[10];
+		Goods [] goods;
 		DB db = new DB();
 		String sql = "select * from t_spb";
 		Object[] params = null;
@@ -60,6 +61,8 @@ public class IndexData extends HttpServlet {
 			int lastNumber = rs.getRow();
 
 			//System.out.print(rs.getRow()+10);
+			
+			goods = new Goods[lastNumber];
 			
 			for(int i = 0;i<lastNumber;i++) {
 				
@@ -85,6 +88,7 @@ public class IndexData extends HttpServlet {
 				
 				myGoods.add(goods[i]);
 				
+				
 			}
 			
 			while(rs.next()) {
@@ -102,25 +106,25 @@ public class IndexData extends HttpServlet {
 		//System.out.print(myGoods);
 		
 		//Goods [] goodsYouLove = new Goods[10];
-		
-		Goods goods01 = new Goods(1,"牙膏",5.20,"/storage/01.png","好货");
-		Goods goods02 = new Goods(2,"牙膏",5.20,"/storage/01.png","好货");
-		Goods goods03 = new Goods(3,"牙膏",5.20,"/storage/01.png","好货");
-		Goods goods04 = new Goods(4,"牙膏",5.20,"/storage/01.png","好货");
-		Goods goods05 = new Goods(5,"牙膏",5.20,"/storage/01.png","好货");
-		Goods goods06 = new Goods(6,"牙膏",5.20,"/storage/01.png","好货");
-		Goods goods07 = new Goods(7,"牙膏",5.20,"/storage/01.png","好货");
-		
-		
+//		
+//		Goods goods01 = new Goods(1,"牙膏",5.20,"/storage/01.png","好货");
+//		Goods goods02 = new Goods(2,"牙膏",5.20,"/storage/01.png","好货");
+//		Goods goods03 = new Goods(3,"牙膏",5.20,"/storage/01.png","好货");
+//		Goods goods04 = new Goods(4,"牙膏",5.20,"/storage/01.png","好货");
+//		Goods goods05 = new Goods(5,"牙膏",5.20,"/storage/01.png","好货");
+//		Goods goods06 = new Goods(6,"牙膏",5.20,"/storage/01.png","好货");
+//		Goods goods07 = new Goods(7,"牙膏",5.20,"/storage/01.png","好货");
 		
 		
-		goods[0] = goods01;
-		goods[1] = goods02;
-		goods[2] = goods03;
-		goods[3] = goods04;
-		goods[4] = goods05;
-		goods[5] = goods06;
-		goods[6] = goods07;
+		
+		
+//		goods[0] = goods01;
+//		goods[1] = goods02;
+//		goods[2] = goods03;
+//		goods[3] = goods04;
+//		goods[4] = goods05;
+//		goods[5] = goods06;
+//		goods[6] = goods07;
 		
 		JSONObject json = new JSONObject();
 		json.put("code", 200);

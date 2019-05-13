@@ -50,7 +50,7 @@ $(function () {
 	        		   html += `
 	        			   <li>
 							<div class="show-border">
-								<img src="./static/img/index/02.webp">
+								<img src="./static/img/M01.webp">
 								
 								<div class="change-color">
 									<span class="my-first-span title"> 

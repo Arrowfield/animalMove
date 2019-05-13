@@ -15,8 +15,8 @@ CREATE TABLE  t_khb(
 	avatar VARCHAR(256)
 );
 
-INSERT INTO t_khb VALUES(1,'Feild','15118099616','123456','123456',null,null,null);
-INSERT INTO t_khb VALUES(2,'Tom','18186228854','123456','123456',null,null,null);
+INSERT INTO t_khb VALUES(null,'Feild','15118099616','123456','123456',null,null,null);
+INSERT INTO t_khb VALUES(null,'Tom','18186228854','123456','123456',null,null,null);
 
 #商品表
 CREATE TABLE t_spb(
@@ -46,8 +46,28 @@ INSERT INTO t_spb VALUES(NULL,'冷淡风赫本小黑裙女2019春装新款韩版
 INSERT INTO t_spb VALUES(NULL,'【i.t潮牌】Rocket x lunch 春季女士风衣','1000','180.00',"190.00",'春季新品女士风衣',"/storage/goods/02.png",1);
 INSERT INTO t_spb VALUES(NULL,'宽松落肩胸口侧边字母印染连帽卫衣男女同款','2000','190.00',"300.00",'优质面料，简约设计',"/storage/goods/03.png",2);
 INSERT INTO t_spb VALUES(NULL,'【刘亚仁宋仲基同款】Studio Concrete韩国进口数字心情中性款情侣卫衣男女同款1/LOW黑色','800','300.00','400.00','时尚潮流，基础简约',"/storage/goods/04.png",2);
+INSERT INTO t_spb VALUES(NULL,'冷淡风赫本小黑裙女2019春装新款韩版宽松显瘦抽绳系带灯笼袖波点连衣裙女长裙子潮','100','50.50',"55.50",'简约时尚，美式格调',"/storage/goods/01.png",1);
+INSERT INTO t_spb VALUES(NULL,'冷淡风赫本小黑裙女2019春装新款韩版宽松显瘦抽绳系带灯笼袖波点连衣裙女长裙子潮','100','50.50',"55.50",'简约时尚，美式格调',"/storage/goods/01.png",1);
+INSERT INTO t_spb VALUES(NULL,'冷淡风赫本小黑裙女2019春装新款韩版宽松显瘦抽绳系带灯笼袖波点连衣裙女长裙子潮','100','50.50',"55.50",'简约时尚，美式格调',"/storage/goods/01.png",1);
+INSERT INTO t_spb VALUES(NULL,'冷淡风赫本小黑裙女2019春装新款韩版宽松显瘦抽绳系带灯笼袖波点连衣裙女长裙子潮','100','50.50',"55.50",'简约时尚，美式格调',"/storage/goods/01.png",1);
+INSERT INTO t_spb VALUES(NULL,'冷淡风赫本小黑裙女2019春装新款韩版宽松显瘦抽绳系带灯笼袖波点连衣裙女长裙子潮','100','50.50',"55.50",'简约时尚，美式格调',"/storage/goods/01.png",1);
+INSERT INTO t_spb VALUES(NULL,'冷淡风赫本小黑裙女2019春装新款韩版宽松显瘦抽绳系带灯笼袖波点连衣裙女长裙子潮','100','50.50',"55.50",'简约时尚，美式格调',"/storage/goods/01.png",1);
+INSERT INTO t_spb VALUES(NULL,'【i.t潮牌】Rocket x lunch 春季女士风衣','1000','180.00',"190.00",'春季新品女士风衣',"/storage/goods/02.png",1);
+INSERT INTO t_spb VALUES(NULL,'【i.t潮牌】Rocket x lunch 春季女士风衣','1000','180.00',"190.00",'春季新品女士风衣',"/storage/goods/02.png",1);
+INSERT INTO t_spb VALUES(NULL,'【i.t潮牌】Rocket x lunch 春季女士风衣','1000','180.00',"190.00",'春季新品女士风衣',"/storage/goods/02.png",1);
+INSERT INTO t_spb VALUES(NULL,'【i.t潮牌】Rocket x lunch 春季女士风衣','1000','180.00',"190.00",'春季新品女士风衣',"/storage/goods/02.png",1);
+INSERT INTO t_spb VALUES(NULL,'【i.t潮牌】Rocket x lunch 春季女士风衣','1000','180.00',"190.00",'春季新品女士风衣',"/storage/goods/02.png",1);
+INSERT INTO t_spb VALUES(NULL,'宽松落肩胸口侧边字母印染连帽卫衣男女同款','2000','190.00',"300.00",'优质面料，简约设计',"/storage/goods/03.png",2);
+INSERT INTO t_spb VALUES(NULL,'宽松落肩胸口侧边字母印染连帽卫衣男女同款','2000','190.00',"300.00",'优质面料，简约设计',"/storage/goods/03.png",2);
+INSERT INTO t_spb VALUES(NULL,'宽松落肩胸口侧边字母印染连帽卫衣男女同款','2000','190.00',"300.00",'优质面料，简约设计',"/storage/goods/03.png",2);
+INSERT INTO t_spb VALUES(NULL,'宽松落肩胸口侧边字母印染连帽卫衣男女同款','2000','190.00',"300.00",'优质面料，简约设计',"/storage/goods/03.png",2);
+INSERT INTO t_spb VALUES(NULL,'宽松落肩胸口侧边字母印染连帽卫衣男女同款','2000','190.00',"300.00",'优质面料，简约设计',"/storage/goods/03.png",2);
 
+#向sku表插入数据
 INSERT INTO t_sku VALUES(NULL,'L X M S','1 2 3 4',1);
+INSERT INTO t_sku VALUES(NULL,'L X S','1 2 3 4',2);
+INSERT INTO t_sku VALUES(NULL,'L M S','1 2 4',3);
+INSERT INTO t_sku VALUES(NULL,'L X M S','1 2 3 4',4);
 
 #购物车表
 CREATE TABLE t_khdgb(

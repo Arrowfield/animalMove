@@ -44,7 +44,7 @@ public class AllCartHandle extends BaseServlet {
 		
 		String tel = (String)session.getAttribute("tel");
 		
-		System.out.printf("%s,%s,%s",id,price,num);
+		//System.out.printf("%s,%s,%s",id,price,num);
 		
 		float sum = Float.parseFloat(price) * Float.parseFloat(num);
 		
