@@ -42,6 +42,20 @@ $('.CartBtn>button:nth-child(1)').click(function(){
 		success:function(res){
 			
 			console.log(res);
+			
+			if(res.code == 200){
+				
+				$("#myModal").click();
+				
+				getToast("删除成功");
+				
+				setTimeout(()=>{
+					
+					history.go(0);
+				
+				},1000);
+				
+			}
 		
 		}
 		
@@ -63,14 +77,18 @@ $('.CartBtn>button:nth-child(1)').click(function(){
 				
 				var html = "";
 				
+				var sum = 0;
+				
 				for(var i=0;i<res.data.length;i++){
 					
 					var arr = res.data[i];
 					
+					sum += arr[4] * arr[5]; 
+					
 					html += `
 					
 					<tr>
-						<td><input type="checkbox" class="my_input"></td>
+						<td><input checked type="checkbox" class="my_input"></td>
 						<td>
 							<div class="CartAddFlex">
 								<div>
@@ -113,6 +131,9 @@ $('.CartBtn>button:nth-child(1)').click(function(){
 				html += `
 					<tr><td colspan="7" class="LoadMore text-center">加载更多</td></tr>
 				`
+				//总价复制
+				
+				$('.SumPrice i').html(sum.toFixed(2));
 				
 				$(html).replaceAll('table>tbody>tr');
 				
@@ -152,15 +173,12 @@ $('.CartBtn>button:nth-child(1)').click(function(){
     
     // 修改商品小计
     
-    
-    
     var $sub = $(this).parent().parent().next();
-    
-    //console.log($sub);
     
     $sub.html(`${(price*i).toFixed(2)}`);
     
     // 修改商品总价
+    
     var total = 0;
     
     tds = $('table>tbody>tr>td.h5');
@@ -170,7 +188,8 @@ $('.CartBtn>button:nth-child(1)').click(function(){
       total += parseFloat($(td).html());
     }
     
-    $('table').next().children(":nth-child(8)").html(`￥${total.toFixed(2)}`);
+    $(".SumPrice i").html(total.toFixed(2));
+    
   });
   // 功能结束
 })();

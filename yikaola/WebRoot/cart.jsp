@@ -70,7 +70,7 @@
 				<table class="table CartTableClass">
 					<thead>
 					<tr>
-						<th><input type="checkbox" class="my_input"></th>
+						<th></th>
 						<th colspan="2">商品信息</th>
 						<th>单价（元）</th>
 						<th>数量</th>
@@ -88,13 +88,18 @@
 					
 				</table>
 				<div id="my_money" class="CartFooter">
-				<div>
-					<input type="checkbox" class="my_input"> <span>全选</span>
-				</div>
-					 <span>删除</span> <span>清空失效商品</span>
-					<span>移入收藏夹</span> <span>共有 <b class="text-danger">2</b> 件商品
-					</span>
-					<button class="my_btn1" onclick='goToPage()'>去支付 ></button>
+					 <div>
+					    <input checked type="checkbox" class="my_input"> 
+					    <span>全选</span>
+					 </div>
+					 <span>删除</span> 
+					 <span>清空失效商品</span>
+					 <span>移入收藏夹</span> 
+					
+					 <div>
+					 	<span class="SumPrice">总共：￥<i>123132</i></span>
+					 	<button class="my_btn1" onclick='goToPage()'>去支付 ></button>
+					 </div>
 				</div>
 			</div>
 		</div>
