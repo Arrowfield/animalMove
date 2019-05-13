@@ -83,7 +83,7 @@ public class GetGoodsList extends BaseServlet {
 			
 			ResultSetMetaData rsmd = rs.getMetaData();
 			
-			/*while(rs.next()) {
+			while(rs.next()) {
 				
 				Map m = new HashMap();
 				
@@ -98,17 +98,19 @@ public class GetGoodsList extends BaseServlet {
 				
 				list.add(m);
 				
-			}*/
+			}
 			
-			rs.last();
+			/*rs.last();
 			
 			int lastNumber = rs.getRow();
 			
+			System.out.print(lastNumber);
+			
+			Map m = new HashMap();
+			
 			for(int i = 0;i<lastNumber;i++) {
 				
-				Map m = new HashMap();
-				
-				/*Object[] obj = {
+				Object[] obj = {
 						
 						rs.getObject(1),
 						rs.getObject(2),
@@ -118,7 +120,7 @@ public class GetGoodsList extends BaseServlet {
 						rs.getObject(6),
 						rs.getObject(7),
 						rs.getObject(8),
-				};*/
+				};
 				
 				for(int j = 1;j <= rsmd.getColumnCount();j++) {
 				
@@ -127,9 +129,10 @@ public class GetGoodsList extends BaseServlet {
 					m.put(colName, rs.getString(colName));
 				}
 				
+				
 				list.add(m);
 				
-			}
+			}*///这种方法有问题先不解决
 			
 			json.put("code", 200);
 			
@@ -152,6 +155,8 @@ public class GetGoodsList extends BaseServlet {
 			mTow.put("total",sum);//总跳数
 			
 			mTow.put("currentPage",page);//当前页
+			
+			mTow.put("pageSize", pageSize);
 			
 			json.put("page", mTow);
 			
