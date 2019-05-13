@@ -1,4 +1,7 @@
   //操作分页
+		
+	var page = {}; 
+
 	function handlePage(page){
  	$.ajax({
 	  url:"GetGoodsList",
@@ -6,9 +9,12 @@
 	  data:{method:"handlePage",page:page},
 	  type:"get",
 	  success:function(res){
+		   
 		  console.log(res);
 		  
 		  var html = "";
+		  
+		  page = res.page;
 		  
 		  for(var i = 0;i<res.data.length;i++){
 			  
@@ -62,8 +68,17 @@
  		
  		//用户点击最后一页时
  		
- 		if($li.hasClass("prev")){
+ 		if($(this).children('a').html() != 1 && !$li.hasClass("prev")){
+ 			
+ 			$(".prev").removeClass("disabled");
+ 		}else{
+ 			
+ 			$(".prev").addClass("disabled");
+ 			
+ 		}
  		
+ 		if($li.hasClass("prev")){
+ 			
  			return;
  		
  		}else if($li.hasClass("next")){
