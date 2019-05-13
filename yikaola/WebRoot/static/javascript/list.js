@@ -1,8 +1,9 @@
   //操作分页
+	function handlePage(page){
  	$.ajax({
 	  url:"GetGoodsList",
 	  dataType:"json",
-	  data:{method:"handlePage"},
+	  data:{method:"handlePage",page:page},
 	  type:"get",
 	  success:function(res){
 		  console.log(res);
@@ -24,6 +25,12 @@
 			  ` 
 		  }
 		  
+		  $(".ListPageUl>li").remove();
+		  
+		  $(".ListPageUl").append("<li></li>");
+		  
+		  $(html).replaceAll(".ListPageUl>li");//数量
+		  
 		  
 		  var htmlTow = "";
 		  
@@ -31,22 +38,45 @@
 			  
 			  htmlTow += `
 			  
-			  <li class="page-item"><a href="#" class="page-link">${j+1}</a></li>
+			  <li class="page-item"><a href="javascript:" class="page-link">${j+1}</a></li>
 			  
 			  ` 
 		  }
 		  
-		  $(".pagination>li:nth-child(1)").after(htmlTow);
+		  $(".pagination>li:not(:first-child,:last-child)").remove();
 		  
-		  $(html).replaceAll(".ListPageUl>li");
+		  $(".pagination>li:nth-child(1)").after(htmlTow);//分页
+		  
+		  
 	  }
  	});
+	}
+	
+	handlePage();
  	
  	$("ul.pagination").on("click","li",function(){
  		
  		var $li = $(this);
  		
+ 		//情况当用户点击第一页时
  		
+ 		//用户点击最后一页时
+ 		
+ 		if($li.hasClass("prev")){
+ 		
+ 			return;
+ 		
+ 		}else if($li.hasClass("next")){
+ 			
+ 			return;
+ 			
+ 		}else{
+ 			
+ 			handlePage($(this).children("a").html());
+ 		}
+
+ 		
+ 		getToast("加载中...");
  		
  	})
   
