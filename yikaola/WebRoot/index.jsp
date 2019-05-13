@@ -37,7 +37,7 @@
 				</ul>
 			</div>
 			<ul class="right-nav">
-				<li><a href="./static/login.html?uid=1">首页</a></li>
+				<li><a href="./index.jsp">首页</a></li>
 				<li><a href="./list.jsp">男装</a></li>
 				<li>女装</li>
 				<li>儿童装</li>
