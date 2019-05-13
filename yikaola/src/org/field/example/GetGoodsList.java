@@ -1,12 +1,13 @@
 package org.field.example;
 
 import java.io.IOException;
+
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -15,7 +16,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.field.bean.Goods;
 import org.field.dao.DB;
 
 
@@ -40,22 +40,45 @@ public class GetGoodsList extends BaseServlet {
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void handlePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		// TODO Auto-generated method stub
 		
 		JSONObject json = new JSONObject();
 		
+		//int page = Integer.parseInt(request.getParameter("page"));
+		
+		String page = request.getParameter("page");
+				
 		DB db = new DB();
 		
-		String sql = "select * from t_spb";
+		//int page = 1;
 		
-		db.doPstm(sql, null);
+		if(page == null) {
+			
+			page = "1";
+			
+		}
+		
+		int pageSize = 10;
+		
+		int offset = pageSize * (Integer.parseInt(page) - 1); 
+		
+		String sql = "select * from t_spb limit ? , ?";//偏移量 数量
+		
+		Object[] params = {offset,pageSize};
+		
+		db.doPstm(sql, params);
 		
 		ResultSet rs = db.getRs();
 		
 		//LinkedList<Object> myGoods = new LinkedList<Object>();
 		
-		List list = new ArrayList();
+		//总条数
+		//当前页
 		
+		
+		List list = new ArrayList();
+		     
 		try {
 			
 			ResultSetMetaData rsmd = rs.getMetaData();
@@ -111,6 +134,26 @@ public class GetGoodsList extends BaseServlet {
 			json.put("code", 200);
 			
 			json.put("data", list);
+			
+			//获取总页数
+			
+			String sqlTow = "select * from t_spb";
+			
+			db.doPstm(sqlTow, null);
+			
+			ResultSet rsTow = db.getRs();
+			
+			rsTow.last();
+			
+			int sum = rsTow.getRow();
+			
+			Map mTow = new HashMap();
+			
+			mTow.put("total",sum);//总跳数
+			
+			mTow.put("currentPage",page);//当前页
+			
+			json.put("page", mTow);
 			
 			response.getWriter().print(json.toString());
 			
