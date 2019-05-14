@@ -94,5 +94,19 @@
 		</div>
 	</section>
 	<%@ include file='../common/footer.jsp'%>
+	<script>
+	
+		//获取购物车的数据
+		
+		$.ajax({
+			url:"CartMessage",
+			type:"get",
+			dataType:"json",
+			success:function(res){
+				console.log(res);
+			}
+		})
+	
+	</script>
 </body>
 </html>

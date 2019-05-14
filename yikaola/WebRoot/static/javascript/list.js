@@ -55,6 +55,12 @@
 			  ` 
 		  }
 		  
+		  if(res.page.total<=10){
+			  
+			  $(".pagination").hide();
+			  
+		  }
+		  
 		  
 		  $(".pagination>li:not(:first-child,:last-child)").remove();
 		  
@@ -140,6 +146,42 @@
 	 		
 	 	})
 	 	//结束
- 	
+ 
+//事件绑定
+	 	
+function handleRange(){
+	
+	var min = "";
+	var max = "";
+	
+	min = $('.min').val();
+	
+	max = $('.max').val();
+	
+	
+	if(!min || !max || min > max){
+		
+		getToast("请输入正确数值");
+		
+		return;
+	}
+	
+	$.ajax({
+		url:"GetGoodsList",
+		data:{method:"handleRange",max,min},
+		dataType:"json",
+		type:"get",
+		success:function(res){
+			
+			console.log(res);
+		}
+	})
+}
+	 
+//构造数据
+function makeData(){
+	
+}	 
+	 
  	
   

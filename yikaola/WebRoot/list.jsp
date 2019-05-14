@@ -148,16 +148,20 @@
 					<a href="#" class="border-right text-danger">综合</a> <a href="#"
 						class="border-right">销量</a> <a href="#" class="border-right">新品</a>
 				</div>
+				
 				<div class="d-flex text-muted mr-3">
 					<p class="mb-0 border ">
-						<span>￥</span><input type="text">
+						<span>￥</span>
+						<input class="min" type="text">
 					</p>
 					<span class="pl-2 pr-2 ">-</span>
 					<p class="mb-0 border mr-3">
-						<span>￥</span><input type="text">
+						<span>￥</span>
+						<input class="max" type="text">
 					</p>
-					<button class="bg-white ">确定</button>
+					<button onclick="handleRange()" class="bg-white handleRange">确定</button>
 				</div>
+				
 				<div>
 					<button class="pl-3 pr-3 rounded-0 bg-white ">50-80</button>
 					<button class="pl-3 pr-3 bg-white  rounded-0">80-90</button>

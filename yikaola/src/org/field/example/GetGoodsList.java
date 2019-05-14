@@ -169,14 +169,70 @@ public class GetGoodsList extends BaseServlet {
 		}
 		
 	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	@Override
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	
+
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public void handleRange(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		//进行价格的范围搜索
+		
+		String min = request.getParameter("min");
+		
+		String max = request.getParameter("max");
+		
+		//System.out.printf("%s%s",min,max);
+		
+		DB db = new DB();
+		
+		JSONObject json = new JSONObject();
+		
+		String sql = "select * from t_spb where sprice > ? and sprice < ?";
+		
+		Object[] params = {min,max};
+		
+		db.doPstm(sql, params);
+		
+		ResultSet rs = db.getRs();
+		
+		try {
+			
+			List good = new ArrayList();
+			
+			ResultSetMetaData rsmd = rs.getMetaData();
+			
+			while(rs.next()) {
+				
+				Map m = new HashMap();
+				
+				for(int i = 1;i<=rsmd.getColumnCount();i++) {
+					
+					String  colName = rsmd.getColumnName(i);
+					
+					m.put(colName, rs.getString(colName));
+					
+				}
+				
+				good.add(m);
+				
+			}
+			
+			json.put("code", 200);
+			
+			json.put("data",good);
+			
+			response.getWriter().print(json.toString());
+			
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+		
 	}
 
 }
