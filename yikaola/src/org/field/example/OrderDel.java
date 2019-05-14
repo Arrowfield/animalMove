@@ -37,7 +37,29 @@ public class OrderDel extends HttpServlet {
 		
 		DB db = new DB();
 		
-		String sqlString = "";
+		String sqlString = "delete from t_khdgb where kid = ?";
+		
+		Object[] params = {idString};
+		
+		boolean bool = db.executeUpdate(sqlString, params);
+		
+		if(bool) {
+			
+			json.put("code", 200);
+			
+			json.put("message", "删除成功");
+			
+			response.getWriter().print(json.toString());
+			
+		}else {
+			
+			json.put("code", 401);
+			
+			json.put("message", "删除失败");
+			
+			response.getWriter().print(json.toString());
+			
+		}
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}

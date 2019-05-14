@@ -180,11 +180,12 @@
 					<div class='MyModalBody'>
 						<img src="./static/img/index/02.webp" alt="">
 						<p class="name">2018春秋新款韩版纯色毛衣外套中长款宽松显瘦连帽女针织开衫</p>
+						<em class="d-none DelId"></em>
 						<div class='CartBtn'>
 							<button onclick="handleRelDel()">确认删除</button>
 							<button onclick="$('#myModal').click()">取消</button>
 						</div>
-						<p class="id"></p>
+						<p class="id d-none"></p>
 					</div>
 				</div>
 			</div>

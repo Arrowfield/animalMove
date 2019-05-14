@@ -191,6 +191,19 @@ $('#my_bar>ul>li>a').click(function (e) {
 		  dataType:"json",
 		  success:function(res){
 			  console.log(res);
+			  
+			  if(res.code == 200){
+				  
+				  getToast("删除成功");
+				  
+				  $('#myModal').click()
+				  
+				  setTimeout(()=>{
+					  
+					  window.history.go(0);
+					  
+				  },1000);
+			  }
 		  }
 	  })
   }
