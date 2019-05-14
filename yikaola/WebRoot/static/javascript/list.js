@@ -113,7 +113,13 @@
 	 			console.log(page.total/page.pageSize,page.currentPage);
 	 			
 	 			if(page.total/page.pageSize == page.currentPage){
+	 				
+	 				//$btn.attr("disabled",true);
+	 				
 	 				return;
+	 			}else{
+	 				
+	 				
 	 			}
 	 			
 	 			handlePage(++page.currentPage);

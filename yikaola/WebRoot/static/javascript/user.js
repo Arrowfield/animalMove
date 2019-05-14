@@ -143,9 +143,11 @@ $('#my_bar>ul>li>a').click(function (e) {
 		  success:function(res){
 			  
 			  if(res.code == 301){
+				  
 				  $('table>tbody>tr').remove();
-				  $('table>tbody').append('<tr></tr>');
+				  
 				  $('.add').show();
+				  
 			  }else{
 				  
 				  $('.add').hide();
@@ -168,6 +170,10 @@ $('#my_bar>ul>li>a').click(function (e) {
 						  </tr>
 					  `;
 				  }
+				  
+				  $('table>tbody>tr').remove();
+				  
+				  $('table>tbody').append('<tr></tr>');
 				  
 				  $(html).replaceAll('tbody>tr');
 				  
