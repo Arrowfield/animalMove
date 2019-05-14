@@ -10,11 +10,11 @@
 	  type:"get",
 	  success:function(res){
 		   
-		  console.log(res);
+		  //console.log(res);
 		  
 		  var html = "";
 		  
-		  page = res.page;
+		  //page = res.page;
 		  
 		  for(var i = 0;i<res.data.length;i++){
 			  
@@ -31,6 +31,7 @@
 			  ` 
 		  }
 		  
+		  
 		  $(".ListPageUl>li").remove();
 		  
 		  $(".ListPageUl").append("<li></li>");
@@ -40,58 +41,84 @@
 		  
 		  var htmlTow = "";
 		  
-		  for(var j=0;j<res.page.total/res.page.pageSize;j++){
+		  for(var j=1;j<=res.page.total/res.page.pageSize;j++){
 			  
 			  htmlTow += `
 			  
-			  <li class="page-item"><a href="javascript:" class="page-link">${j+1}</a></li>
+			  <li class="page-item ${j == res.page.currentPage ? 'active': ''}">
+				  <button class="page-link ">${j}</button>
+			  </li>
 			  
 			  ` 
 		  }
+		  
 		  
 		  $(".pagination>li:not(:first-child,:last-child)").remove();
 		  
 		  $(".pagination>li:nth-child(1)").after(htmlTow);//分页
 		  
 		  
-	  }
- 	});
+		  //为添加的dom元素绑定事件
+	  	}
+ 		});
 	}
 	
 	handlePage();
+	
+	 $("ul.pagination").on("click","li>button",function(){
+	 		
+	 		var $btn = $(this);
+	 		
+	 		//console.log(page);
+	 		
+	 		if($(this).html() == page){
+	 			
+	 			$(this).css("border","1px solid gray");
+	 		}
+	 		
+	 		if($(this).html() != 1){
+	 			
+	 			$('.prev').attr("disabled",false).parent().removeClass("disabled");
+	 			
+	 			
+	 		}else{
+	 			
+	 			$('.prev').attr("disabled",true).parent().addClass('disabled');;
+	 		}
+	 		
+	 		if($btn.parent().next().hasClass("next")){
+	 			
+	 			
+	 			
+	 			//$btn.parent().next().addClass("disabled").children().attr('disabled',true);
+	 			
+	 		}else{
+	 			
+	 			
+	 			
+	 			//$btn.parent().next().removeClass("disabled").children().attr('disabled',false);
+	 		}
+	 		
+	 		if($(this).hasClass("prev")){
+	 			
+	 			return;
+	 			
+	 		}else if($btn.hasClass('next')){
+	 			
+	 			return;
+	 			
+	 		}else{
+	 			
+	 			handlePage($btn.html());
+	 			
+	 			
+	 			//$btn.addClass('active');
+	 			
+	 			getToast("加载中...");
+	 		}
+	 		
+	 	})
+	 	//结束
  	
- 	$("ul.pagination").on("click","li",function(){
- 		
- 		var $li = $(this);
- 		
- 		//情况当用户点击第一页时
- 		
- 		//用户点击最后一页时
- 		
- 		if($(this).children('a').html() != 1 && !$li.hasClass("prev")){
- 			
- 			$(".prev").removeClass("disabled");
- 		}else{
- 			
- 			$(".prev").addClass("disabled");
- 			
- 		}
- 		
- 		if($li.hasClass("prev")){
- 			
- 			return;
- 		
- 		}else if($li.hasClass("next")){
- 			
- 			return;
- 			
- 		}else{
- 			
- 			handlePage($(this).children("a").html());
- 		}
-
- 		
- 		getToast("加载中...");
- 		
- 	})
+ 	
   

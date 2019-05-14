@@ -91,7 +91,7 @@ public class GetGoodsList extends BaseServlet {
 					
 					String colName = rsmd.getColumnName(j);
 					
-					System.out.print(colName);
+					//System.out.print(colName);
 					
 					m.put(colName, rs.getString(colName));
 				}

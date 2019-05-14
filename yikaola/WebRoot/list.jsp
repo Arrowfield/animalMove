@@ -172,10 +172,10 @@
 			<div class="m-auto my_small ListPageFlex" style="width: 1090px">
 				<ul class="pagination">
 					<li class="page-item disabled prev">
-						<a href="javascript:" class="page-link ">上一页</a>
+						<button disabled  class="page-link prev">上一页</button>
 					</li>
 					<li class="page-item next">
-						<a href="javascript:" class="page-link">下一页</a>
+						<button  class="page-link next">下一页</button>
 					</li>
 				</ul>
 			</div>
