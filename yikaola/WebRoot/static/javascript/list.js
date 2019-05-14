@@ -16,6 +16,9 @@
 		  
 		  //page = res.page;
 		  
+		  
+		  sessionStorage.setItem("page",JSON.stringify(res.page));
+		  
 		  for(var i = 0;i<res.data.length;i++){
 			  
 			  var obj = res.data[i];
@@ -66,15 +69,13 @@
 	handlePage();
 	
 	 $("ul.pagination").on("click","li>button",function(){
+		 
+		 	var page = JSON.parse(sessionStorage.getItem("page"));
+		 	
+		 	console.log(page);
 	 		
 	 		var $btn = $(this);
 	 		
-	 		//console.log(page);
-	 		
-	 		if($(this).html() == page){
-	 			
-	 			$(this).css("border","1px solid gray");
-	 		}
 	 		
 	 		if($(this).html() != 1){
 	 			
@@ -101,9 +102,23 @@
 	 		
 	 		if($(this).hasClass("prev")){
 	 			
+	 			handlePage(--page.currentPage);
+	 			
+	 			getToast("加载中...");
+	 			
 	 			return;
 	 			
 	 		}else if($btn.hasClass('next')){
+	 			
+	 			console.log(page.total/page.pageSize,page.currentPage);
+	 			
+	 			if(page.total/page.pageSize == page.currentPage){
+	 				return;
+	 			}
+	 			
+	 			handlePage(++page.currentPage);
+	 			
+	 			getToast("加载中...");
 	 			
 	 			return;
 	 			
