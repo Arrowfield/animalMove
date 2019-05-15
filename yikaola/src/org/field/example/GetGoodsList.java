@@ -39,6 +39,7 @@ public class GetGoodsList extends BaseServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	@SuppressWarnings({ "rawtypes", "unchecked" })
+	
 	public void handlePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// TODO Auto-generated method stub
@@ -48,6 +49,28 @@ public class GetGoodsList extends BaseServlet {
 		//int page = Integer.parseInt(request.getParameter("page"));
 		
 		String page = request.getParameter("page");
+		
+		String max =  request.getParameter("max");
+		
+		String min = request.getParameter("min");
+		
+		
+		//System.out.print(max);
+		
+		//System.out.print(Boolean.getBoolean(max));
+		
+		
+		if(max == null) {
+			
+			//System.out.print(0);
+			
+			max = Integer.toString(Integer.MAX_VALUE);
+		}
+		
+		if(min == null) {
+			
+			min = Integer.toString(0);
+		}
 				
 		DB db = new DB();
 		
@@ -63,9 +86,9 @@ public class GetGoodsList extends BaseServlet {
 		
 		int offset = pageSize * (Integer.parseInt(page) - 1); 
 		
-		String sql = "select * from t_spb limit ? , ?";//偏移量 数量
+		String sql = "select * from t_spb where sprice > ? and sprice < ? order by sprice limit ? , ?";//偏移量 数量
 		
-		Object[] params = {offset,pageSize};
+		Object[] params = {min,max,offset,pageSize};
 		
 		db.doPstm(sql, params);
 		
@@ -74,6 +97,7 @@ public class GetGoodsList extends BaseServlet {
 		//LinkedList<Object> myGoods = new LinkedList<Object>();
 		
 		//总条数
+		
 		//当前页
 		
 		
@@ -140,9 +164,11 @@ public class GetGoodsList extends BaseServlet {
 			
 			//获取总页数
 			
-			String sqlTow = "select * from t_spb";
+			String sqlTow = "select * from t_spb where sprice > ? and sprice < ?";
 			
-			db.doPstm(sqlTow, null);
+			Object[] param = {min,max};
+			
+			db.doPstm(sqlTow,param);
 			
 			ResultSet rsTow = db.getRs();
 			
@@ -221,6 +247,29 @@ public class GetGoodsList extends BaseServlet {
 				good.add(m);
 				
 			}
+			
+			
+			//获取总页数
+			
+			String sqlTow = "select * from t_spb";
+			
+			db.doPstm(sqlTow, null);
+			
+			ResultSet rsTow = db.getRs();
+			
+			rsTow.last();
+			
+			int sum = rsTow.getRow();
+			
+			Map mTow = new HashMap();
+			
+			mTow.put("total",sum);//总跳数
+			
+			//mTow.put("currentPage",page);//当前页
+			
+			mTow.put("pageSize", 10);
+			
+			json.put("page", mTow);
 			
 			json.put("code", 200);
 			

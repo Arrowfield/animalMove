@@ -2,75 +2,19 @@
 		
 	var page = {}; 
 
-	function handlePage(page){
+function handlePage(page){
  	$.ajax({
 	  url:"GetGoodsList",
 	  dataType:"json",
 	  data:{method:"handlePage",page:page},
 	  type:"get",
 	  success:function(res){
-		   
-		  //console.log(res);
 		  
-		  var html = "";
+		  makeData(res);
 		  
-		  //page = res.page;
-		  
-		  
-		  sessionStorage.setItem("page",JSON.stringify(res.page));
-		  
-		  for(var i = 0;i<res.data.length;i++){
-			  
-			  var obj = res.data[i];
-			  
-			  html += `
-				  <li class="pb-1">
-				  	<a href="#"> 
-				  		<img src="./static/img/M01.webp" alt="" class="my_img">
-						<p class="mb-0">${obj.sname}</p> 
-						<span>¥${obj.sprice}</span>
-				  	</a>
-				  </li>
-			  ` 
-		  }
-		  
-		  
-		  $(".ListPageUl>li").remove();
-		  
-		  $(".ListPageUl").append("<li></li>");
-		  
-		  $(html).replaceAll(".ListPageUl>li");//数量
-		  
-		  
-		  var htmlTow = "";
-		  
-		  for(var j=1;j<=res.page.total/res.page.pageSize;j++){
-			  
-			  htmlTow += `
-			  
-			  <li class="page-item ${j == res.page.currentPage ? 'active': ''}">
-				  <button class="page-link ">${j}</button>
-			  </li>
-			  
-			  ` 
-		  }
-		  
-		  if(res.page.total<=10){
-			  
-			  $(".pagination").hide();
-			  
-		  }
-		  
-		  
-		  $(".pagination>li:not(:first-child,:last-child)").remove();
-		  
-		  $(".pagination>li:nth-child(1)").after(htmlTow);//分页
-		  
-		  
-		  //为添加的dom元素绑定事件
-	  	}
- 		});
-	}
+	  }
+ 	});
+}
 	
 	handlePage();
 	
@@ -156,10 +100,9 @@ function handleRange(){
 	
 	min = $('.min').val();
 	
-	max = $('.max').val();
+	max = $('.max').val();	
 	
-	
-	if(!min || !max || min > max){
+	if(!min || !max || !(min > max)){
 		
 		getToast("请输入正确数值");
 		
@@ -168,19 +111,74 @@ function handleRange(){
 	
 	$.ajax({
 		url:"GetGoodsList",
-		data:{method:"handleRange",max,min},
+		data:{method:"handlePage",max,min},
 		dataType:"json",
 		type:"get",
 		success:function(res){
 			
-			console.log(res);
+			makeData(res);
+			
+			
 		}
 	})
 }
 	 
 //构造数据
-function makeData(){
-	
+function makeData(res){
+	  var html = "";
+	  
+	  //page = res.page;
+	  
+	  sessionStorage.setItem("page",JSON.stringify(res.page));
+	  
+	  for(var i = 0;i<res.data.length;i++){
+		  
+		  var obj = res.data[i];
+		  
+		  html += `
+			  <li class="pb-1">
+			  	<a href="#"> 
+			  		<img src="./static/img/M01.webp" alt="" class="my_img">
+					<p class="mb-0">${obj.sname}</p> 
+					<span>¥${obj.sprice}</span>
+			  	</a>
+			  </li>
+		  ` 
+	  }
+	  
+	  
+	  $(".ListPageUl>li").remove();
+	  
+	  $(".ListPageUl").append("<li></li>");
+	  
+	  $(html).replaceAll(".ListPageUl>li");//数量
+	  
+	  
+	  var htmlTow = "";
+	  
+	  for(var j=1;j<=res.page.total/res.page.pageSize;j++){
+		  
+		  htmlTow += `
+		  
+		  <li class="page-item ${j == res.page.currentPage ? 'active': ''}">
+			  <button class="page-link ">${j}</button>
+		  </li>
+		  
+		  ` 
+	  }
+	  
+	  if(res.page.total<=10){
+		  
+		  $(".pagination").hide();
+		  
+	  }
+	  
+	  
+	  $(".pagination>li:not(:first-child,:last-child)").remove();
+	  
+	  $(".pagination>li:nth-child(1)").after(htmlTow);//分页
+	  
+	  //为添加的DOM元素绑定事件
 }	 
 	 
  	
