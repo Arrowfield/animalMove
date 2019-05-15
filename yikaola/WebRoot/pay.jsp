@@ -65,18 +65,30 @@
 		justify-content:center;
 		flex-direction:column;
 	}
+	.AllGoods{
+		list-style:none;
+		margin:0;
+		padding:10px 0;
+	}
+	.AllGoods li{
+		padding-bottom:10px;
+	}
+	.AllGoods li>span:nth-child(2){
+		padding-left:5px;
+	}
 </style>
 <body>
 	<%@ include file='../common/header.jsp'%>
 	<section class='PayPage'>
 		<p class='PayPageTitle'>4.8-5.14白付美分期享受前3期免息啦</p>
-		<p>2018秋季新款Chic韩版休闲长款纯色T恤女短袖连衣裙修身显瘦百搭简约基础款圆领长裙裙子</p>
+		<ul class="AllGoods"><li></li></ul>
+		
 		<p>请您于 <span>0时1分5秒</span>内完成支付 (逾期将被取消)</p>
 		<hr>
 		<div class="PayForWx">
 			<div>
 				<h4>微信支付</h4>
-				<h5>实付金额：￥29.90</h5>
+				<h5>实付金额：￥<em class="PaySum">29.90</em></h5>
 			</div>
 			
 			<div class="PayFlex">
@@ -94,19 +106,39 @@
 		</div>
 	</section>
 	<%@ include file='../common/footer.jsp'%>
-	<script>
-	
-		//获取购物车的数据
+<script>
+
+//获取购物车的数据
+$.ajax({
+	url:"CartMessage",
+	type:"get",
+	dataType:"json",
+	success:function(res){
+		console.log(res);
 		
-		$.ajax({
-			url:"CartMessage",
-			type:"get",
-			dataType:"json",
-			success:function(res){
-				console.log(res);
-			}
-		})
-	
-	</script>
+		var html = "";
+		
+		var sum = 0;
+		
+		for(var i=0;i<res.data.length;i++){
+			
+			var arr = res.data[i];
+			
+			sum += arr[5]*arr[4];
+
+			
+			html += "<li><span>"+arr[3]+"</span><span>x"+arr[4]+"</span></li>";
+			
+		}
+		
+		$(html).replaceAll(".AllGoods>li");
+		
+		//总价
+		
+		$(".PaySum").html(sum.toFixed(2));
+	}
+})
+
+</script>
 </body>
 </html>
