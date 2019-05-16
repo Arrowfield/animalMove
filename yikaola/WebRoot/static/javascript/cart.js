@@ -63,6 +63,61 @@ $('.CartBtn>button:nth-child(1)').click(function(){
 	
 });
 
+function handleClick(e,id){
+	//判断当前是否选中状态
+	
+	//console.log(e.target);
+	
+	var dom = e.target;
+	
+	//console.log($(e.target).is(":checked"),id);
+	
+	var status = '';
+	
+	
+	
+	if($(e.target).is(":checked")){
+		
+		//选中状态调数据库将status更改为1;
+		
+		status = 1;
+		
+		//修改总价
+		
+		
+		var sum = parseFloat($(".SumPrice i").html());
+		
+		sum += parseFloat($(e.target).parent().nextAll('.h5').html());
+		
+		
+		
+		$(".SumPrice i").html(sum.toFixed(2));
+		
+	}else{
+		
+		status = 0;
+		
+		var sum = $(".SumPrice i").html();
+		
+		sum -= $(e.target).parent().nextAll('.h5').html();
+		
+		$(".SumPrice i").html(sum.toFixed(2));
+		
+		//修改总价
+		
+	}
+	
+	$.ajax({
+		url:"AllCartHandle",
+		data:{method:"status",status,id},
+		dataType:"json",
+		success:function(res){
+			
+			console.log(res);
+		}
+	})
+}	
+
 (function () {
 	
 	$.ajax({
@@ -92,7 +147,9 @@ $('.CartBtn>button:nth-child(1)').click(function(){
 					html += `
 					
 					<tr>
-						<td><input ${arr[7] == 1?'checked':""} type="checkbox" class="my_input"></td>
+						<td>
+							<input onclick="handleClick(event,${arr[0]})" ${arr[7] == 1?'checked':""} type="checkbox" class="my_input">
+						</td>
 						<td>
 							<div class="CartAddFlex">
 								<div>
@@ -145,10 +202,13 @@ $('.CartBtn>button:nth-child(1)').click(function(){
 			
 		}
 	})
+	
+
 
   // 功能:用户单击加入购物车就可以实现总价的计算
   $('table').on('click', 'BUTTON', function () {
-    $button = $(this);
+    
+	$button = $(this);
     
     // 修改商品个数
     $input = $button.parent().children('input');
@@ -187,9 +247,24 @@ $('.CartBtn>button:nth-child(1)').click(function(){
     
     tds = $('table>tbody>tr>td.h5');
     
-    for (var td of tds) {
+    inputs = $('table>tbody>tr>td:nth-child(1)>input');
+    
+    //console.log(tds,inputs);
+    
+   
+    for(var i=0;i<inputs.length;i++){
     	
-      total += parseFloat($(td).html());
+    	if($(inputs[i]).is(":checked")){
+    		
+    		for(var j=0;j<tds.length;j++){
+    			
+    			if(j == i){
+    				
+    				total += parseFloat($(tds[j]).html());
+    			}
+    			
+    		}
+    	}
     }
     
     $(".SumPrice i").html(total.toFixed(2));

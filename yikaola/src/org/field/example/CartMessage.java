@@ -75,8 +75,6 @@ public class CartMessage extends HttpServlet {
 
 			int last = rs.getRow();
 
-			//System.out.print(last);
-
 			if (last == 0) {
 
 				json.put("code", 301);

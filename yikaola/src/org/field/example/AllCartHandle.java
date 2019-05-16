@@ -102,5 +102,46 @@ public class AllCartHandle extends BaseServlet {
 		}
 		
 	}
+	
+	//操作修改状态
+	
+	public void status(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String status = request.getParameter("status");
+		
+		String id = request.getParameter("id");
+		
+		HttpSession session = request.getSession();
+		
+		String tel = (String)session.getAttribute("tel");
+		
+		DB db = new DB();
+		
+		String sql = "update t_khdgb set status = ? where kid = ? and tel = ?";//购物车表的自增ID
+		
+		Object[] params = {status,id,tel};
+		
+		boolean bool = db.executeUpdate(sql, params);
+		
+		JSONObject json = new JSONObject();
+		
+		
+		if(bool){
+			
+			json.put("code", 200);
+			
+			json.put("message", "更新成功");
+			
+			response.getWriter().print(json.toString());
+		}else {
+			
+			json.put("code", 401);
+			
+			json.put("message", "更新失败");
+			
+			response.getWriter().print(json.toString());
+		}
+		
+	}
 
 }
