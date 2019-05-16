@@ -83,12 +83,16 @@ $('.CartBtn>button:nth-child(1)').click(function(){
 					
 					var arr = res.data[i];
 					
-					sum += arr[4] * arr[5]; 
+					if(arr[7] == 1){
+					
+						sum += arr[4] * arr[5]; 
+						
+					}
 					
 					html += `
 					
 					<tr>
-						<td><input checked type="checkbox" class="my_input"></td>
+						<td><input ${arr[7] == 1?'checked':""} type="checkbox" class="my_input"></td>
 						<td>
 							<div class="CartAddFlex">
 								<div>

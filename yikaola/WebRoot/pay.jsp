@@ -113,6 +113,7 @@ $.ajax({
 	url:"CartMessage",
 	type:"get",
 	dataType:"json",
+	data:{status:1},
 	success:function(res){
 		console.log(res);
 		

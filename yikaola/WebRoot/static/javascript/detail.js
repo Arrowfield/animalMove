@@ -1,4 +1,4 @@
-var goodMessage = {num:1};
+var goodMessage = {num:1,status:1};
 (function () {
   //功能：引入头文件
   $("<link rel='stylesheet' href='css/header.css'>").appendTo('head');

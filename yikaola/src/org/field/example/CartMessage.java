@@ -40,16 +40,30 @@ public class CartMessage extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		String tel = (String) session.getAttribute("tel");
-
-		//System.out.print(tel);
-
+		
+		String status = request.getParameter("status");
+		
+		String sql = "";
+		
 		DB db = new DB();
-
-		String sql = "SELECT * FROM `t_khdgb` WHERE `tel` = ?";
-
-		Object[] params = { tel };
-
-		db.doPstm(sql, params);
+		
+		if(status == null) {
+			
+			sql = "SELECT * FROM `t_khdgb` WHERE `tel` = ?";
+			
+			Object[] params = { tel};
+			
+			db.doPstm(sql, params);
+			
+		}else {
+			
+			sql = "SELECT * FROM `t_khdgb` WHERE `tel` = ? and status = ?";
+			
+			Object[] params = { tel , status};
+			
+			db.doPstm(sql, params);
+		
+		}
 
 		LinkedList<Object> order = new LinkedList<Object>();
 

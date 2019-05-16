@@ -43,6 +43,8 @@ public class AddCart extends HttpServlet {
 		
 		String size = request.getParameter("size");
 		
+		String status = request.getParameter("status");
+		
 		HttpSession session = request.getSession();
 		
 		String tel = (String) session.getAttribute("tel");
@@ -63,9 +65,9 @@ public class AddCart extends HttpServlet {
 		
 		DB db = new DB();
 		
-		String sql = "INSERT INTO `t_khdgb`(`kid`, `sid`, `tel`, `goodname`, `number`, `price`, `sum`, `status`,`color`,`size`) VALUES (null,null,?,?,?,?,?,null,?,?)";
+		String sql = "INSERT INTO `t_khdgb`(`kid`, `sid`, `tel`, `goodname`, `number`, `price`, `sum`, `status`,`color`,`size`) VALUES (null,null,?,?,?,?,?,?,?,?)";
 		
-		Object[] params = {tel,name,num,price,sum,color,size};
+		Object[] params = {tel,name,num,price,sum,status,color,size};
 		
 		boolean bool = db.executeUpdate(sql, params);
 		
