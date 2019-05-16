@@ -26,6 +26,8 @@ $('.CartBtn>button:nth-child(2)').click(function(){
 	
 });
 
+//
+
 $('.CartBtn>button:nth-child(1)').click(function(){
 	
 	//操作删除
@@ -74,6 +76,26 @@ function handleClick(e,id){
 	
 	var status = '';
 	
+	//当全部选中的时候就让全选进入状态
+	
+	var inputs = $("table>tbody>tr>td:nth-child(1)>input");
+	
+	//for()
+	
+	inputs.each((i,tmp)=>{
+		
+		if(!$(tmp).is(":checked")){
+			
+			$("#my_money input").prop("checked",false);
+			
+			return false;//结束
+			
+		}else{
+			
+			$("#my_money input").prop("checked",true);
+		}
+	})
+	
 	
 	
 	if($(e.target).is(":checked")){
@@ -116,7 +138,77 @@ function handleClick(e,id){
 			console.log(res);
 		}
 	})
-}	
+}
+
+//操作全选
+
+function handleCheckAll(e){
+	
+	//初始状态（解决）
+	
+	//点击状态
+	
+	//console.log(e.target);
+	
+	var inputs = $("table>tbody>tr>td:nth-child(1)>input");
+	
+	var statusAll;
+	
+	if($(e.target).is(":checked")){
+		
+		//修改inputs的状态
+		
+		for(var input of inputs){
+			
+			$(input).prop("checked",true);
+			
+		}
+		
+		var tds = $('table>tbody>tr>td.h5');
+		
+		var sum = 0;
+		
+		for(var td of tds){
+			
+			sum += parseFloat($(td).html());
+			
+		}
+		
+		
+		$(".SumPrice>i").html(sum.toFixed(2));
+		
+		//入库
+		
+		statusAll = 1;
+		
+		
+	}else{
+		
+		for(var input of inputs){
+			
+			$(input).prop("checked",false);
+			
+		}
+		
+		var sum = parseFloat(0);
+		
+		$(".SumPrice>i").html(sum.toFixed(2));
+		
+		//入库
+		
+		statusAll = 0;
+	}
+	
+	$.ajax({
+		url:"AllCartHandle",
+		dataType:"json",
+		data:{method:"status",statusAll},
+		success:function(res){
+			console.log(res);
+		}
+	})
+	
+}
 
 (function () {
 	
@@ -197,6 +289,23 @@ function handleClick(e,id){
 				$('.SumPrice i').html(sum.toFixed(2));
 				
 				$(html).replaceAll('table>tbody>tr');
+				
+				//初始状态
+				
+				var inputs = $("table>tbody>tr>td:nth-child(1)>input");
+				
+				//for()
+				
+				var bool = inputs.each((i,tmp)=>{
+					
+					if(!$(tmp).is(":checked")){
+						
+						$("#my_money input").prop("checked",false);
+						
+						return false;
+						
+					}
+				})
 				
 			}
 			

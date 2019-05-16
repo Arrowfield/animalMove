@@ -56,7 +56,7 @@ public class AllCartHandle extends BaseServlet {
 		
 		boolean bool = db.executeUpdate(sql, params);
 		
-		System.out.print(bool);
+		//System.out.print(bool);
 		
 		response.getWriter().append("Served at:update ").append(request.getContextPath());
 	
@@ -115,13 +115,32 @@ public class AllCartHandle extends BaseServlet {
 		
 		String tel = (String)session.getAttribute("tel");
 		
+		String statusAll = request.getParameter("statusAll");
+		
 		DB db = new DB();
 		
-		String sql = "update t_khdgb set status = ? where kid = ? and tel = ?";//购物车表的自增ID
+		boolean bool;
 		
-		Object[] params = {status,id,tel};
-		
-		boolean bool = db.executeUpdate(sql, params);
+		if(statusAll != null) {
+			
+			//status = statusAll;
+			
+			String sql = "update t_khdgb set status = ? where tel = ?";//购物车表的自增ID
+			
+			Object[] params = {statusAll,tel};
+			
+			bool = db.executeUpdate(sql, params);
+			
+		}else {
+			
+			
+			String sql = "update t_khdgb set status = ? where kid = ? and tel = ?";//购物车表的自增ID
+			
+			Object[] params = {status,id,tel};
+			
+			bool = db.executeUpdate(sql, params);
+			
+		}
 		
 		JSONObject json = new JSONObject();
 		

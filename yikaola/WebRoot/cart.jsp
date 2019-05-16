@@ -89,7 +89,7 @@
 				</table>
 				<div id="my_money" class="CartFooter">
 					 <div>
-					    <input  type="checkbox" class="my_input"> 
+					    <input checked onclick="handleCheckAll(event)"  type="checkbox" class="my_input"> 
 					    <span>全选</span>
 					 </div>
 					 <span>删除</span> 

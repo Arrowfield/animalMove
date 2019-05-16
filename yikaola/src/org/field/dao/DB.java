@@ -12,10 +12,15 @@ import java.sql.Connection;
 public class DB {
 	
 	private String className; // 驱动名
+	
 	private String url; // 连接数据库的URL地址
+	
 	private String username; // 数据库的用户名
+	
 	private String password; // 数据库的密码
+	
 	private Connection con; // 数据库连接对象
+	
 	private PreparedStatement pstm; // 数据库预编译处理对象
 
 	public DB() {
