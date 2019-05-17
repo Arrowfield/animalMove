@@ -60,7 +60,7 @@ function handlePage(page){
 	 			
 	 		}else if($btn.hasClass('next')){
 	 			
-	 			console.log(page.total/page.pageSize,page.currentPage);
+	 			//console.log(page.total/page.pageSize,page.currentPage);
 	 			
 	 			if(page.total/page.pageSize == page.currentPage){
 	 				
@@ -170,6 +170,10 @@ function makeData(res){
 	  if(res.page.total<=10){
 		  
 		  $(".pagination").hide();
+		  
+	  }else{
+		  
+		  $(".pagination").show();
 		  
 	  }
 	  

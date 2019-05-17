@@ -12,11 +12,12 @@ CREATE TABLE  t_khb(
 	passwordAgain varchar(16),
 	sex INT,
 	registerTime DATETIME,
-	avatar VARCHAR(256)
+	avatar VARCHAR(256),
+	address VARCHAR(256)
 );
 
-INSERT INTO t_khb VALUES(null,'Feild','15118099616','123456','123456',null,null,null);
-INSERT INTO t_khb VALUES(null,'Tom','18186228854','123456','123456',null,null,null);
+INSERT INTO t_khb VALUES(null,'Feild','15118099616','123456','123456',null,null,null,null);
+INSERT INTO t_khb VALUES(null,'Tom','18186228854','123456','123456',null,null,null,null);
 
 #商品表
 CREATE TABLE t_spb(

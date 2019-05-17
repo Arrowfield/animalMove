@@ -38,7 +38,7 @@ public class OrderSearch extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
-	@SuppressWarnings("unused")
+	@SuppressWarnings({ "unused", "unchecked", "rawtypes" })
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -71,6 +71,7 @@ public class OrderSearch extends HttpServlet {
 		}else {
 			
 			//sql = "SELECT * FROM `t_khdgb` WHERE !?";
+			
 			
 			sql = "select * from t_order as t_o left join t_spb  as t_s  on  t_o.s_id = t_s.sid where !? and t_o.phone = ?";
 			
