@@ -102,7 +102,7 @@ function handleRange(){
 	
 	max = $('.max').val();	
 	
-	if(!min || !max || !(min > max)){
+	if(!min || !max || (min > max)){
 		
 		getToast("请输入正确数值");
 		

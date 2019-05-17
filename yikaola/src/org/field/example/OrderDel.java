@@ -37,7 +37,7 @@ public class OrderDel extends HttpServlet {
 		
 		DB db = new DB();
 		
-		String sqlString = "delete from t_khdgb where kid = ?";
+		String sqlString = "delete from t_order where id = ?";
 		
 		Object[] params = {idString};
 		

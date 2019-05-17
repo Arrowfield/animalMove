@@ -97,7 +97,7 @@
 					 <span>移入收藏夹</span> 
 					
 					 <div>
-					 	<span class="SumPrice">总共：￥<i>123132</i></span>
+					 	<span class="SumPrice">总共：￥<i></i></span>
 					 	<button class="my_btn1" onclick='goToPage()'>去支付 ></button>
 					 </div>
 				</div>

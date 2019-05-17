@@ -2,7 +2,13 @@ package org.field.example;
 
 import java.io.IOException;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -33,6 +39,7 @@ public class OrderList extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -45,9 +52,57 @@ public class OrderList extends HttpServlet {
 		String tel = (String) session.getAttribute("tel");
 
 		//System.out.print(tel);
+		
+		//获取订单
 
 		DB db = new DB();
 
+		//联表查询（既查出用户订单，有查出对应的商品信息）
+		
+		String sqlTow = "select * from t_order as t_o left join t_spb  as t_s  on  t_o.s_id = t_s.sid where t_o.phone = ?";
+		
+		Object[] paramsTow = {tel};
+		
+		db.doPstm(sqlTow, paramsTow);
+		
+		ResultSet res = db.getRs();
+		
+		@SuppressWarnings("rawtypes")
+		
+		List list = new ArrayList();
+		
+		try {
+			
+			
+			
+			ResultSetMetaData rsmd = res.getMetaData();
+			
+			while(res.next()) {
+				
+				@SuppressWarnings("rawtypes")
+				
+				Map m = new HashMap();
+				
+				for(int j = 1;j <= rsmd.getColumnCount();j++) {
+					
+					String colName = rsmd.getColumnName(j);
+					
+					//System.out.print(colName);
+					
+					m.put(colName, res.getString(colName));
+				}
+				
+				list.add(m);
+				
+			}
+			
+		} catch (SQLException e1) {
+
+			e1.printStackTrace();
+		}
+		
+		json.put("newData", list);
+		
 		String sql = "SELECT * FROM `t_khdgb` WHERE `tel` = ?";
 
 		Object[] params = { tel };
@@ -73,6 +128,7 @@ public class OrderList extends HttpServlet {
 				response.getWriter().print(json.toString());
 
 				return;
+				
 			} else {
 
 				for (int i = 0; i < last; i++) {

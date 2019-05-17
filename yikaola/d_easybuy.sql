@@ -106,10 +106,13 @@ CREATE TABLE t_img(
 #订单表
 CREATE TABLE t_order(
 	id INT  PRIMARY KEY AUTO_INCREMENT,
-	phone VARCHAR(11),
-	time DATETIME,
-	money DECIMAL(6,2),
-	sort VARCHAR(128)
+	phone VARCHAR(11), #手机号码
+	time DATETIME,     #产生时间
+	s_id int,          #商品ID 
+	orderNum VARCHAR(64),  #订单编号
+	status int,
+	num int,
+	sum DECIMAL(6,2)
 );
 
 #优惠券表

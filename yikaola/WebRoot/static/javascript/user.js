@@ -91,20 +91,20 @@ $('#my_bar>ul>li>a').click(function (e) {
 				  
 				  var html = "";
 				  
-				  for(var i=0;i<res.data.length;i++){
+				  for(var i=0;i<res.newData.length;i++){
 					  
-					  var arr = res.data[i];
+					  var obj = res.newData[i];
 					  
 					  
 					  html += `
 						  <tr>
-						  	<td class="TooLong" title=${arr[3]}>${arr[3]}</td>
-						  	<td>${arr[5]}</td>
-						  	<td>${arr[4]}</td>
+						  	<td class="TooLong" title=${obj.sname}> ${obj.sname} </td>
+						  	<td>${obj.sprice}</td>
+						  	<td>${obj.num}</td>
 						  	<td>暂无</td>
-						  	<td>${arr[6]}</td>
-						  	<td>待付款</td>
-						  	<td><a data-toggle="modal" data-target="#myModal" onclick="handleDel(${arr[0]},'${arr[3]}')" href="javascript:">删除订单</a></td>
+						  	<td>${obj.sum}</td>
+						  	<td>${obj.status == 0? "待付款":"已付款"}</td>
+						  	<td><a data-toggle="modal" data-target="#myModal" onclick="handleDel(${obj.id},'${obj.sname}')" href="javascript:">删除订单</a></td>
 						  </tr>
 					  `;
 				  }
@@ -142,7 +142,7 @@ $('#my_bar>ul>li>a').click(function (e) {
 		  dataType:"json",
 		  success:function(res){
 			  
-			  if(res.code == 301){
+			  if(res.data.length == 0){
 				  
 				  $('table>tbody>tr').remove();
 				  
@@ -156,17 +156,18 @@ $('#my_bar>ul>li>a').click(function (e) {
 				  
 				  for(var i=0;i<res.data.length;i++){
 					  
-					  var arr = res.data[i];
+					  var obj = res.data[i];
+					  
 					  
 					  html += `
 						  <tr>
-						  	<td class="TooLong">${arr[3]}</td>
-						  	<td>${arr[5]}</td>
-						  	<td>${arr[4]}</td>
+						  	<td class="TooLong" title=${obj.sname}> ${obj.sname} </td>
+						  	<td>${obj.sprice}</td>
+						  	<td>${obj.num}</td>
 						  	<td>暂无</td>
-						  	<td>${arr[6]}</td>
-						  	<td>待付款</td>
-						  	<td><a data-toggle="modal" data-target="#myModal" onclick="handleDel(${arr[0]},'${arr[3]}')" href="javascript:">删除订单</a></td>
+						  	<td>${obj.sum}</td>
+						  	<td>${obj.status == 0? "待付款":"已付款"}</td>
+						  	<td><a data-toggle="modal" data-target="#myModal" onclick="handleDel(${obj.id},'${obj.sname}')" href="javascript:">删除订单</a></td>
 						  </tr>
 					  `;
 				  }
