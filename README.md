@@ -14,3 +14,7 @@
   <groupId>com.baidu</groupId>
   <artifactId>springdemo</artifactId>
 ```
+
+#### 知识点
+
++ 开发工具自动集成maven
