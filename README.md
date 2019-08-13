@@ -8,3 +8,9 @@
 + MAVEN_HOME D:\apache-maven-3.6.1
 + java + Maven + SpringBoot 构建webapp项目<https://baijiahao.baidu.com/s?id=1632687280256687825&wfr=spider&for=pc>
 + pom => 项目对象模型
+
+```
+  //自己输入后生成的
+  <groupId>com.baidu</groupId>
+  <artifactId>springdemo</artifactId>
+```
