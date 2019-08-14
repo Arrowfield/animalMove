@@ -11,7 +11,9 @@ public class HelloController {
     @ResponseBody
     @RequestMapping("/hello")
     public String hello() {
-        return "你好,百度 123！ 456 7689 ";
+        return "你好,百度 123！ 456 7689 132 123";
     }
-
+    public String index(){
+        return "123";
+    }
 }

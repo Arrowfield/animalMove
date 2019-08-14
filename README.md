@@ -20,8 +20,17 @@
 + 开发工具自动集成maven
 + 热部署<https://blog.csdn.net/testcs_dn/article/details/79929886>
 + 端口占用<https://www.cnblogs.com/iflytek/p/8916175.html>
++ 打包部署方便
++ 文件大小目前不超过1M（除去就的文件）
++ 
 
 ```
 netstat -aon|findstr 8080
 taskkill /f /t /im 8080
+```
++ 运行jar包的命令
+
+```java
+//java -jar springdemo-1.0-SNAPSHOT.jar
+
 ```
