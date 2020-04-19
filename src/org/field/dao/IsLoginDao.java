@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import org.field.bean.Login;
 
 public class IsLoginDao {
-	@SuppressWarnings("unused")
+
 	public static String login(Login login){
 		Connection conn = null;
 		PreparedStatement pstmt = null;

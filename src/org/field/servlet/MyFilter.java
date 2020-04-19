@@ -13,10 +13,6 @@ import javax.servlet.ServletResponse;
  */
 public class MyFilter implements Filter {
 
-    /**
-     * Default constructor. 
-     */
-	private static String encoding = null;
     public MyFilter() {
         // TODO Auto-generated constructor stub
     }

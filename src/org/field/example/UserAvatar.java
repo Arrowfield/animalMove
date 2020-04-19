@@ -5,11 +5,7 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,8 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.commons.fileupload.FileItem;
-import org.apache.commons.fileupload.FileItemFactory;
+
 import org.apache.commons.fileupload.FileItemIterator;
 import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.FileUploadException;
@@ -52,9 +47,9 @@ public class UserAvatar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		/* 将用户的图片存储到本地，并返回路径 */
+		/* 灏嗙敤鎴风殑鍥剧墖瀛樺偍鍒版湰鍦帮紝骞惰繑鍥炶矾寰� */
 
-		// 导入两个jar包
+		// 瀵煎叆涓や釜jar鍖�
 
 		/*
 		 * 
@@ -99,7 +94,7 @@ public class UserAvatar extends HttpServlet {
 		 * stream.close();
 		 */
 
-		// 获取二进制流
+		// 鑾峰彇浜岃繘鍒舵祦
 
 		try {
 
@@ -113,11 +108,11 @@ public class UserAvatar extends HttpServlet {
 			
 			//System.out.print(this.getServletContext());
 			
-			String str = System.getProperty("catalina.home");
+			
 			
 			//String uploadPath = str + "/webapps/upload";
 
-			String uploadPath = "E:\\workspace_project\\毕业设计与论文编写的专属文件夹\\animalmove\\yikaola\\WebRoot\\upload";
+			String uploadPath = "" ;
 			
 			File file = new File(uploadPath);
 
@@ -144,7 +139,7 @@ public class UserAvatar extends HttpServlet {
 
 					json.put("code", "301");
 
-					json.put("message", "请输入正确的信息");
+					json.put("message", "璇疯緭鍏ユ纭殑淇℃伅");
 
 					response.getWriter().print(json.toString());
 
@@ -182,7 +177,7 @@ public class UserAvatar extends HttpServlet {
 
 						json.put("code", "200");
 
-						json.put("message", "修改成功");
+						json.put("message", "淇敼鎴愬姛");
 
 						json.put("path", filename);
 
@@ -191,7 +186,7 @@ public class UserAvatar extends HttpServlet {
 						
 						json.put("code", "401");
 
-						json.put("message", "修改失败");
+						json.put("message", "淇敼澶辫触");
 						
 						response.getWriter().print(json.toString());
 					}
@@ -220,8 +215,8 @@ public class UserAvatar extends HttpServlet {
 }
 
 /*
- * 问题：
+ * 闂锛�
  * 
- * 修改servlet没有成功
+ * 淇敼servlet娌℃湁鎴愬姛
  * 
  */

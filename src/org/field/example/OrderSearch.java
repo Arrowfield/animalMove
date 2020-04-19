@@ -6,7 +6,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedList;
+
 import java.util.List;
 import java.util.Map;
 
@@ -109,8 +109,6 @@ public class OrderSearch extends HttpServlet {
 			
 			while(rs.next()) {
 				
-				
-				@SuppressWarnings("rawtypes")
 				
 				Map m = new HashMap();
 				

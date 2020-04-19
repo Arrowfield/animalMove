@@ -10,11 +10,12 @@
 				class="header-href login-before" href="login.jsp">登录</a> <a
 				class="header-href login-before" href="reg.jsp">免费注册</a> <a
 				class="header-href ShowHide" href="#">手机考拉
-				<div class="ShowApp">
+				
+			</a>
+			<div class="show-app">
 					<img src="./static/img/code.png">
 					<p>扫码即可下载APP</p>
 				</div>
-			</a>
 		</div>
 		<ul class="my-right">
 			<li onclick="handleEveryday('everyday=1')">每日签到</li>

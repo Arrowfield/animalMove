@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.commons.collections.map.HashedMap;
+
 import org.field.bean.Goods;
 import org.field.dao.DB;
 
@@ -27,21 +27,21 @@ public class IndexData extends HttpServlet {
     }
 
 
-	@SuppressWarnings("null")
+
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
 		response.setContentType("text/html;charset=utf-8");
 		response.setCharacterEncoding("utf-8");
-		//数据
+		//鏁版嵁
 		/*
 		 * code = 200
-		 * message = "请求成功"
+		 * message = "璇锋眰鎴愬姛"
 		 * data = {goods:[{},{}],sellHot:[],}
 		 *
 		 * */
-		/*获取数据库中的数据*/
+		/*鑾峰彇鏁版嵁搴撲腑鐨勬暟鎹�*/
 		Goods [] goods;
 		DB db = new DB();
 		String sql = "select * from t_spb";
@@ -107,13 +107,13 @@ public class IndexData extends HttpServlet {
 		
 		//Goods [] goodsYouLove = new Goods[10];
 //		
-//		Goods goods01 = new Goods(1,"牙膏",5.20,"/storage/01.png","好货");
-//		Goods goods02 = new Goods(2,"牙膏",5.20,"/storage/01.png","好货");
-//		Goods goods03 = new Goods(3,"牙膏",5.20,"/storage/01.png","好货");
-//		Goods goods04 = new Goods(4,"牙膏",5.20,"/storage/01.png","好货");
-//		Goods goods05 = new Goods(5,"牙膏",5.20,"/storage/01.png","好货");
-//		Goods goods06 = new Goods(6,"牙膏",5.20,"/storage/01.png","好货");
-//		Goods goods07 = new Goods(7,"牙膏",5.20,"/storage/01.png","好货");
+//		Goods goods01 = new Goods(1,"鐗欒啅",5.20,"/storage/01.png","濂借揣");
+//		Goods goods02 = new Goods(2,"鐗欒啅",5.20,"/storage/01.png","濂借揣");
+//		Goods goods03 = new Goods(3,"鐗欒啅",5.20,"/storage/01.png","濂借揣");
+//		Goods goods04 = new Goods(4,"鐗欒啅",5.20,"/storage/01.png","濂借揣");
+//		Goods goods05 = new Goods(5,"鐗欒啅",5.20,"/storage/01.png","濂借揣");
+//		Goods goods06 = new Goods(6,"鐗欒啅",5.20,"/storage/01.png","濂借揣");
+//		Goods goods07 = new Goods(7,"鐗欒啅",5.20,"/storage/01.png","濂借揣");
 		
 		
 		
@@ -128,7 +128,7 @@ public class IndexData extends HttpServlet {
 		
 		JSONObject json = new JSONObject();
 		json.put("code", 200);
-		json.put("msg", "数据获取成功");
+		json.put("msg", "鏁版嵁鑾峰彇鎴愬姛");
 		json.put("data",myGoods);
 		json.put("goods",hashgoods);
 		response.getWriter().print(json.toString());

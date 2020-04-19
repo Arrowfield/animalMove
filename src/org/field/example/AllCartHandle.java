@@ -32,29 +32,29 @@ public class AllCartHandle extends BaseServlet {
 	public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		//操作修改
+		//鎿嶄綔淇敼
 		
-		String id = request.getParameter("id");
+		//String id = request.getParameter("id");
 		
-		String price = request.getParameter("price");
+		//String price = request.getParameter("price");
 		
-		String num = request.getParameter("num");
+		//String num = request.getParameter("num");
 		
-		HttpSession session = request.getSession();
+		//HttpSession session = request.getSession();
 		
-		String tel = (String)session.getAttribute("tel");
+		//String tel = (String)session.getAttribute("tel");
 		
 		//System.out.printf("%s,%s,%s",id,price,num);
 		
-		float sum = Float.parseFloat(price) * Float.parseFloat(num);
+		//float sum = Float.parseFloat(price) * Float.parseFloat(num);
 		
-		DB db = new DB();
+		//DB db = new DB();
 		
-		String sql = "update t_khdgb set number = ? , sum = ?  where kid = ? and tel = ?";
+		//String sql = "update t_khdgb set number = ? , sum = ?  where kid = ? and tel = ?";
 		
-		Object[] params = {num,sum,id,tel};
+		//Object[] params = {num,sum,id,tel};
 		
-		boolean bool = db.executeUpdate(sql, params);
+		//boolean boo = db.executeUpdate(sql, params);
 		
 		//System.out.print(bool);
 		
@@ -88,14 +88,14 @@ public class AllCartHandle extends BaseServlet {
 			
 			json.put("code", 200);
 			
-			json.put("message", "删除成功");
+			json.put("message", "鍒犻櫎鎴愬姛");
 			
 			response.getWriter().print(json.toString());
 		}else {
 			
 			json.put("code", 401);
 			
-			json.put("message", "删除失败");
+			json.put("message", "鍒犻櫎澶辫触");
 			
 			response.getWriter().print(json.toString());
 			
@@ -103,7 +103,7 @@ public class AllCartHandle extends BaseServlet {
 		
 	}
 	
-	//操作修改状态
+	//鎿嶄綔淇敼鐘舵��
 	
 	public void status(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
@@ -125,7 +125,7 @@ public class AllCartHandle extends BaseServlet {
 			
 			//status = statusAll;
 			
-			String sql = "update t_khdgb set status = ? where tel = ?";//购物车表的自增ID
+			String sql = "update t_khdgb set status = ? where tel = ?";//璐墿杞﹁〃鐨勮嚜澧濱D
 			
 			Object[] params = {statusAll,tel};
 			
@@ -134,7 +134,7 @@ public class AllCartHandle extends BaseServlet {
 		}else {
 			
 			
-			String sql = "update t_khdgb set status = ? where kid = ? and tel = ?";//购物车表的自增ID
+			String sql = "update t_khdgb set status = ? where kid = ? and tel = ?";//璐墿杞﹁〃鐨勮嚜澧濱D
 			
 			Object[] params = {status,id,tel};
 			
@@ -149,14 +149,14 @@ public class AllCartHandle extends BaseServlet {
 			
 			json.put("code", 200);
 			
-			json.put("message", "更新成功");
+			json.put("message", "鏇存柊鎴愬姛");
 			
 			response.getWriter().print(json.toString());
 		}else {
 			
 			json.put("code", 401);
 			
-			json.put("message", "更新失败");
+			json.put("message", "鏇存柊澶辫触");
 			
 			response.getWriter().print(json.toString());
 		}

@@ -3,9 +3,9 @@ package org.field.servlet;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
+
 import java.util.Calendar;
-import java.util.Date;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -47,7 +47,7 @@ public class AddCard extends HttpServlet {
 
 		String tel = (String) session.getAttribute("tel");
 
-		// 如果是第一次请求就执行插入操作
+		// 濡傛灉鏄涓�娆¤姹傚氨鎵ц鎻掑叆鎿嶄綔
 
 		DB db = new DB();
 
@@ -55,18 +55,14 @@ public class AddCard extends HttpServlet {
 
 		//Object[] paramsObjects = null;
 
-		Date now = new Date();
-
-		SimpleDateFormat matter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-
 		int num = Integer.parseInt(numString);
 
 		num++;
 
-		String timeString = matter.format(now);
+		
 		
 		/*
-		 * 用户当天点击获取时间
+		 * 鐢ㄦ埛褰撳ぉ鐐瑰嚮鑾峰彇鏃堕棿
 		 * */
 		
 		//sqlString = "SELECT * FROM `t_khb` WHERE 1";
@@ -76,11 +72,11 @@ public class AddCard extends HttpServlet {
 
 			sqlString = "INSERT INTO `t_docard`(`id`, `user_id`, `num`, `time`, `tel`) VALUES (null,null,?,?,?)";
 
-			Object[] paramsObjects = {num,timeString,tel};
+			//Object[] paramsObjects = {num,timeString,tel};
 			
-			boolean bool = db.executeUpdate(sqlString, paramsObjects);
+			//boolean boo = db.executeUpdate(sqlString, paramsObjects);
 			
-			//System.out.print(bool);
+
 		}else {
 			
 			sqlString = "SELECT `time` FROM `t_docard` WHERE `tel` = ?";
@@ -124,14 +120,14 @@ public class AddCard extends HttpServlet {
 			
 			sqlString = "UPDATE `t_docard` SET `num`= ? ,`time` = ? ,`tel`= ?  WHERE `tel` = ?";
 			
-			Object[] paramsObjects = {num,timeString,tel,tel};
+			//Object[] paramsObjects = {num,timeString,tel,tel};
 			
-			boolean bool = db.executeUpdate(sqlString, paramsObjects);
+			//boolean boo = db.executeUpdate(sqlString, paramsObjects);
 			
 			//System.out.print(bool);
 		}
 
-		// 如果是第二次就执行更新操作
+		// 濡傛灉鏄浜屾灏辨墽琛屾洿鏂版搷浣�
 
 		// String sqlString = "";
 

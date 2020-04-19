@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.field.bean.Goods;
+
 import org.field.dao.DB;
 
 import net.sf.json.JSONObject;
@@ -53,11 +53,11 @@ public class OrderList extends HttpServlet {
 
 		//System.out.print(tel);
 		
-		//获取订单
+		//鑾峰彇璁㈠崟
 
 		DB db = new DB();
 
-		//联表查询（既查出用户订单，有查出对应的商品信息）
+		//鑱旇〃鏌ヨ锛堟棦鏌ュ嚭鐢ㄦ埛璁㈠崟锛屾湁鏌ュ嚭瀵瑰簲鐨勫晢鍝佷俊鎭級
 		
 		String sqlTow = "select * from t_order as t_o left join t_spb  as t_s  on  t_o.s_id = t_s.sid where t_o.phone = ?";
 		
@@ -160,7 +160,7 @@ public class OrderList extends HttpServlet {
 
 		json.put("code", 200);
 
-		// 获取当前用户的签到次数
+		// 鑾峰彇褰撳墠鐢ㄦ埛鐨勭鍒版鏁�
 
 		json.put("data", order);
 
