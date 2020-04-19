@@ -9,6 +9,13 @@
 </pre>
 
 
+#### 启动项目
+
++ 启动tomcat服务器
++ 项目运行在eclipse里面 安装开发web项目的插件 普通的eclipse无法开发jsp项目 只能用myEclipse 否者就装plugin 配置tomcat
++ 将项目的入口文件放到服务器的webapp目录下即可
+
+
 + 包的大小：11.7kb
 
 
