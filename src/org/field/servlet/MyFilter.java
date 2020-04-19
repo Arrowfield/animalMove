@@ -41,8 +41,17 @@ public class MyFilter implements Filter {
 		
 		request.setCharacterEncoding("utf-8");
 		
-		response.setContentType("text/html;charset=utf-8");
 		
+        /*String url = request.getRequestURI();
+
+        if(url.indexOf(".css")>0||url.indexOf(".js")>0||url.indexOf(".png")>0) {
+            chain.doFilter(request, response);
+            return;
+        }*/
+        
+        
+        response.setContentType("text/css; charset=UTF-8");
+
 		response.setCharacterEncoding("utf-8");
 		
 		chain.doFilter(request, response);

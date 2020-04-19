@@ -12,10 +12,11 @@
 				class="header-href ShowHide" href="#">手机考拉
 				
 			</a>
-			<div class="show-app">
+			
+			<!--div class="show-app">
 					<img src="./static/img/code.png">
 					<p>扫码即可下载APP</p>
-				</div>
+				</div-->
 		</div>
 		<ul class="my-right">
 			<li onclick="handleEveryday('everyday=1')">每日签到</li>
